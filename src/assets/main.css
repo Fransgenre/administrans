@@ -1,6 +1,10 @@
 @import './base.css';
 
-#app {
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+main {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -8,11 +12,61 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+/* titles */
+h1 {
+  margin-bottom: var(--space-small);
+}
+h2 {
+  margin-bottom: var(--space-small);
+}
+h3 {
+  margin-bottom: var(--space-xsmall);
+}
+/* grid */
+.grid--row {
+  display: flex;
+  gap: var(--space-xlarge);
+}
+.grid--column {
+  flex: 1 1 0px;
+}
+
+/* forms and inputs */
+label + input:not([type='checkbox']),
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-medium);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-medium);
+
+}
+
+/* separators */
+hr {
+  border: none;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  margin: var(--space-small) 0;
+  display: block;
+}
+
+/* letter specific styles */
+.adress--sender, .adress--recipient {
+  white-space: pre-wrap;
+  margin-bottom: var(--space-medium);
+}
+.adress--recipient {
+  text-align: right;
+}
+.letter .subject {
+  text-decoration: underline;
+  margin-bottom: var(--space-medium);
+}
+.letter p {
+  margin-bottom: var(--space-medium);
 }
 
 @media (hover: hover) {

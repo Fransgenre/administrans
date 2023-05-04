@@ -9,16 +9,21 @@ export const useGlobalStore = defineStore('global', {
     ]
   },
   state: () => ({
-    profileIdx: null,
-    profiles: []
+    profileIdx: 0,
+    profiles: [{}]
   }),
   getters: {
     currentProfile: (state) => {
-      if (state.profileIdx === null) {
-        return {}
-      }
       let current = state.profiles[state.profileIdx]
       return current ? current : {}
     },
-  }
+  },
+  actions: {
+    persistProfileData (data) {
+      this.profiles[this.profileIdx] = {
+        ...this.currentProfile,
+        ...data,
+      }
+    },
+  },
 })

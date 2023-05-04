@@ -1,5 +1,9 @@
 <script setup>
-import { reactive } from 'vue'
+import { shallowRef, reactive, watch } from 'vue'
+import DynamicForm from './DynamicForm.vue'
+import { useGlobalStore } from '@/store'
+
+const store = useGlobalStore()
 
 const props = defineProps({
   template: {
@@ -8,25 +12,50 @@ const props = defineProps({
   }
 })
 const formFields = {}
-props.template.fields.forEach(f => {
-  formFields[f] = 'toto'
+props.template.structure.forEach(f => {
+  if (f.isInput) {
+    formFields[f.id] = store.currentProfile[f.id]
+  }
 })
-
 const data = reactive(formFields)
+watch (
+  data,
+  (v) => {
+    let toPersist = {}
+    props.template.structure.forEach(e => {
+      let persist = e.persist === undefined ? true : e.persist
+      if (persist && v[e.id] != undefined) {
+        toPersist[e.id] = v[e.id]
+      }
+    })
+    store.persistProfileData(toPersist)
+  },
+  {deep: true},
+)
+function updateData (v) {
+  Object.assign(data, v)
+}
 </script>
 
 <template>
   <div>
     <h1>{{ template.name}}</h1>
     <p>{{ template.description }}</p>
-    <div class="row">
-      <div class="column">
+    <hr>
+    <div class="grid--row">
+      <div class="grid--column">
         <h2>Vos informations</h2>
+        <DynamicForm
+          v-model="data"
+          :structure="template.structure"
+          @update:modelValue="updateData"
+        />
       </div>
-      <div class="column">
+      <div class="grid--column">
         <h2>Rendu du courrier</h2>
-        {{ template.template }}
-        <component :is="template.template" :data="data" /> 
+        <div class="letter">
+          <component :is="template.template" :data="data" /> 
+        </div>
       </div>
     </div>
   </div>
