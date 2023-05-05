@@ -48,7 +48,7 @@ function downloadPdf() {
 
 <template>
   <div>
-    <div class="hide-for-print">
+    <div class="hide-for-print text--center">
       <h1>{{ template.name }}</h1>
       <p>{{ template.description }}</p>
       <hr />
@@ -67,7 +67,7 @@ function downloadPdf() {
           <button @click.prevent="downloadPdf">Télécharger au format PDF</button>
           <hr class="hidden" />
         </div>
-        <div class="letter" id="rendered">
+        <div class="letter" id="rendered" contenteditable="true">
           <component :is="template.template" :data="data" />
         </div>
       </div>
