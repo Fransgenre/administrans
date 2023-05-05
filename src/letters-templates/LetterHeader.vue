@@ -19,7 +19,7 @@ const props = defineProps({
     </div>
     <div class="grid--column" v-if="data.villeCourrier && data.dateCourrier">
       {{ renderValue('villeCourrier') }},
-      le {{ (new Date(data.dateCourrier)).toLocaleDateString('fr-FR', options) }}
+      le {{ (new Date(data.dateCourrier)).toLocaleDateString('fr-FR') }}
     </div>
   </div>
   <div class="adress--recipient" v-if="renderValue('adresseDestinataire')">

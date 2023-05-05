@@ -57,7 +57,8 @@ export const fields = [
     id: 'dateCourrier',
     name: 'Date de rédaction',
     type: 'date',
-    default: () => { return new Date () }
+    default: () => { return new Date ().toISOString().slice(0, 10) },
+    persist: false,
   },
   {
     id: 'listerPJ',
