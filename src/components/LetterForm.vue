@@ -41,15 +41,21 @@ watch (
 function updateData (v) {
   Object.assign(data, v)
 }
+function downloadPdf () {
+  window.print()
+}
+
 </script>
 
 <template>
   <div>
-    <h1>{{ template.name}}</h1>
-    <p>{{ template.description }}</p>
-    <hr>
+    <div class="hide-for-print">
+      <h1>{{ template.name}}</h1>
+      <p>{{ template.description }}</p>
+      <hr>
+    </div>
     <div class="grid--row">
-      <div class="grid--column">
+      <div class="grid--column hide-for-print">
         <DynamicForm
           v-model="data"
           :structure="template.structure"
@@ -57,8 +63,12 @@ function updateData (v) {
         />
       </div>
       <div class="grid--column">
-        <h2>Rendu du courrier</h2>
-        <div class="letter">
+        <div class="hide-for-print">
+          <h2>Rendu du courrier</h2>
+          <button @click.prevent="downloadPdf">Télécharger au format PDF</button>
+          <hr class="hidden">
+        </div>
+        <div class="letter" id="rendered">
           <component :is="template.template" :data="data" /> 
         </div>
       </div>
