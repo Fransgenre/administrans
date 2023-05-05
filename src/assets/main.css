@@ -50,6 +50,21 @@ label {
   margin-left: var(--space-small);
 }
 
+.letter-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 var(--space-medium);
+}
+.letter-form > * {
+  grid-column: span 1;
+
+}
+.letter-form .category {
+  grid-column: span 2;
+}
+.letter-form .category + .letter-form .field {
+  grid-column-start: 1;
+}
 /* separators */
 hr {
   border: none;
