@@ -94,10 +94,10 @@ function field(name, params = {}) {
 
 const templates = [
   {
-    id: 'assurance',
-    name: 'Assurance',
+    id: 'contrat-simple',
+    name: 'Contrat simple',
     template: defineAsyncComponent(() => import(`./letters-templates/ContratSimple.vue`)),
-    description: 'Pour vos démarches auprès de votre assureur.',
+    description: 'Pour vos démarches auprès de fournisseurs tels qu\'EDF, votre assureur, votre opérateur mobile…',
     structure: [
       category('Vos informations'),
       field('prénom'),
