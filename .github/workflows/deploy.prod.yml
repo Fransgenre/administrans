@@ -1,4 +1,4 @@
-name: Test, build and deploy to tempo.agate.blue
+name: Test, build and deploy to administrans.agate.blue
 
 on:
   push:
