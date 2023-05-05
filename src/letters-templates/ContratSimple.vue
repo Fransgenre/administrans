@@ -1,6 +1,7 @@
 <script setup>
 import useLetterTemplate from '@/templates'
 import LetterHeader from './LetterHeader.vue'
+import LetterFooter from './LetterFooter.vue'
 
 const p = defineProps({data: {type: Object}})
 const {renderValue} = useLetterTemplate(p)
@@ -30,12 +31,5 @@ const {renderValue} = useLetterTemplate(p)
     et vous prie de bien vouloir croire, Madame, Monsieur, en l'assurance de ma
     considération,
   </p>
-  <p class="signature">
-    {{ renderValue('prénom') }} {{ renderValue('nom') }}
-  </p>
-  <p>Pièces jointes :</p>
-  <ul class="attachments">
-    <li>Copie des pièces d'identité de {{ renderValue('prénom') }} {{ renderValue('nom') }} et décision de changement de
-prénom de {{ renderValue('prénom') }} {{ renderValue('nom') }}</li>
-  </ul>
+  <LetterFooter :data="p.data" :renderValue="renderValue" />
 </template>

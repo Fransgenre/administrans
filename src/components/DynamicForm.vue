@@ -26,8 +26,14 @@ const localData = reactive({...props.modelValue})
 <template>
   <form @submit.prevent="">
     <template v-for="element in props.structure" :key="JSON.stringify(element)">
+      <div v-if="element.isCategory">
+        <h2>{{ element.name }}</h2>
+      </div>
       <div v-if="element.isInput">
-        <label :for="`field-${element.id}`">{{ element.name }}</label>
+        <label
+          v-if="element.type != 'checkbox'"
+          :for="`field-${element.id}`"
+        >{{ element.name }}</label>
         <textarea
           v-if="element.type === 'textarea'"
           v-model="localData[element.id]"
@@ -36,6 +42,18 @@ const localData = reactive({...props.modelValue})
           @input="$emit('update:modelValue', localData)"
         >
         </textarea>
+        <div v-else-if="element.type === 'checkbox'" class="checkbox">
+          <input
+            type="checkbox"
+            v-model="localData[element.id]"
+            :id="`field-${element.id}`"
+            @change="$emit('update:modelValue', localData)"
+          >
+          <label
+            :for="`field-${element.id}`"
+          >{{ element.name }}</label>
+
+        </div>
         <input
           v-else
           :type="element.type || 'text'"

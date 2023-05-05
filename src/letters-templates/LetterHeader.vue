@@ -9,12 +9,20 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="adress--sender" v-if="renderValue('adresse')">
-    {{ renderValue('prénom') }} {{ renderValue('nom') }}<br>
-    {{ renderValue('adresse') }}
+  <div class="grid--row">
+    <div class="grid--column">
+      <div class="adress--sender" v-if="renderValue('adresse')">
+        {{ renderValue('prénom') }} {{ renderValue('nom') }}<br>{{ renderValue('adresse') }}
+        <template v-if="data['téléphone']"><br>Téléphone : {{ renderValue('téléphone') }}</template>
+        <template v-if="data['email']"><br>Email : {{ renderValue('email') }}</template>
+      </div>
+    </div>
+    <div class="grid--column" v-if="data.villeCourrier && data.dateCourrier">
+      {{ renderValue('villeCourrier') }},
+      le {{ (new Date(data.dateCourrier)).toLocaleDateString('fr-FR', options) }}
+    </div>
   </div>
   <div class="adress--recipient" v-if="renderValue('adresseDestinataire')">
-    {{ renderValue('societé', false) }}<br>
-    À l'attention du service client
+    À l'attention du service client<template v-if="data['société']"> de {{ renderValue('société', false) }}</template>
   </div>
 </template>

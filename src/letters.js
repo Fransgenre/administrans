@@ -2,23 +2,33 @@ import {defineAsyncComponent} from 'vue'
 export const fields = [
   {
     id: 'prénom',
-    name: 'Votre prénom',
+    name: 'Prénom',
     type: 'text',
   },
   {
     id: 'nom',
-    name: 'Votre nom',
+    name: 'Nom',
     type: 'text',
   },
   {
     id: 'deadname',
-    name: 'Votre deadname',
+    name: 'Deadname',
     type: 'text',
   },
   {
     id: 'adresse',
-    name: 'Votre adresse',
+    name: 'Adresse',
     type: 'textarea',
+  },
+  {
+    id: 'téléphone',
+    name: 'N° de téléphone',
+    type: 'text',
+  },
+  {
+    id: 'email',
+    name: 'Adresse email',
+    type: 'email',
   },
   // {
   //   id: 'adresseDestinataire',
@@ -38,12 +48,44 @@ export const fields = [
     type: 'text',
     persist: false,
   },
+  {
+    id: 'villeCourrier',
+    name: 'Lieu de rédaction',
+    type: 'text',
+  },
+  {
+    id: 'dateCourrier',
+    name: 'Date de rédaction',
+    type: 'date',
+    default: () => { return new Date () }
+  },
+  {
+    id: 'listerPJ',
+    name: 'Inclure la liste des pièces jointes',
+    type: 'checkbox',
+    default: () => {return true},
+  },
 ]
 export const fieldsById = {}
 
 fields.forEach(f => {
   fieldsById[f.id] = f
 })
+
+function category (name) {
+  return {name, isCategory: true}
+}
+function field (name, params = {}) {
+  let config = {}
+  if (fieldsById[name]) {
+    config = {...fieldsById[name]}
+  }
+  return {
+    ...config,
+    ...params,
+    isInput: true
+  }
+}
 
 const templates = [
   {
@@ -52,29 +94,21 @@ const templates = [
     template: defineAsyncComponent(() => import(`./letters-templates/ContratSimple.vue`)),
     description: 'Pour vos démarches auprès de votre assureur.',
     structure: [
-      'prénom',
-      'nom',
-      'deadname',
-      'adresse',
-      'société',
-      'refContrat',
+      category('Vos informations'),
+      field('prénom'),
+      field('nom'),
+      field('deadname'),
+      field('adresse'),
+      field('email'),
+      field('téléphone'),
+      category('Société contactée'),
+      field('société'),
+      field('refContrat'),
+      category('Options du courrier'),
+      field('villeCourrier'),
+      field('dateCourrier'),
+      field('listerPJ'),
     ]
   }
 ]
 export default templates
-
-templates.forEach(t => {
-  let finalStructure = t.structure.map(e => {
-    if (fieldsById[e]) {
-      // a field ID was given, we grab the actual field definition
-      return {...fieldsById[e], isInput: true}
-    } else if (typeof e === 'object') {
-      // a full field definition was passed
-      return {...e, isInput: true}
-    } else {
-      // we assume HTML was passed
-      return {content: e, isInput: false}
-    }
-  })
-  t.structure = finalStructure
-})

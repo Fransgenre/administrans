@@ -1,5 +1,5 @@
 <script setup>
-import { shallowRef, reactive, watch } from 'vue'
+import { reactive, watch } from 'vue'
 import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
 
@@ -14,7 +14,13 @@ const props = defineProps({
 const formFields = {}
 props.template.structure.forEach(f => {
   if (f.isInput) {
-    formFields[f.id] = store.currentProfile[f.id]
+    let v
+    if (store.currentProfile[f.id] != undefined) {
+      v = store.currentProfile[f.id]
+    } else if (f.default != undefined) {
+      v = f.default()
+    }
+    formFields[f.id] = v
   }
 })
 const data = reactive(formFields)
@@ -44,7 +50,6 @@ function updateData (v) {
     <hr>
     <div class="grid--row">
       <div class="grid--column">
-        <h2>Vos informations</h2>
         <DynamicForm
           v-model="data"
           :structure="template.structure"

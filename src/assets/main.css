@@ -5,7 +5,7 @@ header {
   margin: 0 auto;
 }
 main {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 
@@ -22,6 +22,7 @@ h2 {
 h3 {
   margin-bottom: var(--space-xsmall);
 }
+
 /* grid */
 .grid--row {
   display: flex;
@@ -43,6 +44,10 @@ label {
   display: block;
   margin-bottom: var(--space-medium);
 
+}
+.checkbox label {
+  display: inline;
+  margin-left: var(--space-small);
 }
 
 /* separators */
@@ -67,6 +72,9 @@ hr {
 }
 .letter p {
   margin-bottom: var(--space-medium);
+}
+.letter .signature {
+  text-align: center;
 }
 
 @media (hover: hover) {
