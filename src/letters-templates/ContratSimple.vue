@@ -10,8 +10,7 @@ const {renderValue} = useLetterTemplate(p)
 <template>
   <LetterHeader :data="p.data" :renderValue="renderValue" />
   <p class="subject">
-    Objet : Mise à jour de mes informations d'état-civil
-    (Contrat n°{{ renderValue('refContrat') }})
+    Objet : Mise à jour de mes informations d'état-civil · Contrat n°{{ renderValue('refContrat') }}
   </p>
   <p>Madame, Monsieur,</p>
   <p>

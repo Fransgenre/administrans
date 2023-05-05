@@ -74,11 +74,23 @@ hr {
 }
 
 /* letter specific styles */
+.letter {
+  background: white;
+  border: 1px solid #CCCCCC;
+  font-family: serif;
+  font-size: 14px;
+  padding: var(--space-medium);
+  color: #222222;
+
+}
 .adress--sender, .adress--recipient {
   white-space: pre-wrap;
   margin-bottom: var(--space-medium);
 }
 .adress--recipient {
+  text-align: right;
+}
+.date {
   text-align: right;
 }
 .letter .subject {
