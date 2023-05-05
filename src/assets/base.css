@@ -1,10 +1,5 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --space-xsmall: 0.25em;
-  --space-small: 0.5em;
-  --space-medium: 1em;
-  --space-large: 1.5em;
-  --space-xlarge: 2em;
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
@@ -24,6 +19,19 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --space-xsmall: 0.25em;
+  --space-small: 0.5em;
+  --space-medium: 1em;
+  --space-large: 1.5em;
+  --space-xlarge: 2em;
+  
+  --font-xsmall: 0.8em;
+  --font-small: 0.9em;
+  --font-medium: 1em;
+  --font-large: 1.1em;
+  --font-xlarge: 1.3em;
+
 }
 
 /* semantic color variables for this project */

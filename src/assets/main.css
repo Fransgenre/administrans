@@ -7,7 +7,7 @@ header {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-medium);
 
   font-weight: normal;
 }
@@ -15,21 +15,30 @@ main {
 /* titles */
 h1 {
   margin-bottom: var(--space-small);
+  font-size: var(--font-xlarge);
 }
 h2 {
   margin-bottom: var(--space-small);
+  font-size: var(--font-large);
 }
 h3 {
   margin-bottom: var(--space-xsmall);
+  font-size: var(--font-medium);
 }
 
 /* grid */
-.grid--row {
-  display: flex;
-  gap: var(--space-xlarge);
-}
 .grid--column {
-  flex: 1 1 0px;
+  margin-bottom: var(--space-medium);
+}
+@media (min-width: 800px) {
+  .grid--row {
+    display: flex;
+    gap: var(--space-xlarge);
+  }
+  .grid--column {
+    flex: 1 1 0px;
+    margin-bottom: 0;
+  }
 }
 
 /* forms and inputs */
@@ -41,8 +50,9 @@ textarea {
 }
 
 label {
+  font-size: var(--font-small);
   display: block;
-  margin-bottom: var(--space-medium);
+  margin-bottom: var(--space-xsmall);
 }
 .checkbox label {
   display: inline;
@@ -55,10 +65,15 @@ label {
   gap: 0 var(--space-medium);
 }
 .letter-form > * {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 .letter-form .category {
   grid-column: span 2;
+}
+@media (min-width: 500px) {
+  .letter-form > * {
+    grid-column: span 1;
+  }
 }
 .letter-form .category + .letter-form .field {
   grid-column-start: 1;
@@ -79,7 +94,7 @@ hr.hidden {
   background: white;
   border: 1px solid #cccccc;
   font-family: serif;
-  font-size: 14px;
+  font-size: var(--font-small);
   padding: var(--space-medium);
   color: #222222;
 }
@@ -119,6 +134,7 @@ hr.hidden {
     border: none;
     padding: var(--space-xlarge);
     color: black;
+    font-size: var(--font-large);
   }
 }
 @media (hover: hover) {
