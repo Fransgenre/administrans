@@ -1,7 +1,7 @@
-import {fieldsById} from '@/letters'
+import { fieldsById } from '@/letters'
 
-export default function useLetterTemplate (props) {
-  function renderValue (field, defaultValue = null) {
+export default function useLetterTemplate(props) {
+  function renderValue(field, defaultValue = null) {
     if (props.data[field]) {
       return props.data[field]
     }

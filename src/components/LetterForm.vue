@@ -12,7 +12,7 @@ const props = defineProps({
   }
 })
 const formFields = {}
-props.template.structure.forEach(f => {
+props.template.structure.forEach((f) => {
   if (f.isInput) {
     let v
     if (store.currentProfile[f.id] != undefined) {
@@ -24,11 +24,11 @@ props.template.structure.forEach(f => {
   }
 })
 const data = reactive(formFields)
-watch (
+watch(
   data,
   (v) => {
     let toPersist = {}
-    props.template.structure.forEach(e => {
+    props.template.structure.forEach((e) => {
       let persist = e.persist === undefined ? true : e.persist
       if (persist && v[e.id] != undefined) {
         toPersist[e.id] = v[e.id]
@@ -36,23 +36,22 @@ watch (
     })
     store.persistProfileData(toPersist)
   },
-  {deep: true},
+  { deep: true }
 )
-function updateData (v) {
+function updateData(v) {
   Object.assign(data, v)
 }
-function downloadPdf () {
+function downloadPdf() {
   window.print()
 }
-
 </script>
 
 <template>
   <div>
     <div class="hide-for-print">
-      <h1>{{ template.name}}</h1>
+      <h1>{{ template.name }}</h1>
       <p>{{ template.description }}</p>
-      <hr>
+      <hr />
     </div>
     <div class="grid--row">
       <div class="grid--column hide-for-print">
@@ -66,10 +65,10 @@ function downloadPdf () {
         <div class="hide-for-print">
           <h2>Rendu du courrier</h2>
           <button @click.prevent="downloadPdf">Télécharger au format PDF</button>
-          <hr class="hidden">
+          <hr class="hidden" />
         </div>
         <div class="letter" id="rendered">
-          <component :is="template.template" :data="data" /> 
+          <component :is="template.template" :data="data" />
         </div>
       </div>
     </div>

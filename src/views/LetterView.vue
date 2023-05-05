@@ -9,13 +9,11 @@ const props = defineProps({
   }
 })
 const templatesById = {}
-templates.forEach(element => {
+templates.forEach((element) => {
   templatesById[element.id] = element
-});
+})
 const template = templatesById[props.id]
-
 </script>
 <template>
-  <LetterForm :template="template"
-  />
+  <LetterForm :template="template" />
 </template>

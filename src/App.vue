@@ -4,7 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-
     <nav>
       <RouterLink class="logo" to="/">Administrans</RouterLink>
       <RouterLink to="/">Home</RouterLink>
@@ -21,7 +20,6 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
 
 nav {
   width: 100%;

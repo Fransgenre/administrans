@@ -3,10 +3,7 @@ import { defineStore } from 'pinia'
 export const useGlobalStore = defineStore('global', {
   persist: {
     key: 'store.global',
-    paths: [
-      'profileIdx',
-      'profiles',
-    ]
+    paths: ['profileIdx', 'profiles']
   },
   state: () => ({
     profileIdx: 0,
@@ -16,14 +13,14 @@ export const useGlobalStore = defineStore('global', {
     currentProfile: (state) => {
       let current = state.profiles[state.profileIdx]
       return current ? current : {}
-    },
+    }
   },
   actions: {
-    persistProfileData (data) {
+    persistProfileData(data) {
       this.profiles[this.profileIdx] = {
         ...this.currentProfile,
-        ...data,
+        ...data
       }
-    },
-  },
+    }
+  }
 })

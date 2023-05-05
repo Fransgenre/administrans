@@ -43,7 +43,6 @@ textarea {
 label {
   display: block;
   margin-bottom: var(--space-medium);
-
 }
 .checkbox label {
   display: inline;
@@ -57,7 +56,6 @@ label {
 }
 .letter-form > * {
   grid-column: span 1;
-
 }
 .letter-form .category {
   grid-column: span 2;
@@ -79,13 +77,14 @@ hr.hidden {
 /* letter specific styles */
 .letter {
   background: white;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   font-family: serif;
   font-size: 14px;
   padding: var(--space-medium);
   color: #222222;
 }
-.adress--sender, .adress--recipient {
+.adress--sender,
+.adress--recipient {
   white-space: pre-wrap;
   margin-bottom: var(--space-medium);
 }
@@ -111,7 +110,8 @@ hr.hidden {
     size: auto;
     margin: 0;
   }
-  header, .hide-for-print {
+  header,
+  .hide-for-print {
     display: none !important;
   }
   .letter {

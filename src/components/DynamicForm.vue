@@ -15,12 +15,12 @@ const props = defineProps({
 })
 
 const fieldsById = {}
-props.structure.forEach(e => {
+props.structure.forEach((e) => {
   if (e.isInput) {
     fieldsById[e.id] = e
   }
 })
-const localData = reactive({...props.modelValue})
+const localData = reactive({ ...props.modelValue })
 </script>
 
 <template>
@@ -30,10 +30,9 @@ const localData = reactive({...props.modelValue})
         <h2>{{ element.name }}</h2>
       </div>
       <div v-if="element.isInput" class="field">
-        <label
-          v-if="element.type != 'checkbox'"
-          :for="`field-${element.id}`"
-        >{{ element.name }}</label>
+        <label v-if="element.type != 'checkbox'" :for="`field-${element.id}`">{{
+          element.name
+        }}</label>
         <textarea
           v-if="element.type === 'textarea'"
           v-model="localData[element.id]"
@@ -48,11 +47,8 @@ const localData = reactive({...props.modelValue})
             v-model="localData[element.id]"
             :id="`field-${element.id}`"
             @change="$emit('update:modelValue', localData)"
-          >
-          <label
-            :for="`field-${element.id}`"
-          >{{ element.name }}</label>
-
+          />
+          <label :for="`field-${element.id}`">{{ element.name }}</label>
         </div>
         <input
           v-else
@@ -60,7 +56,7 @@ const localData = reactive({...props.modelValue})
           v-model="localData[element.id]"
           :id="`field-${element.id}`"
           @input="$emit('update:modelValue', localData)"
-        >
+        />
       </div>
     </template>
   </form>
