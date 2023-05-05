@@ -95,7 +95,7 @@ function field(name, params = {}) {
 const templates = [
   {
     id: 'contrat-simple',
-    name: 'Contrat simple',
+    name: 'Mise à jour  d\'état-civil pour un contrat simple',
     template: defineAsyncComponent(() => import(`./letters-templates/ContratSimple.vue`)),
     description: 'Pour vos démarches auprès de fournisseurs tels qu\'EDF, votre assureur, votre opérateur mobile…',
     structure: [

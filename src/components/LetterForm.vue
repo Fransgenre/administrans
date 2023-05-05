@@ -48,26 +48,29 @@ function downloadPdf() {
 
 <template>
   <div>
-    <div class="hide-for-print">
-      <h1>{{ template.name }}</h1>
-      <p>{{ template.description }}</p>
-      <hr />
-    </div>
     <div class="grid--row">
       <div class="grid--column hide-for-print">
+        <h1>{{ template.name }}</h1>
+        <p>Remplissez le formulaire ci-dessous pour obtenir votre courrier.</p>
         <DynamicForm
+          class="position--sticky"
           v-model="data"
           :structure="template.structure"
           @update:modelValue="updateData"
-        />
+          >
+          <button
+            type="submit"
+            class="my-2"
+            @click.prevent="downloadPdf"
+          >Télécharger au format PDF</button>
+        </DynamicForm>
       </div>
       <div class="grid--column">
         <div class="hide-for-print">
           <h2>Rendu du courrier</h2>
-          <button @click.prevent="downloadPdf">Télécharger au format PDF</button>
           <hr class="hidden" />
         </div>
-        <div class="letter" id="rendered">
+        <div class="letter" id="rendered" contenteditable="true">
           <component :is="template.template" :data="data" />
         </div>
       </div>
