@@ -1,4 +1,13 @@
 <script setup>
+import { useGlobalStore } from '@/store'
+
+const store = useGlobalStore()
+
+function deleteData() {
+  confirm("Toutes les données stockées localement seront supprimées.");
+  store.deleteData()
+}
+
 </script>
 
 <template>
@@ -32,7 +41,7 @@
       faciliter l'édition successive de plusieurs courriers. Si vous souhaitez supprimer
       cette copie locale, cliquez simplement sur le bouton ci-dessous :
     </p>
-    <button @click.prevent="delete">Supprimer mes données…</button>
+    <button @click.prevent="deleteData">Supprimer mes données…</button>
   </section>
   <section class="width--xnarrow my-2">
     <h2>Contribuer à Administrans</h2>

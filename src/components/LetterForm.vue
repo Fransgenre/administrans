@@ -15,8 +15,8 @@ const formFields = {}
 props.template.structure.forEach((f) => {
   if (f.isInput) {
     let v
-    if (store.currentProfile[f.id] != undefined) {
-      v = store.currentProfile[f.id]
+    if (store.formData[f.id] != undefined) {
+      v = store.formData[f.id]
     } else if (f.default != undefined) {
       v = f.default()
     }
@@ -34,7 +34,7 @@ watch(
         toPersist[e.id] = v[e.id]
       }
     })
-    store.persistProfileData(toPersist)
+    store.persistFormData(toPersist)
   },
   { deep: true }
 )
