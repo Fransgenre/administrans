@@ -11,7 +11,11 @@ const props = defineProps({
   modelValue: {
     type: Object,
     required: true
-  }
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const fieldsById = {}
@@ -42,6 +46,7 @@ const localData = reactive({ ...props.modelValue })
             :id="`field-${element.id}`"
             rows="3"
             @input="$emit('update:modelValue', localData)"
+            :disabled="disabled"
           >
           </textarea>
           <div v-else-if="element.type === 'checkbox'" class="checkbox">
@@ -50,6 +55,7 @@ const localData = reactive({ ...props.modelValue })
               v-model="localData[element.id]"
               :id="`field-${element.id}`"
               @change="$emit('update:modelValue', localData)"
+              :disabled="disabled"
             />
             <label :for="`field-${element.id}`">{{ element.name }}</label>
           </div>
@@ -59,6 +65,7 @@ const localData = reactive({ ...props.modelValue })
             v-model="localData[element.id]"
             :id="`field-${element.id}`"
             @input="$emit('update:modelValue', localData)"
+            :disabled="disabled"
           />
         </div>
       </template>

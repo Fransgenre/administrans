@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, watch } from 'vue'
+import { reactive, watch, ref } from 'vue'
 import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
 
@@ -24,6 +24,8 @@ props.template.structure.forEach((f) => {
   }
 })
 const data = reactive(formFields)
+const manualEdit = ref(false)
+
 watch(
   data,
   (v) => {
@@ -55,9 +57,21 @@ function downloadPdf() {
         <DynamicForm
           class="position--sticky"
           v-model="data"
+          :disabled="manualEdit"
           :structure="template.structure"
           @update:modelValue="updateData"
           >
+          <p v-if="manualEdit" class="message--info px-1 py-1">
+            En mode édition, il n'est pas possible de modifier les données du formulaire. Vous pouvez désactiver l'édition, mais vous perdrez les modifications effectuées manuellement dans le courrier.
+          </p>
+          <button
+            @click.prevent="manualEdit = false"
+            v-if="manualEdit"
+            class="inverted"
+          >
+            Désactiver l'édition
+          </button>
+          <hr class="hidden">
           <button
             type="submit"
             class="my-2"
@@ -67,10 +81,26 @@ function downloadPdf() {
       </div>
       <div class="grid--column">
         <div class="hide-for-print">
-          <h2>Rendu du courrier</h2>
+          <div class="grid--row">
+            <div class="grid--column">
+              <h2>Rendu du courrier</h2>
+            </div>
+            <div class="grid--column text--right">
+              <button
+                class="inverted"
+                @click.prevent="manualEdit = true"
+                v-if="!manualEdit"
+              >
+                Éditer
+              </button>
+            </div>
+          </div>
+          <p v-if="manualEdit" class="message--primary px-1 py-1">
+            Vous êtes actuellement en mode édition. Vous pouvez éditer directement le contenu du courrier avant de l'enregistrer.
+          </p>
           <hr class="hidden" />
         </div>
-        <div class="letter" id="rendered" contenteditable="true">
+        <div class="letter" id="rendered" :contenteditable="manualEdit">
           <component :is="template.template" :data="data" />
         </div>
       </div>

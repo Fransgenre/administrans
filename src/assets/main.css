@@ -136,6 +136,9 @@ h3 {
 .text--center {
   text-align: center;
 }
+.text--right {
+  text-align: right;
+}
 
 .text--italic {
   font-style: italic;
@@ -158,6 +161,11 @@ button, .button {
   border: none;
   border-radius: var(--border-radius);
   color: var(--white);
+}
+button.inverted, .button.inverted {
+  border: 2px solid var(--button-color);
+  background-color: var(--white);
+  color: var(--button-color);
 }
 button:hover, button:hover {
   cursor: pointer;
@@ -313,6 +321,10 @@ hr.hidden {
   background: var(--pink-light);
   border-radius: var(--border-radius);
   color: var(--text-dark);
+}
+.message--info {
+  background: var(--apricot);
+  border-radius: var(--border-radius);
 }
 /* letter specific styles */
 .letter {
