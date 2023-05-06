@@ -12,8 +12,9 @@ import LettersList from '../components/LettersList.vue'
     <ol>
       <li>Choisissez la demande que vous souhaitez effectuer</li>
       <li>Saisissez vos informations</li>
-      <li>Obtenez un document PDF prêt à envoyer, préparé pour vous</li>
+      <li>Obtenez en quelques secondes un document PDF préparé pour vous, prêt à envoyer</li>
     </ol>
+    <p>Administrans est gratuit, fonctionne sans inscription et les données que vous saisissez et courriers générés ne quittent jamais votre appareil.</p>
   </section>
   <section class="width--xnarrow">
     <h2>Demandes disponibles</h2>
