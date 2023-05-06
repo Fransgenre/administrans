@@ -1,5 +1,10 @@
 # Administrans
 
+Administrans est un outil gratuit conçu pour vous aider dans votre transition administrative.
+
+Il est directement inspiré du projet Trans-CEC lancé par Maria Climent-Pommeret,
+et des différentes versions qui ont ensuites été améliorées et maintenues par des volontaires.
+
 Le projet n'est pas encore fini, mais vous pouvez commencer à regarder le résultat ici :
 https://administrans.agate.blue/
 
