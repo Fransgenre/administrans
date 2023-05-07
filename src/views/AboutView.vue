@@ -13,7 +13,7 @@ function deleteData() {
 <template>
   <section class="width--xnarrow my-2">
     <h1>À propos d'Administrans</h1>
-    <p>Administrans est un outil gratuit conçu pour vous aider dans votre transition administrative.</p>
+    <p>Administrans est un outil gratuit conçu pour vous aider dans votre transition administrative en France.</p>
     <p>
       Il est directement inspiré du projet Trans-CEC lancé par Maria Climent-Pommeret,
       et des différentes versions qui ont ensuites été améliorées et maintenues par des volontaires.

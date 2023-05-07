@@ -131,6 +131,8 @@ h2 {
 h3 {
   margin-bottom: var(--space-xsmall);
   font-size: var(--font-medium);
+  color: var(--primary-color);
+  font-style: italic;
 }
 /* text */
 .text--center {
@@ -142,6 +144,9 @@ h3 {
 
 .text--italic {
   font-style: italic;
+}
+strong {
+  font-weight: bold;
 }
 a {
   color: var(--link-color);
@@ -161,6 +166,8 @@ button, .button {
   border: none;
   border-radius: var(--border-radius);
   color: var(--white);
+  text-decoration: none;
+  display: inline-block;
 }
 button.inverted, .button.inverted {
   border: 2px solid var(--button-color);
