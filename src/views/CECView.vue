@@ -304,7 +304,7 @@ const store = useGlobalStore()
       </section>
     </div>
     <div class="grid--column one-third">
-      <aside class="position--sticky my-4">
+      <aside class="position--sticky my-4" id="checklist">
         <h2>Checklist</h2>
         <StepItem stepId="chooseCecMethod" :link="false">
           Choisir votre parcours :
@@ -437,6 +437,13 @@ const store = useGlobalStore()
         </template>
         
       </aside>
+      <RouterLink
+        to="#checklist"
+        class="button inverted desktop--hidden"
+        style="position: fixed; right: var(--space-medium); bottom: var(--space-medium)"
+      >
+        Afficher la checklist
+      </RouterLink>
     </div>
   </div>
 </template>
