@@ -207,8 +207,8 @@ const store = useGlobalStore()
             Pour déposer votre demande, deux choix s'offrent à vous :
           </p>
           <ul>
-            <li>Une remise en main propre, directement au service d'état-civil ou au tribunal</li>
-            <li>Un envoi par courrier, en recommandé</li>
+            <li>Une remise en main propre, directement au service d'état-civil ou au tribunal.</li>
+            <li>Un envoi par courrier, en recommandé.</li>
           </ul>
           <p><strong>Le document de demande doit être daté et signé.</strong></p>
           <p>
