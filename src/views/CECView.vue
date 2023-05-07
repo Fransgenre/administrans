@@ -131,7 +131,7 @@ const store = useGlobalStore()
           </p>
           <ul>
             <li>
-              Des attestations de vos proches, ami·es, collègues, famille… Avec chaque attestation, vous devez transmettre une copie recto-verso de la CNI ou de passeport de la personne qui l'a rédigée.
+              Des attestations de vos proches, ami·es, collègues, famille… Avec chaque attestation, vous devez transmettre une copie recto-verso de la CNI ou du passeport de la personne qui l'a rédigée.
               <br>
               <RouterLink
                 to="courriers/attestation-temoignage"
