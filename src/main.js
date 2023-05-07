@@ -25,7 +25,7 @@ if (import.meta.env.VITE_PLAUSIBLE_URL) {
     trackLocalhost: !!import.meta.env.VITE_PLAUSIBLE_TRACK_LOCALHOST,
   }
   
-  app.use(plausible)
+  app.use(plausible, plausibleOptions)
 }
 
 app.mount('#app')
