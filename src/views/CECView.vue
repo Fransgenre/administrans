@@ -287,6 +287,20 @@ const store = useGlobalStore()
             </a>, vous y trouverez certainement les réponses que vous cherchez.    
           </p>
         </StepDetails>
+        <StepDetails stepId="party">
+          <h3>🎉 Célébrer 🎉</h3>
+          <p>
+            De tout cœur, bravo !
+          </p>
+          <p>
+            On est passé·es par là aussi et on sait à
+            quel point tout le processus peut être lent, usant, crevant, absurde et brutal.
+          </p>
+          <p>
+            On vous souhaite du repos et de la sérénité après tout ça. N'hésitez pas à nous écrire
+            si vous avez trouvé Administrans utile, ou si vous souhaitez nous suggérer des améliorations !
+          </p>
+        </StepDetails>
       </section>
     </div>
     <div class="grid--column one-third">
@@ -337,6 +351,9 @@ const store = useGlobalStore()
           <StepItem stepId="notification">
             Recevoir la notification
           </StepItem>
+          <StepItem stepId="party">
+            Célébrer
+          </StepItem>
         </template>
         <template v-else>
           <StepItem stepId="submitRequestMairie" :link="false">
@@ -373,7 +390,10 @@ const store = useGlobalStore()
           <StepItem stepId="notificationName" class="mx-2" linkTo="notification">
             Recevoir la notification
           </StepItem>
-
+          <StepItem stepId="party" class="mx-2">
+            Célébrer
+          </StepItem>
+  
           <StepItem stepId="submitRequestCourt" :link="false">
             Changement de mention de sexe au tribunal
           </StepItem>
@@ -410,6 +430,9 @@ const store = useGlobalStore()
 
           <StepItem stepId="notificationCourt" class="mx-2" linkTo="notification">
             Recevoir la notification
+          </StepItem>
+          <StepItem stepId="party" class="mx-2">
+            Célébrer
           </StepItem>
         </template>
         
