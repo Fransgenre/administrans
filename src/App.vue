@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { inject } from 'vue';
+const plausible = inject('plausible');
 </script>
 
 <template>

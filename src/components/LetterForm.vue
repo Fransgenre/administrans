@@ -1,7 +1,9 @@
 <script setup>
-import { reactive, watch, ref } from 'vue'
+import { reactive, watch, ref, inject } from 'vue'
 import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
+
+const plausible = inject('plausible')
 
 const store = useGlobalStore()
 
@@ -44,6 +46,7 @@ function updateData(v) {
   Object.assign(data, v)
 }
 function downloadPdf() {
+  plausible.trackEvent('print', { props: { letter: props.template.id } })
   window.print()
 }
 </script>

@@ -1,6 +1,7 @@
 <script setup>
 import { useGlobalStore } from '@/store'
 
+const plausibleEnabled = import.meta.env.VITE_PLAUSIBLE_URL
 const store = useGlobalStore()
 
 function deleteData() {
@@ -56,5 +57,23 @@ function deleteData() {
     <p>
       Merci beaucoup et prenez soin de vous &lt;3
     </p>
+  </section>
+  <section class="width--xnarrow my-2" v-if="plausibleEnabled">
+    <h2>Analytique</h2>
+    <p>
+      Pour avoir une idée de l'utilisation du site et des aspects à améliorer ou retravailler,
+      des données de visites et d'utilisation anonymes sont collectées.
+    </p>
+    <p>
+      Ces données se limitent exclusivement à :
+    </p>
+    <ul>
+      <li>Votre système d'exploitation</li>
+      <li>Votre navigateur</li>
+      <li>Les URLs visitées</li>
+      <li>Les types de courriers générés</li>
+      <li>La durée d'utilisation du site</li>
+    </ul>
+    <p>Aucun cookie ni identifiant unique n'est déposé sur votre appareil, votre adresse IP et les données saisies dans les formulaires ne sont pas non plus collectées.</p>
   </section>
 </template>
