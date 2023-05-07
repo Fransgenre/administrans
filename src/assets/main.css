@@ -269,8 +269,20 @@ button:hover, button:hover {
     flex: 1 1 0px;
     margin-bottom: 0;
   }
+  .one-third {
+    flex-basis: 33.33%;
+  }
+  .two-third {
+    flex-basis: 66.66%;
+  }
 }
 
+.emphasize-block {
+  border: 2px dashed var(--primary-color);
+  padding: var(--space-small);
+  padding-left: var(--space-large);
+  margin: var(--space-large) 0;
+}
 /* forms and inputs */
 label + input:not([type='checkbox']),
 textarea {

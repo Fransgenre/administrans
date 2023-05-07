@@ -9,7 +9,7 @@ export const useGlobalStore = defineStore('global', {
   state: () => ({
     formData: {},
     steps: {},
-    CecMethod: 'tribunal',
+    CecMethod: 'mairieEtTribunal',
   }),
   actions: {
     persistFormData(data) {

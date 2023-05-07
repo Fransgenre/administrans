@@ -6,6 +6,13 @@ import LetterView from './views/LetterView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  scrollBehavior: function(to, from, savedPosition) {
+    if (to.hash) {
+      return {el: to.hash}
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes: [
     {
       path: '/',
