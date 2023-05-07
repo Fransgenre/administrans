@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
+import CECView from './views/CECView.vue'
 import LetterView from './views/LetterView.vue'
 
 const router = createRouter({
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/a-propos',
       name: 'about',
       component: AboutView
+    },
+    {
+      path: '/cec',
+      name: 'cec',
+      component: CECView
     },
     {
       path: '/courriers/:id',

@@ -3,10 +3,13 @@ import { defineStore } from 'pinia'
 export const useGlobalStore = defineStore('global', {
   persist: {
     key: 'store.global',
-    paths: ['formData']
+    paths: ['formData', 'steps', 'CecMethod'],
+    
   },
   state: () => ({
-    formData: {}
+    formData: {},
+    steps: {},
+    CecMethod: 'tribunal',
   }),
   actions: {
     persistFormData(data) {
@@ -15,6 +18,13 @@ export const useGlobalStore = defineStore('global', {
         ...data
       }
     },
+    setStep(id, value) {
+      this.steps[id] = value
+    },
+    setCecMethod(value) {
+      this.CecMethod = value
+    },
+    
     deleteData() {
       this.formData = {}
     }
