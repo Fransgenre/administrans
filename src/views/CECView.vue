@@ -1,5 +1,6 @@
 <script setup>
 import StepItem from '@/components/StepItem.vue'
+import StepDetails from '@/components/StepDetails.vue'
 import { useGlobalStore } from '@/store'
 
 const store = useGlobalStore()
@@ -71,7 +72,10 @@ const store = useGlobalStore()
       </section>
       <section class="width--xnarrow my-2">
         <h2>Les étapes en détail</h2>
-        <p>Ici, on vous explique très précisément comment constituer votre dossier pour qu'il aie les meilleurs chances de passer.</p>
+        <p>
+          Ici, on vous explique très précisément comment constituer votre dossier pour qu'il aie les meilleurs chances de passer.
+          Certaines des étapes peuvent être menées en parallèle pour gagner du temps.
+        </p>
         <p>Commencez par choisir votre parcours :
           <select
             name="method"
@@ -82,10 +86,7 @@ const store = useGlobalStore()
             <option value="mairieEtTribunal">Mairie puis tribunal</option>
           </select>
         </p> 
-        <div
-          id="chooseNames"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'chooseNames'}"
-        >
+        <StepDetails stepId="chooseNames">
           <h3>Choisir vos prénoms</h3>
           <p>Il s'agit d'un choix très personnel, évidemment, mais voici quelques informations qui pourront vous aider :</p>
           <ul>
@@ -95,11 +96,8 @@ const store = useGlobalStore()
             </li>
             <li>Vous êtes totalement libre sur l'orthographe, et vous pouvez inventer vos propres prénoms si vous le souhaitez</li>
           </ul>
-        </div>
-        <div
-          id="requestBirthCertificates"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'requestBirthCertificates'}"
-        >
+        </StepDetails>
+        <StepDetails stepId="requestBirthCertificates">
           <h3>Demander des copies intégrales de votre acte de naissance</h3>
           <p>
             Ces copies vont permettre de justifier de votre identité et sont indispensables pour la suite de la procédure.
@@ -115,44 +113,157 @@ const store = useGlobalStore()
             dans la mesure où elle est gratuite et que certaines communes mettent parfois
             un peu de temps à vous envoyer les documents. Prenez au moins 3 copies, ce n'est jamais perdu.
           </p>
-        </div>
-        <div
-          id="prepareRequest"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'prepareRequest'}"
-        >
-          <h3>Préparer votre demande</h3>
-          <p>
-            TODO
-          </p>
-        </div>
-        <div
-          id="prepareProofs"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'prepareProofs'}"
-        >
+        </StepDetails>
+        <StepDetails stepId="prepareProofs">
           <h3>Rassembler vos justificatifs</h3>
           <p>
-            TODO
+            Certains justificatifs sont incontournables pour que votre demande puisse aboutir :
           </p>
-        </div>
-        <div
-          id="submitRequest"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'submitRequest'}"
-        >
+          <ul >
+            <li>Une copie intégrale de votre acte de naissance</li>
+            <li>Une photocopie recto-verso de votre carte d'identité ou passeport</li>
+            <li>
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F1028" target="_blank">Un justificatif de domicile récent</a>
+            </li>
+          </ul>
+          <p>
+            D'autres justificatifs peuvent aider à montrer le bien fondé de votre demande, notamment :
+          </p>
+          <ul>
+            <li>
+              Des attestations de vos proches, ami·es, collègues, famille…
+              Administrans propose une page dédiée aux attestations pour vous faciliter les choses.
+              Avec chaque attestation, vous devez transmettre une copie recto-verso de la CNI ou de passeport de la personne qui l'a rédigée.
+            </li>
+            <li>Des factures, captures d'écrans, courriers d'entreprises qui utilisent votre prénom ou genre revendiqué.</li>
+          </ul>
+          <p>Ces justificatifs servent à démontrer que votre genre et/ou prénom(s) revendiqués sont déjà utilisés dans votre vie quotidienne.</p>
+          <p>
+            <strong>Il n'est pas nécessaire de fournir de justificatifs médicaux</strong> pour obtenir gain de cause.
+            D'autre part, nous vous recommandons de limiter au maximum le nombre de justificatifs et attestations que vous joignez
+            à votre demande. En effet, en fournissant de très nombreuses pièces, on habitue les officiers d'état-civil et magistrats
+            à des dossiers très fournis, ce qui complique d'autant plus la transition des personnes isolées ou précaires
+            qui ne sont pas en mesure de fournir de tels justificatifs.
+          </p>
+          <p>
+            Deux ou trois attestations sont normalement largement suffisantes, et si ce n'est pas le cas, vous aurez l'opportunité d'en
+            transmettre d'autres par la suite en complétant votre dossier.
+          </p>
+        </StepDetails>
+        <StepDetails stepId="prepareRequest" v-if="store.CecMethod === 'tribunal'">
+          <h3>Préparer votre demande</h3>
+          <p>
+            Vous allez maintenant produire le document de demande de changement de prénom et de mention de sexe,
+            à adresser au tribunal administratif de votre ville de résidence ou de naissance.
+          </p>
+          <RouterLink
+            to="courriers/requête-changement-état-civil-tribunal"
+            class="button my-2"
+          >
+            Générer votre demande de changement de prénom et de mention de sexe
+          </RouterLink>
+        </StepDetails>
+        <StepDetails stepId="prepareRequestName" v-if="store.CecMethod === 'mairieEtTribunal'">
+          <h3>Préparer votre demande de changement de prénom</h3>
+          <p>
+            Vous allez maintenant produire le document de demande de changement de prénom,
+            à adresser au service d'état civil de la mairie de votre ville de résidence ou de naissance.
+          </p>
+          
+          <RouterLink
+            to="courriers/changement-prénom-mairie"
+            class="button my-2"
+          >
+            Générer votre demande de changement de prénom
+          </RouterLink>
+        </StepDetails>
+        <StepDetails stepId="prepareRequestCourt" v-if="store.CecMethod === 'mairieEtTribunal'">
+          <h3>Préparer votre demande de changement de mention de sexe</h3>
+          <p>
+            Une fois que votre demande de changement de prénom aura abouti
+            et que vous aurez reçu la décision du service d'état-civil, 
+            il vous faudra rédiger une requête de changement de mention de sexe,
+            et l'adresser au tribunal administratif de votre ville de résidence ou de naissance.
+          </p>
+          <p>
+            Pour cette seconde demande, pensez à joindre à votre dossier la décision de changement dé prénom fournie par le service d'état-civil.
+          </p>
+          <RouterLink
+            to="courriers/requête-changement-état-civil-tribunal"
+            class="button my-2"
+          >
+            Générer votre demande de changement de mention de sexe
+          </RouterLink>
+        </StepDetails>
+        
+        <StepDetails stepId="submitRequest">
           <h3>Déposer votre demande</h3>
           <p>
-            TODO
+            Pour déposer votre demande, deux choix s'offrent à vous :
           </p>
-        </div>
-        <div
-          id="wait"
-          :class="{'emphasize-block': $route.hash.slice(1) === 'wait'}"
-        >
-          <h3>Patienter</h3>
+          <ul>
+            <li>Une remise en main propre, directement au service d'état-civil ou au tribunal</li>
+            <li>Un envoi par courrier, en recommandé</li>
+          </ul>
+          <p><strong>Le document de demande doit être daté et signé.</strong></p>
           <p>
-            TODO
+            Si vous déposez votre demande en main propre, demandez systématiquement un reçu ou un document attestant du dépôt.
+            Cela vous permettra de suivre l'avancée de la procédure, et de relancer si nécessaire.
           </p>
-        </div>
-
+          <p>
+            N'hésitez pas non plus à demander quels sont les délais habituels de traitement,
+            cela vous permettra d'avoir une meilleure idée du temps que vous devrez patienter.
+          </p>
+        </StepDetails>
+        <StepDetails stepId="wait">
+          <h3>Attendre le résultat de la procédure</h3>
+          <p>
+            Votre demande est déposée, maintenant vous n'avez plus qu'à attendre.
+          </p>
+          <p>
+            En mairie, les délais vont généralement de quelques semaines à trois ou quatre mois, mais cela dépend évidemment de chaque commune.
+          </p>
+          <p>
+            Au tribunal, les délais sont plus long et le traitement d'une demande peut prendre entre six mois et deux ans.
+            Là encore, cela dépend de la commune et de la bonne volonté des personnes qui traitent votre demande.
+          </p>
+          <p>
+            Pour demande au tribunal, il n'est pas rare que vous receviez par courrier des demandes de documents complémentaires.
+            Répondez-y dans la mesure du possible soit par courrier, soit via une remise en main propre.
+          </p>
+          <p>
+            Il pourra également vous être demandé de vous rendre à une audience sur place.
+            Ce n'est pas systématique mais cela arrive. Si tel est le cas, nous vous recommandons fortement d'y
+            aller accompagné·e et de prendre contact avec des associations locales pour en savoir plus
+            sur l'attitude à adopter : parfois il s'agit d'une simple formalité, parfois non.
+          </p>
+          <p>
+            Il ne faut vraiment pas hésiter à appeler ponctuellement la mairie ou le tribunal
+            pour savoir où en est votre demande. Il n'est pas rare que les courriers se perdent,
+            et certaines personnes ont attendu plusieurs mois d'être notifié d'une décision
+            qui avait déjà été rendue.
+          </p>
+        </StepDetails>
+        <StepDetails stepId="notification">
+          <h3>Recevoir la notification de décision</h3>
+          <p>
+            Une fois votre demande validée, la mairie ou le tribunal vous enverront systématiquement un courrier.
+          </p>
+          <p>
+            <strong>Ce courrier contient la décision ou le jugement et doit être conservé précieusement,
+            photocopié et/ou scanné</strong>. Il peut notamment vous servir à attester de votre identité
+            en attendant d'avoir refait vos papiers, ou à justifier de vos changements
+            d'état-civil pour d'autres démarches.
+          </p>
+          <p>Au moment de la réception du courrier, plusieurs choses se déclenchent automatiquement sans que vous ayez à intervenir :</p>
+          <ol>
+            <li>Le service d'état-civil ou le tribunal notifient votre commune de naissance du changement</li>
+            <li>Votre commune de naissance mets à jour votre acte de naissance</li>
+            <li>L'INSEE est notifiée du changement</li>
+            <li>L'INSEE informe différents organismes (impôts, CPAM, par exemple) du changement</li>
+          </ol>
+          <p>Les étapes 1 et 2 se font généralement sous deux à trois mois. Les étapes trois et quatre sous six mois.</p>
+        </StepDetails>
       </section>
     </div>
     <div class="grid--column one-third">
@@ -175,18 +286,110 @@ const store = useGlobalStore()
         <StepItem stepId="requestBirthCertificates">
           Demander des copies intégrales de votre acte de naissance
         </StepItem>
-        <StepItem stepId="prepareRequest">
-          Préparer votre demande
-        </StepItem>
-        <StepItem stepId="prepareProofs">
-          Préparer vos justificatifs
-        </StepItem>
-        <StepItem stepId="submitRequest">
-          Déposer où envoyer votre demande
-        </StepItem>
-        <StepItem stepId="wait">
-          Patienter
-        </StepItem>
+        <template v-if="store.CecMethod === 'tribunal'">
+          <StepItem stepId="prepareProofs">
+            Rassembler vos justificatifs
+          </StepItem>
+          <StepItem stepId="prepareProofsBirthCertificate" class="mx-2" :link="false">
+            Copie d'acte de naissance
+          </StepItem>
+          <StepItem stepId="prepareProofsId" class="mx-2" :link="false">
+            Copie de votre CNI ou Passeport
+          </StepItem>
+          <StepItem stepId="prepareProofsHome" class="mx-2" :link="false">
+            Justificatif de domicile
+          </StepItem>
+          <StepItem stepId="prepareProofsSocial" class="mx-2" :link="false">
+            Attestations de proches
+          </StepItem>
+          <StepItem stepId="prepareRequest">
+            Préparer votre demande
+          </StepItem>          
+          <StepItem stepId="submitRequest">
+            Déposer où envoyer votre demande
+          </StepItem>
+          <StepItem stepId="wait">
+            Attendre la décision
+          </StepItem>
+          <StepItem stepId="notification">
+            Recevoir la notification
+          </StepItem>
+        </template>
+        <template v-else>
+          <StepItem stepId="submitRequestMairie" :link="false">
+            Changement de prénom en mairie
+          </StepItem>
+          <StepItem stepId="prepareProofs" class="mx-2">
+            Rassembler vos justificatifs
+          </StepItem>
+          <StepItem stepId="prepareProofsBirthCertificateMairie" class="mx-4" :link="false">
+            Copie d'acte de naissance
+          </StepItem>
+          <StepItem stepId="prepareProofsIdMairie" class="mx-4" :link="false">
+            Copie de votre CNI ou Passeport
+          </StepItem>
+          <StepItem stepId="prepareProofsHomeMairie" class="mx-4" :link="false">
+            Justificatif de domicile
+          </StepItem>
+          <StepItem stepId="prepareProofsSocialMairie" class="mx-4" :link="false">
+            Attestations de proches
+          </StepItem>
+
+
+          <StepItem stepId="prepareRequestName" class="mx-2">
+            Préparer votre demande
+          </StepItem>
+
+          <StepItem stepId="submitRequestName" class="mx-2" linkTo="submitRequest">
+            Déposer votre demande
+          </StepItem>
+          <StepItem stepId="waitName" class="mx-2" linkTo="wait">
+            Attendre la décision
+          </StepItem>
+          
+          <StepItem stepId="notificationName" class="mx-2" linkTo="notification">
+            Recevoir la notification
+          </StepItem>
+
+          <StepItem stepId="submitRequestCourt" :link="false">
+            Changement de mention de sexe au tribunal
+          </StepItem>
+          <StepItem stepId="prepareProofsCourt" class="mx-2" linkTo="prepareProofs">
+            Rassembler vos justificatifs
+          </StepItem>
+          <StepItem stepId="prepareProofsBirthCertificateCourt" class="mx-4" :link="false">
+            Copie d'acte de naissance
+          </StepItem>
+          <StepItem stepId="prepareProofsIdCourt" class="mx-4" :link="false">
+            Copie de votre CNI ou Passeport
+          </StepItem>
+          <StepItem stepId="prepareProofsHomeCourt" class="mx-4" :link="false">
+            Justificatif de domicile
+          </StepItem>
+          <StepItem stepId="prepareProofsSocialCourt" class="mx-4" :link="false">
+            Attestations de proches
+          </StepItem>
+          <StepItem stepId="prepareProofsNameCHangeCourt" class="mx-4" :link="false">
+            Décision de changement de prénom transmise par l'état-civil
+          </StepItem>
+
+          <StepItem stepId="prepareRequestCourt" class="mx-2">
+            Préparer votre demande
+          </StepItem>
+
+          <StepItem stepId="submitRequestCourt" class="mx-2" linkTo="submitRequest">
+            Déposer votre demande
+          </StepItem>
+
+          <StepItem stepId="waitCourt" class="mx-2" linkTo="wait">
+            Attendre la décision
+          </StepItem>
+
+          <StepItem stepId="notificationCourt" class="mx-2" linkTo="notification">
+            Recevoir la notification
+          </StepItem>
+        </template>
+        
       </aside>
     </div>
   </div>

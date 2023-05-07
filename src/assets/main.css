@@ -130,7 +130,7 @@ h2 {
 }
 h3 {
   margin-bottom: var(--space-xsmall);
-  font-size: var(--font-medium);
+  font-size: var(--font-large);
   color: var(--primary-color);
   font-style: italic;
 }
@@ -279,8 +279,7 @@ button:hover, button:hover {
 
 .emphasize-block {
   border: 2px dashed var(--primary-color);
-  padding: var(--space-small);
-  padding-left: var(--space-large);
+  padding: var(--space-medium);
   margin: var(--space-large) 0;
 }
 /* forms and inputs */

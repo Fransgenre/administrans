@@ -6,6 +6,7 @@ import { useGlobalStore } from '@/store'
 const props = defineProps({
   stepId: {required: true},
   link: {required: false, default: true},
+  linkTo: {required: false, default: ''},
 })
 
 const store = useGlobalStore()
@@ -31,7 +32,7 @@ watch(
       <slot></slot>
     </label>
     <template v-if="link">
-      · <RouterLink :to="`#${stepId}`">Détails</RouterLink>
+      · <RouterLink :to="`#${linkTo || stepId}`">Détails</RouterLink>
     </template>
   </div>
 </template>
