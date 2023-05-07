@@ -114,6 +114,63 @@ const templates = [
       field('dateCourrier'),
       field('listerPJ')
     ]
+  },
+  {
+    id: 'requete-changement-etat-civil-tribunal',
+    name: 'Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal administratif',
+    template: defineAsyncComponent(() => import(`./letters-templates/RequeteCecTribunal.vue`)),
+    description: 'TODO',
+    structure: [
+      category('Vos informations'),
+      field('prénom'),
+      field('nom'),
+      field('deadname'),
+      field('adresse'),
+      field('email'),
+      field('téléphone'),
+      category('Options du courrier'),
+      field('villeCourrier'),
+      field('dateCourrier'),
+      field('listerPJ')
+    ]
+  },
+  {
+    id: 'changement-prenom-mairie',
+    name: 'Requête pour changement de prénom(s) en mairie',
+    template: defineAsyncComponent(() => import(`./letters-templates/RequetePrenomMairie.vue`)),
+    description: 'TODO',
+    structure: [
+      category('Vos informations'),
+      field('prénom'),
+      field('nom'),
+      field('deadname'),
+      field('adresse'),
+      field('email'),
+      field('téléphone'),
+      category('Options du courrier'),
+      field('villeCourrier'),
+      field('dateCourrier'),
+      field('listerPJ')
+    ]
+  },
+  {
+    id: 'attestation-temoignage',
+    name: "Attestation pour témoigner de l'utilisation d'un prénom et/ou genre en vue d'une demande de modification d'état-civil",
+    template: defineAsyncComponent(() => import(`./letters-templates/AttestationTemoignage.vue`)),
+    description: 'TODO',
+    structure: [
+      category('Vos informations'),
+      field('prénom'),
+      field('nom'),
+      field('deadname'),
+      field('adresse'),
+      field('email'),
+      field('téléphone'),
+      category('Options du courrier'),
+      field('villeCourrier'),
+      field('dateCourrier'),
+      field('listerPJ')
+    ]
   }
 ]
 export default templates

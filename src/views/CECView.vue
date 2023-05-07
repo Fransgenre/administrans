@@ -131,9 +131,14 @@ const store = useGlobalStore()
           </p>
           <ul>
             <li>
-              Des attestations de vos proches, ami·es, collègues, famille…
-              Administrans propose une page dédiée aux attestations pour vous faciliter les choses.
-              Avec chaque attestation, vous devez transmettre une copie recto-verso de la CNI ou de passeport de la personne qui l'a rédigée.
+              Des attestations de vos proches, ami·es, collègues, famille… Avec chaque attestation, vous devez transmettre une copie recto-verso de la CNI ou de passeport de la personne qui l'a rédigée.
+              <br>
+              <RouterLink
+                to="courriers/attestation-temoignage"
+                class="button my-2"
+              >
+                Générer vos attestations
+              </RouterLink>
             </li>
             <li>Des factures, captures d'écrans, courriers d'entreprises qui utilisent votre prénom ou genre revendiqué.</li>
           </ul>
@@ -157,7 +162,7 @@ const store = useGlobalStore()
             à adresser au tribunal administratif de votre ville de résidence ou de naissance.
           </p>
           <RouterLink
-            to="courriers/requête-changement-état-civil-tribunal"
+            to="courriers/requete-changement-etat-civil-tribunal"
             class="button my-2"
           >
             Générer votre demande de changement de prénom et de mention de sexe
@@ -171,7 +176,7 @@ const store = useGlobalStore()
           </p>
           
           <RouterLink
-            to="courriers/changement-prénom-mairie"
+            to="courriers/changement-prenom-mairie"
             class="button my-2"
           >
             Générer votre demande de changement de prénom
@@ -189,7 +194,7 @@ const store = useGlobalStore()
             Pour cette seconde demande, pensez à joindre à votre dossier la décision de changement dé prénom fournie par le service d'état-civil.
           </p>
           <RouterLink
-            to="courriers/requête-changement-état-civil-tribunal"
+            to="courriers/requete-changement-etat-civil-tribunal"
             class="button my-2"
           >
             Générer votre demande de changement de mention de sexe
@@ -255,6 +260,7 @@ const store = useGlobalStore()
             en attendant d'avoir refait vos papiers, ou à justifier de vos changements
             d'état-civil pour d'autres démarches.
           </p>
+          <p><strong>Chronologie</strong></p>
           <p>Au moment de la réception du courrier, plusieurs choses se déclenchent automatiquement sans que vous ayez à intervenir :</p>
           <ol>
             <li>Le service d'état-civil ou le tribunal notifient votre commune de naissance du changement</li>
@@ -262,7 +268,24 @@ const store = useGlobalStore()
             <li>L'INSEE est notifiée du changement</li>
             <li>L'INSEE informe différents organismes (impôts, CPAM, par exemple) du changement</li>
           </ol>
-          <p>Les étapes 1 et 2 se font généralement sous deux à trois mois. Les étapes trois et quatre sous six mois.</p>
+          <p>Les étapes 1 et 2 se font généralement sous deux à trois mois, les étapes trois et quatre sous six mois.</p>
+          <p>Dès l'étape 2 réalisée, nous vous recommandons vivement de redemander plusieurs extraits d'actes de naissance auprès de votre commune de naissance pour pouvoir refaire vos papiers d'identité et votre carte vitale.</p>
+          <p>
+            Parfois, l'INSEE ne fait pas automatiquement les étapes trois et quatre.
+            Dans ce cas là, il faut <a href="https://www.service-public.fr/particuliers/vosdroits/R49454" target="blank">les contacter via un formulaire dédié</a>.
+          </p>
+          <p><strong>Sécurité sociale</strong></p>
+          <p>Lorsque la mention de changement de sexe est répercutée auprès de la sécurité sociale, plusieurs choses se produisent :</p>
+          <ul>
+            <li>Vous pouvez perdre accès à votre compte Ameli. C'est normal mais stressant car cela arrive sans prévenir. Il faut contacter Ameli par téléphone et leur expliquer la situation.</li>
+            <li>Vous obtiendrez un nouveau numéro de sécurité sociale. Le premier chiffre sera mis à jour pour refléter votre nouveau genre (1 pour les hommes, 2 pour les femmes)</li>
+            <li>Vous devrez demander une nouvelle carte vitale</li>
+          </ul>
+          <p>
+            <a href="https://wikitrans.co/2019/12/16/changement-de-numero-de-securite-sociale/">
+              Wikitrans propose un article très complet sur cette question 
+            </a>, vous y trouverez certainement les réponses que vous cherchez.    
+          </p>
         </StepDetails>
       </section>
     </div>
