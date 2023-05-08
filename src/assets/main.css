@@ -336,6 +336,9 @@ label {
 .letter-form .category + .letter-form .field {
   grid-column-start: 1;
 }
+.letter-form .field {
+  margin-bottom: var(--space-xsmall);
+}
 
 /* separators */
 hr {

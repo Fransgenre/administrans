@@ -54,32 +54,32 @@ function handleUpdate(field, value) {
             element.name
           }}</label>
           <textarea
-            v-if="element.type === 'textarea'"
-            :value="localData[element.id]"
-            :id="`field-${element.id}`"
-            rows="3"
-            @input="handleUpdate(element, $event.target.value)"
-            :disabled="disabled"
+          v-if="element.type === 'textarea'"
+          :value="localData[element.id]"
+          :id="`field-${element.id}`"
+          rows="3"
+          @input="handleUpdate(element, $event.target.value)"
+          :disabled="disabled"
           >
-          </textarea>
-          <select
-            v-else-if="element.type === 'select'"
-            :value="localData[element.id]"
-            :id="`field-${element.id}`"
-            @input="handleUpdate(element, $event.target.value)"
-            :disabled="disabled"
+        </textarea>
+        <select
+        v-else-if="element.type === 'select'"
+        :value="localData[element.id]"
+        :id="`field-${element.id}`"
+        @input="handleUpdate(element, $event.target.value)"
+        :disabled="disabled"
           >
-            <option v-for="(v, i) in element.choices" :key="i" :value="v.value">
-              {{ v.label }}
-            </option>
-          </select>
-          <div v-else-if="element.type === 'checkbox'" class="checkbox">
+          <option v-for="(v, i) in element.choices" :key="i" :value="v.value">
+            {{ v.label }}
+          </option>
+        </select>
+        <div v-else-if="element.type === 'checkbox'" class="checkbox">
             <input
-              type="checkbox"
-              :value="localData[element.id]"
-              :id="`field-${element.id}`"
-              @change="handleUpdate(element, $event.target.value)"
-              :disabled="disabled"
+            type="checkbox"
+            :value="localData[element.id]"
+            :id="`field-${element.id}`"
+            @change="handleUpdate(element, $event.target.value)"
+            :disabled="disabled"
             />
             <label :for="`field-${element.id}`">{{ element.name }}</label>
           </div>
@@ -90,7 +90,8 @@ function handleUpdate(field, value) {
             :id="`field-${element.id}`"
             @input="handleUpdate(element, $event.target.value)"
             :disabled="disabled"
-          />
+            />
+          <p class="text--small text--italic" v-if="element.help" v-html="element.help"></p>
         </div>
       </template>
     </div>

@@ -194,7 +194,7 @@ const templates = [
       category('Information de la personne concernée par la demande'),
       field('prénom'),
       field('nom'),
-      field('genre'),
+      field('genre', {help: `Il s'agit genre désiré/revendiqué`}),
       field('deadname'),
       field('dateNaissance'),
       field('lieuNaissance'),
