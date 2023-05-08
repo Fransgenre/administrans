@@ -76,6 +76,7 @@ const store = useGlobalStore()
           Ici, on vous explique très précisément comment constituer votre dossier pour qu'il aie les meilleurs chances de passer.
           Certaines des étapes peuvent être menées en parallèle pour gagner du temps.
         </p>
+        <p>Nous vous invitons à faire usage de la checklist pour garder une trace de votre progression : elle est conservée d'une visite à l'autre et vous aidera à vous y retrouver.</p>
         <p>Commencez par choisir votre parcours :
           <select
             name="method"
