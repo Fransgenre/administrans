@@ -9,9 +9,7 @@ const { renderValue } = useLetterTemplate(p)
 
 <template>
   <LetterHeader :data="p.data" :renderValue="renderValue" />
-  <p class="subject">
-    Objet : Mise à jour de mes informations d'état-civil
-  </p>
+  <p class="subject">Objet : Mise à jour de mes informations d'état-civil</p>
   <p>Madame, Monsieur,</p>
   <p>
     Je suis {{ renderValue('prénom') }} {{ renderValue('nom') }} et j'ai récemment obtenu mon

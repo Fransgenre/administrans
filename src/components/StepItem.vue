@@ -1,34 +1,26 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref, watch } from 'vue';
+import { ref, watch } from 'vue'
 import { useGlobalStore } from '@/store'
 
 const props = defineProps({
-  stepId: {required: true},
-  link: {required: false, default: true},
-  linkTo: {required: false, default: ''},
+  stepId: { required: true },
+  link: { required: false, default: true },
+  linkTo: { required: false, default: '' }
 })
 
 const store = useGlobalStore()
 const value = ref(store.steps[props.stepId])
 
-watch(
-  value,
-  (v) => {
-    store.setStep(props.stepId, v)
-  }
-)
+watch(value, (v) => {
+  store.setStep(props.stepId, v)
+})
 </script>
 
 <template>
   <div class="step checkbox">
-    <input
-      type="checkbox"
-      v-model="value"
-      :id="`check-${stepId}`"
-      :name="stepId"
-    />
-    <label :for="`check-${stepId}`"> 
+    <input type="checkbox" v-model="value" :id="`check-${stepId}`" :name="stepId" />
+    <label :for="`check-${stepId}`">
       <slot></slot>
     </label>
     <template v-if="link">

@@ -1,11 +1,19 @@
-import Plausible from 'plausible-tracker';
+import Plausible from 'plausible-tracker'
 
 export default {
   install: (app, options) => {
-    const plausible = Plausible(options);
+    if (options.disabled) {
+      app.provide('plausible', {
+        trackEvent: (name, data) => {
+          console.log('[Plausible] Disabled, would send', name, data)
+        }
+      })
+      return
+    }
+    const plausible = Plausible(options)
 
-    plausible.enableAutoPageviews();
+    plausible.enableAutoPageviews()
 
-    app.provide('plausible', plausible);
-  },
-};
+    app.provide('plausible', plausible)
+  }
+}

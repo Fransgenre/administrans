@@ -56,30 +56,34 @@ function downloadPdf() {
     <div class="grid--row">
       <div class="grid--column hide-for-print">
         <h1>{{ template.name }}</h1>
-        <p>Remplissez le formulaire ci-dessous pour obtenir votre courrier.</p>
+        <p 
+          v-if="template.description"
+          class="text--small"
+          v-html="template.description"></p>
+        <p 
+          v-if="template.help"
+          class="text--small"
+          v-html="template.help"></p>
+        <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre courrier.</p>
         <DynamicForm
           class="position--sticky"
           v-model="data"
           :disabled="manualEdit"
           :structure="template.structure"
           @update:modelValue="updateData"
-          >
+        >
           <p v-if="manualEdit" class="message--info px-1 py-1">
-            En mode édition, il n'est pas possible de modifier les données du formulaire. Vous pouvez désactiver l'édition, mais vous perdrez les modifications effectuées manuellement dans le courrier.
+            En mode édition, il n'est pas possible de modifier les données du formulaire. Vous
+            pouvez désactiver l'édition, mais vous perdrez les modifications effectuées manuellement
+            dans le courrier.
           </p>
-          <button
-            @click.prevent="manualEdit = false"
-            v-if="manualEdit"
-            class="inverted"
-          >
+          <button @click.prevent="manualEdit = false" v-if="manualEdit" class="inverted">
             Désactiver l'édition
           </button>
-          <hr class="hidden">
-          <button
-            type="submit"
-            class="my-2"
-            @click.prevent="downloadPdf"
-          >Télécharger au format PDF</button>
+          <hr class="hidden" />
+          <button type="submit" class="my-2" @click.prevent="downloadPdf">
+            Télécharger au format PDF
+          </button>
         </DynamicForm>
       </div>
       <div class="grid--column">
@@ -89,21 +93,18 @@ function downloadPdf() {
               <h2>Rendu du courrier</h2>
             </div>
             <div class="grid--column text--right">
-              <button
-                class="inverted"
-                @click.prevent="manualEdit = true"
-                v-if="!manualEdit"
-              >
+              <button class="inverted" @click.prevent="manualEdit = true" v-if="!manualEdit">
                 Éditer
               </button>
             </div>
           </div>
           <p v-if="manualEdit" class="message--primary px-1 py-1">
-            Vous êtes actuellement en mode édition. Vous pouvez éditer directement le contenu du courrier avant de l'enregistrer.
+            Vous êtes actuellement en mode édition. Vous pouvez éditer directement le contenu du
+            courrier avant de l'enregistrer.
           </p>
           <hr class="hidden" />
         </div>
-        <div class="letter" id="rendered" :contenteditable="manualEdit">
+        <div class="letter position--sticky" id="rendered" :contenteditable="manualEdit">
           <component :is="template.template" :data="data" />
         </div>
       </div>

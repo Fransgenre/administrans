@@ -1,7 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import LettersList from '../components/LettersList.vue'
-
 </script>
 
 <template>
@@ -17,12 +16,20 @@ import LettersList from '../components/LettersList.vue'
         <RouterLink class="my-2 button" to="/cec">Commencer</RouterLink>
       </div>
       <div class="grid--column">
-        <h2>Je veux faire mettre à jour mon état-civil auprès des entreprises et administrations</h2>
-        <p>Cette étape vous permet de répercuter les changements liés à votre état-civil auprès des différentes organisations avec lesquelles vous intéragissez.</p>
-        <RouterLink class="my-2 button"  to="/mise-a-jour">Commencer</RouterLink>
+        <h2>
+          Je veux faire mettre à jour mon état-civil auprès des entreprises et administrations
+        </h2>
+        <p>
+          Cette étape vous permet de répercuter les changements liés à votre état-civil auprès des
+          différentes organisations avec lesquelles vous intéragissez.
+        </p>
+        <RouterLink class="my-2 button" to="/mise-a-jour">Commencer</RouterLink>
       </div>
     </div>
-    <p>Administrans est gratuit, fonctionne sans inscription et les données que vous saisissez et courriers générés ne quittent jamais votre appareil.</p>
+    <p>
+      Administrans est gratuit, fonctionne sans inscription et les données que vous saisissez et
+      courriers générés ne quittent jamais votre appareil.
+    </p>
   </section>
   <section class="width--narrow">
     <h2>Demandes disponibles</h2>

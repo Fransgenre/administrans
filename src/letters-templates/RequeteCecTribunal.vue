@@ -7,6 +7,4 @@ const p = defineProps({ data: { type: Object } })
 const { renderValue } = useLetterTemplate(p)
 </script>
 
-<template>
-  Courrier encore en cours de conception
-</template>
+<template>Courrier encore en cours de conception</template>

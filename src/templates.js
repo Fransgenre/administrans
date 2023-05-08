@@ -16,7 +16,39 @@ export default function useLetterTemplate(props) {
     }
     return `<${field}>`
   }
+  function renderDate(field) {
+    if (props.data[field]) {
+      return new Date(props.data[field]).toLocaleDateString('fr-FR')
+    }
+    if (fieldsById[field]) {
+      return `<${fieldsById[field].name}>`
+    }
+    return `<${field}>`
+  }
+  function renderWithGender(word, genderField = 'genre', appendLetter = 'e') {
+    const gender = props.data[genderField]
+    if (gender === 'féminin') {
+      word = `${word}${appendLetter}`
+    }
+    return word
+  }
+  function genderSwitch(mascWord, femWord, genderField = 'genre') {
+    const gender = props.data[genderField]
+    if (gender === 'féminin') {
+      return femWord
+    }
+    return mascWord
+  }
+  function renderFullDescription() {
+    return `${renderValue('deadname')} ${renderValue('nom')}
+${renderWithGender('né')} le ${renderDate('dateNaissance')}
+à ${renderValue('lieuNaissance')}`
+  }
   return {
-    renderValue
+    renderValue,
+    renderDate,
+    renderWithGender,
+    genderSwitch,
+    renderFullDescription,
   }
 }
