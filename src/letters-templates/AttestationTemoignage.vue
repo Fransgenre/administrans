@@ -54,9 +54,9 @@ const {
       genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}
       et ne l'appeler que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
     </template>
-    <p v-if="data.contenuAttestation && data.contenuAttestation.trim()"> 
-      {{ data.contenuAttestation }}
-    </p>
+  </p>
+  <p v-if="data.contenuAttestation && data.contenuAttestation.trim()"> 
+    {{ data.contenuAttestation }}
   </p>
   <p>
     Fait pour faire valoir ce que de droit,
