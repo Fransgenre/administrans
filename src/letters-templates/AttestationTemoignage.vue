@@ -45,7 +45,7 @@ const {
     demeurant au {{ renderValue('adresseTiers') }}
     déclare sur l'honneur
     <template v-if="data.typeAttestation === 'prénom'">
-      <template v-if="data.deadname.trim()">
+      <template v-if="data.deadname && data.deadname.trim()">
         n'appeler {{ renderFullDescription() }} que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
       <template v-else>
@@ -56,8 +56,8 @@ const {
       genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
     </template>
     <template v-else>
-      genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
-      <template v-if="data.deadname.trim()">
+      genrer {{ renderFullDescription() }} exclusivement au {s.{ renderValue('genre') }}.
+      <template v-if="data.deadname && data.deadname.trim()">
         Je ne l'appelle que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
       <template v-else>
