@@ -1,0 +1,3 @@
+import{f as a}from"./index-ead47ff8.js";function g(e){function t(n,r=null){return e.data[n]?e.data[n]:r||(r===!1?"":a[n]?`<${a[n].name}>`:`<${n}>`)}function u(n){return e.data[n]?new Date(e.data[n]).toLocaleDateString("fr-FR"):a[n]?`<${a[n].name}>`:`<${n}>`}function c(n,r="genre",i="e"){return e.data[r]==="féminin"&&(n=`${n}${i}`),n}function d(n,r,i="genre"){return e.data[i]==="féminin"?r:n}function f(){let n=t("prénom");return e.data.deadname&&(n=t("deadname")),`${n} ${t("nom")}
+${c("né")} le ${u("dateNaissance")}
+à ${t("lieuNaissance")}`}return{renderValue:t,renderDate:u,renderWithGender:c,genderSwitch:d,renderFullDescription:f}}export{g as u};
