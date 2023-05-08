@@ -45,14 +45,25 @@ const {
     demeurant au {{ renderValue('adresseTiers') }}
     déclare sur l'honneur
     <template v-if="data.typeAttestation === 'prénom'">
-      n'appeler {{ renderFullDescription() }} que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      <template v-if="data.deadname.trim()">
+        n'appeler {{ renderFullDescription() }} que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      </template>
+      <template v-else>
+        ignorer le prénom d'état-civil de {{ renderFullDescription() }} et ne l'appeler que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      </template>
     </template>
     <template v-else-if="data.typeAttestation === 'genre'">
       genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
     </template>
     <template v-else>
-      genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}
-      et ne l'appeler que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
+      <template v-if="data.deadname.trim()">
+        Je ne l'appelle que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      </template>
+      <template v-else>
+        J'ignore son prénom d'état-civil et ne l'appelle que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+      </template>
+      
     </template>
   </p>
   <p v-if="data.contenuAttestation && data.contenuAttestation.trim()"> 

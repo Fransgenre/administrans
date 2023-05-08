@@ -40,7 +40,11 @@ export default function useLetterTemplate(props) {
     return mascWord
   }
   function renderFullDescription() {
-    return `${renderValue('deadname')} ${renderValue('nom')}
+    let name = renderValue('prénom')
+    if (props.data.deadname) {
+      name = renderValue('deadname')
+    }
+    return `${name} ${renderValue('nom')}
 ${renderWithGender('né')} le ${renderDate('dateNaissance')}
 à ${renderValue('lieuNaissance')}`
   }

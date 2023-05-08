@@ -195,7 +195,7 @@ const templates = [
       field('prénom'),
       field('nom'),
       field('genre', {help: `Il s'agit genre désiré/revendiqué`}),
-      field('deadname'),
+      field('deadname', {name: 'Deadname (facultatif)'}),
       field('dateNaissance'),
       field('lieuNaissance'),
       field('adresse'),
