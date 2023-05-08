@@ -1,3 +1,0 @@
-import{f as a}from"./index-04e16222.js";function g(r){function t(n,e=null){return r.data[n]?r.data[n]:e||(e===!1?"":a[n]?`<${a[n].name}>`:`<${n}>`)}function i(n){return r.data[n]?new Date(r.data[n]).toLocaleDateString("fr-FR"):a[n]?`<${a[n].name}>`:`<${n}>`}function c(n,e="genre",u="e"){return r.data[e]==="féminin"&&(n=`${n}${u}`),n}function f(n,e,u="genre"){return r.data[u]==="féminin"?e:n}function $(){return`${t("deadname")} ${t("nom")}
-${c("né")} le ${i("dateNaissance")}
-à ${t("lieuNaissance")}`}return{renderValue:t,renderDate:i,renderWithGender:c,genderSwitch:f,renderFullDescription:$}}export{g as u};
