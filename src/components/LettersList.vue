@@ -5,12 +5,12 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <div v-for="template in templates" :key="template.id">
+    <hr>
     <h2>
       <RouterLink :to="{ name: 'letters', params: { id: template.id } }">
         {{ template.name }}
       </RouterLink>
     </h2>
     <p>{{ template.description }}</p>
-    <hr>
   </div>
 </template>

@@ -73,10 +73,15 @@ main {
   max-width: var(--content-width-large);
   margin: 0 auto;
   padding: var(--space-medium);
-
+  
   font-weight: normal;
 }
-
+footer {
+  border-top: 1px solid var(--separator-color);
+  max-width: var(--content-width-large);
+  margin: 0 auto;
+  padding: var(--space-medium) 0;
+}
 main > * {
   margin-left: auto;
   margin-right: auto;
@@ -147,6 +152,9 @@ h3 {
 
 .text--italic {
   font-style: italic;
+}
+.text--small {
+  font-size: var(--font-small);
 }
 strong {
   font-weight: bold;
