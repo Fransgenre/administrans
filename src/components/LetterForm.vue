@@ -11,13 +11,21 @@ const props = defineProps({
   template: {
     type: Object,
     required: true
+  },
+  prefillData: {
+    type: Object,
+    required: false,
+    default: () => {return {}}
   }
 })
 const formFields = {}
 props.template.structure.forEach((f) => {
   if (f.isInput) {
     let v
-    if (store.formData[f.id] != undefined) {
+    if (props.prefillData[f.id] != undefined) {
+      v = props.prefillData[f.id]
+    }
+    else if (store.formData[f.id] != undefined) {
       v = store.formData[f.id]
     } else if (f.default != undefined) {
       v = f.default()
@@ -48,6 +56,22 @@ function updateData(v) {
 function downloadPdf() {
   plausible.trackEvent('print', { props: { letter: props.template.id } })
   window.print()
+}
+async function shareUrl() {
+  let url = window.location.href.split('?')[0]
+  const params = new URLSearchParams()
+  for (const key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+      const element = data[key];
+      if (element != undefined) {
+        params.set(key, element)
+      }
+    }
+  }
+  url = url + '?' + params.toString()
+  await navigator.clipboard.writeText(url)
+  alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du courrier, ne le partagez qu'avec des personnes de confiance`)
+  
 }
 </script>
 
@@ -83,6 +107,9 @@ function downloadPdf() {
           <hr class="hidden" />
           <button type="submit" class="my-2" @click.prevent="downloadPdf">
             Télécharger au format PDF
+          </button>
+          <button class="my-2 mx-2 inverted" @click.prevent="shareUrl">
+            Partager le courrier…
           </button>
         </DynamicForm>
       </div>

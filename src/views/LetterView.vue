@@ -15,5 +15,5 @@ templates.forEach((element) => {
 const template = templatesById[props.id]
 </script>
 <template>
-  <LetterForm :template="template" />
+  <LetterForm :template="template" :prefillData="$route.query"/>
 </template>

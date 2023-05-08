@@ -264,7 +264,6 @@ const templates = [
       }),
       field('contenuAttestation', {
         name: 'Contenu personnalisé (facultatif)',
-        persist: false,
         type: 'textarea'
       }),
 
