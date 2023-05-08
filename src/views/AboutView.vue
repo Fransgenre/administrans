@@ -44,7 +44,7 @@ function deleteData() {
     </p>
     <button @click.prevent="deleteData">Supprimer mes données…</button>
   </section>
-  <section class="width--xnarrow my-2">
+  <section class="width--xnarrow my-2" id="contact">
     <h2>Contribuer à Administrans</h2>
     <p>Administrans est développé par Agate et Emy, sur notre temps libre. Nous faisons de notre mieux, mais il n'est pas impossible qu'il existe des bugs ou qu'il manque des fonctionnalités qui vous paraissent importantes.</p>
     <p>

@@ -297,9 +297,15 @@ const store = useGlobalStore()
             quel point tout le processus peut être lent, usant, crevant, absurde et brutal.
           </p>
           <p>
-            On vous souhaite du repos et de la sérénité après tout ça. N'hésitez pas à nous écrire
+            On vous souhaite du repos et de la sérénité après tout ça.N'hésitez pas à nous écrire
             si vous avez trouvé Administrans utile, ou si vous souhaitez nous suggérer des améliorations !
           </p>
+          <RouterLink
+            to="/a-propos#contact"
+            class="button inverted "
+          >
+            Nous écrire
+          </RouterLink>
         </StepDetails>
       </section>
     </div>
