@@ -9,11 +9,11 @@ const { renderValue } = useLetterTemplate(p)
 
 <template>
   <LetterHeader :data="p.data" :renderValue="renderValue" />
-  <p class="subject">Objet : Mise à jour de mes informations d'état-civil</p>
+  <p class="subject">Objet : Mise à jour de mes informations d'état civil</p>
   <p>Madame, Monsieur,</p>
   <p>
     Je suis {{ renderValue('prénom') }} {{ renderValue('nom') }} et j'ai récemment obtenu mon
-    changement de prénom à l'État-Civil. Je souhaite faire mettre à jour les informations me
+    changement de prénom à l'état civil. Je souhaite faire mettre à jour les informations me
     concernant dans vos registres.
   </p>
   <p>
@@ -22,7 +22,7 @@ const { renderValue } = useLetterTemplate(p)
     {{ renderValue('deadname') }} {{ renderValue('nom') }}.
   </p>
   <p>
-    En vertu de la décision de changement de prénom délivrée par l'État-Civil, je vous prie de bien
+    En vertu de la décision de changement de prénom délivrée par l'état civil, je vous prie de bien
     vouloir changer mon prénom dans vos registres.
   </p>
   <p>

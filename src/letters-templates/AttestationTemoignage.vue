@@ -49,7 +49,7 @@ const {
         n'appeler {{ renderFullDescription() }} que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
       <template v-else>
-        ignorer le prénom d'état-civil de {{ renderFullDescription() }} et ne l'appeler que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+        ignorer le prénom d'état civil de {{ renderFullDescription() }} et ne l'appeler que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
     </template>
     <template v-else-if="data.typeAttestation === 'genre'">
@@ -61,7 +61,7 @@ const {
         Je ne l'appelle que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
       <template v-else>
-        J'ignore son prénom d'état-civil et ne l'appelle que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
+        J'ignore son prénom d'état civil et ne l'appelle que {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
       
     </template>

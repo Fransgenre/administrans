@@ -152,6 +152,9 @@ h3 {
 .text--italic {
   font-style: italic;
 }
+.text--uppercase {
+  text-transform: uppercase;
+}
 .text--small {
   font-size: var(--font-small);
 }
@@ -325,7 +328,10 @@ label {
   grid-column: span 2;
 }
 .letter-form .category,
-.letter-form .field--textarea {
+.letter-form .field--textarea,
+.letter-form .field--select,
+.letter-form .field--checkbox
+{
   grid-column: span 2;
 }
 @media (min-width: 500px) {
@@ -392,21 +398,91 @@ hr.hidden {
 .letter .signature {
   text-align: center;
 }
+.cerfa {
+  font-family: Calibri, sans-serif;
+  line-height: 1.5;
+}
+.cerfa h1,
+.cerfa h2 {
+  text-transform: uppercase;
+}
+.cerfa h2 {
+  background-color: #D9D9D9;
+  margin: var(--space-medium) 0;
+  padding: var(--space-xsmall);
+}
+.cerfa h1 {
+  color: var(--black);
+  font-size: var(--font-xlarge);
+  font-weight: bold;
+}
+.cerfa .field {
+  display: flex;
+}
+.cerfa .value:not(p) {
+  flex-grow: 1;
+  border-bottom: 1px solid #a19f9f;
+  margin-left: var(--space-small);
+  display: inline-block;
+}
+.cerfa p.value {
+  text-decoration: underline;
+  text-underline-offset: var(--space-xsmall);
+  text-decoration-color: #a19f9f;
+  text-decoration-thickness: 1px;
+} 
+.cerfa p.field {
+  margin: 0;
+}
+.cerfa .checkbox {
+  display: inline-block;
+  margin-right: var(--space-large);
+}
+.cerfa table {
+  border-collapse: collapse;
+}
+.cerfa table {
+  width: 100%;
+}
+.cerfa th {
+  font-weight: bold;
+}
+.cerfa th, .cerfa td {
+  border: 1px solid black;
+  padding: var(--space-small);
+  text-align: center;
+}
+.cerfa td {
+  height: var(--space-large);
+  padding: var(--space-xsmall);
+}
 
+.cerfa .signature {
+  margin-bottom: var(--space-xlarge);
+}
+.cerfa .footer {
+  text-align: center;
+  border: 1px solid var(--black);
+  font-size: var(--font-small);
+  padding: var(--space-small);
+}
 @media print {
   @page {
     size: auto;
-    margin: 0;
+    /* padding: var(--space-medium); */
+  }
+  main {
+    padding: 0;
   }
   header,
   footer,
   .hide-for-print {
     display: none !important;
   }
-  .letter {
+  .letter{
     background: white;
     border: none;
-    padding: var(--space-xlarge);
+    padding: 0;
     color: black;
     font-size: var(--font-medium);
   }

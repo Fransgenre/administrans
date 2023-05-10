@@ -1,6 +1,10 @@
-import { fieldsById } from '@/letters'
-
 export default function useLetterTemplate(props) {
+  const fieldsById = {}
+  props.structure.forEach(e => {
+    if (e.isInput) {
+      fieldsById[e.id] = e
+    }
+  })
   function renderValue(field, defaultValue = null) {
     if (props.data[field]) {
       return props.data[field]
