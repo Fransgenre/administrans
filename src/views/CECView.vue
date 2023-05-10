@@ -4,6 +4,12 @@ import StepDetails from '@/components/StepDetails.vue'
 import { useGlobalStore } from '@/store'
 
 const store = useGlobalStore()
+function foreignResidenceSwitch(foreign, local) {
+  if (store.situation === 'françaisRésidantÀLétranger') {
+    return foreign
+  }
+  return local
+}
 </script>
 
 <template>
@@ -31,6 +37,11 @@ const store = useGlobalStore()
         <p>
           Il est possible de changer de prénom(s) sans changer de mention de sexe, et inversement.
         </p>
+        <p>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N31778">
+            Service-public.fr</a> fournit une page très complète pour expliquer où et comment faire la démarche en fonction
+          de votre situation. Nous utilisons cette page comme source par la suite.
+        </p>
       </section>
       <section class="width--xnarrow my-2">
         <h2>Comment faire ?</h2>
@@ -44,11 +55,26 @@ const store = useGlobalStore()
           tout faire en une fois, d'autres la seconde pour pouvoir avancer plus rapidement sur leur
           changement de prénom.
         </p>
+        <p>
+
+          Indiquer votre situation :
+          <select
+          name="situation"
+          id="situation"
+          :value="store.situation"
+          @input="store.setSituation($event.target.value)"
+          >
+          <option value="françaisRésidantEnFrance">Vous êtes français·es et résidez en France</option>
+          <option value="françaisRésidantÀLétranger">Vous êtes français·e et résidez à l'étranger</option>
+          <option value="françaisNéÀLétranger">Vous êtes français·e né·e à l'étranger</option>
+          <option value="réfugié">Vous êtes réfugié·e, apatride ou bénéficiaire de la protection subsidiaire (Ofpra)</option>
+          </select>
+        </p>
         <div class="message--primary my-2 px-2 py-2">
           <h3>En une fois, au tribunal</h3>
           <p>
             On fait modifier le(s) prénom(s) en même temps que la mention de sexe, via une requête
-            adressée au tribunal administratif.
+            adressée au tribunal.
           </p>
           <div class="grid--row">
             <div class="grid--column">
@@ -77,9 +103,15 @@ const store = useGlobalStore()
           </div>
         </div>
         <div class="message--primary my-2 px-2 py-2">
-          <h3>En deux fois, à la mairie puis au tribunal</h3>
+          <h3>
+            En deux fois,
+            {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }}
+            puis au tribunal
+          </h3>
           <p>
-            On fait modifier le(s) prénom(s) en mairie puis, dans un second temps, la mention de
+            On fait modifier le(s) prénom(s)
+            {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }}
+            puis, dans un second temps, la mention de
             sexe au tribunal.
           </p>
           <div class="grid--row">
@@ -90,7 +122,7 @@ const store = useGlobalStore()
                   On peut obtenir une décision plus rapidement pour ses nouveaux prénoms,
                   typiquement en quelques semaines à quelques mois
                 </li>
-                <li>La démarche en mairie est plus simple qu'au tribunal</li>
+                <li>La démarche {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }} est plus simple qu'au tribunal</li>
               </ul>
             </div>
             <div class="grid--column">
@@ -124,8 +156,8 @@ const store = useGlobalStore()
             :value="store.CecMethod"
             @input="store.setCecMethod($event.target.value)"
           >
-            <option value="tribunal">Tribunal uniquement</option>
-            <option value="mairieEtTribunal">Mairie puis tribunal</option>
+            <option value="prénomEtSexe">Prénom et mention de sexe en une fois</option>
+            <option value="prénomPuisSexe">Prénom puis mention de sexe en deux fois</option>
           </select>
         </p>
         <StepDetails stepId="chooseNames">
@@ -216,35 +248,60 @@ const store = useGlobalStore()
             dossier.
           </p>
         </StepDetails>
-        <StepDetails stepId="prepareRequest" v-if="store.CecMethod === 'tribunal'">
+        <StepDetails stepId="prepareRequest" v-if="store.CecMethod === 'prénomEtSexe'">
           <h3>Préparer votre demande</h3>
           <p>
             Vous allez maintenant produire le document de demande de changement de prénom et de
-            mention de sexe, à adresser au tribunal administratif de votre ville de résidence ou de
-            naissance.
+            mention de sexe, à adresser
+            
+            <template v-if="store.situation === 'réfugié'">
+              <a href="https://lannuaire.service-public.fr/ile-de-france/paris/df25f052-8dbf-492f-90b8-f32ff6a925de">
+                au Tribunal de Paris.
+              </a>
+            </template>
+            <template v-else-if="store.situation === 'françaisNéÀLétranger'">
+              <a href="https://lannuaire.service-public.fr/pays-de-la-loire/loire-atlantique/59edbec7-feb1-49aa-bb94-5f6c316b9093">
+                au Tribunal de Nantes</a> car vous êtes né·e à l'étranger.
+            </template>
+            <template v-else-if="store.situation === 'françaisRésidantEnFrance'">
+              au tribunal de votre ville de résidence ou de naissance.
+            </template>
+            <template v-else-if="store.situation === 'françaisRésidantÀLétranger'">
+              au tribunal de la ville dans laquelle vous élirez domiciliation.
+              Nous ne connaissons pas précisément la méthode à employer pour l'élection de domicile.
+              Cela demande apparemment de faire établir une attestation de domiciliation auprès d'un particulier, d'un organisme ou d'un avocat.
+            </template>
+            
           </p>
           <RouterLink to="courriers/requete-changement-etat-civil-tribunal" class="button my-2">
             Générer votre demande de changement de prénom et de mention de sexe
           </RouterLink>
         </StepDetails>
-        <StepDetails stepId="prepareRequestName" v-if="store.CecMethod === 'mairieEtTribunal'">
+        <StepDetails stepId="prepareRequestName" v-if="store.CecMethod === 'prénomPuisSexe'">
           <h3>Préparer votre demande de changement de prénom</h3>
           <p>
             Vous allez maintenant produire le document de demande de changement de prénom, à
-            adresser au service d'état civil de la mairie de votre ville de résidence ou de
-            naissance.
+            adresser  
+            <template v-if="store.situation === 'françaisRésidantÀLétranger'">
+              <a href="https://www.diplomatie.gouv.fr/fr/le-ministere-et-son-reseau/organisation-et-annuaires/ambassades-et-consulats-francais-a-l-etranger/">
+                à l'ambassade ou poste consulaire compétent.
+              </a>
+            </template>
+            <template v-else>
+              au service d'état-civil de votre commune de résidence.
+            </template>
           </p>
 
           <RouterLink to="courriers/changement-prenom-mairie" class="button my-2">
             Générer votre demande de changement de prénom
           </RouterLink>
         </StepDetails>
-        <StepDetails stepId="prepareRequestCourt" v-if="store.CecMethod === 'mairieEtTribunal'">
+        <StepDetails stepId="prepareRequestCourt" v-if="store.CecMethod === 'prénomPuisSexe'">
           <h3>Préparer votre demande de changement de mention de sexe</h3>
           <p>
             Une fois que votre demande de changement de prénom aura abouti et que vous aurez reçu la
             décision du service d'état-civil, il vous faudra rédiger une requête de changement de
-            mention de sexe, et l'adresser au tribunal administratif de votre ville de résidence ou
+            mention de sexe, et l'adresser au tribunal de votre ville de résidence ou
             de naissance.
           </p>
           <p>
@@ -278,8 +335,8 @@ const store = useGlobalStore()
           <h3>Attendre le résultat de la procédure</h3>
           <p>Votre demande est déposée, maintenant vous n'avez plus qu'à attendre.</p>
           <p>
-            En mairie, les délais vont généralement de quelques semaines à trois ou quatre mois,
-            mais cela dépend évidemment de chaque commune.
+            En {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }}, les délais vont généralement de quelques semaines à trois ou quatre mois,
+            mais cela dépend évidemment de chaque endroit.
           </p>
           <p>
             Au tribunal, les délais sont plus long et le traitement d'une demande peut prendre entre
@@ -299,7 +356,7 @@ const store = useGlobalStore()
             non.
           </p>
           <p>
-            Il ne faut vraiment pas hésiter à appeler ponctuellement la mairie ou le tribunal pour
+            Il ne faut vraiment pas hésiter à appeler ponctuellement {{ foreignResidenceSwitch('le poste consulaire', 'la mairie') }} ou le tribunal pour
             savoir où en est votre demande. Il n'est pas rare que les courriers se perdent, et
             certaines personnes ont attendu plusieurs mois d'être notifié d'une décision qui avait
             déjà été rendue.
@@ -308,7 +365,7 @@ const store = useGlobalStore()
         <StepDetails stepId="notification">
           <h3>Recevoir la notification de décision</h3>
           <p>
-            Une fois votre demande validée, la mairie ou le tribunal vous enverront systématiquement
+            Une fois votre demande validée, {{ foreignResidenceSwitch('le poste consulaire', 'la mairie') }} ou le tribunal vous enverront systématiquement
             un courrier.
           </p>
           <p>
@@ -391,6 +448,20 @@ const store = useGlobalStore()
     <div class="grid--column one-third">
       <aside class="position--sticky my-4" id="checklist">
         <h2>Checklist</h2>
+        <StepItem stepId="setSituation" :link="false">
+          Indiquer votre situation :
+          <select
+            name="situation"
+            id="situation"
+            :value="store.situation"
+            @input="store.setSituation($event.target.value)"
+          >
+            <option value="françaisRésidantEnFrance">Vous êtes français·es et résidez en France</option>
+            <option value="françaisRésidantÀLétranger">Vous êtes français·e et résidez à l'étranger</option>
+            <option value="françaisNéÀLétranger">Vous êtes français·e né·e à l'étranger</option>
+            <option value="réfugié">Vous êtes réfugié·e, apatride ou bénéficiaire de la protection subsidiaire (Ofpra)</option>
+          </select>
+        </StepItem>
         <StepItem stepId="chooseCecMethod" :link="false">
           Choisir votre parcours :
           <select
@@ -399,15 +470,15 @@ const store = useGlobalStore()
             :value="store.CecMethod"
             @input="store.setCecMethod($event.target.value)"
           >
-            <option value="tribunal">Tribunal uniquement</option>
-            <option value="mairieEtTribunal">Mairie puis tribunal</option>
+            <option value="prénomEtSexe">Prénom et mention de sexe en une fois</option>
+            <option value="prénomPuisSexe">Prénom puis mention de sexe en deux fois</option>
           </select>
         </StepItem>
         <StepItem stepId="chooseNames" :link="true"> Choisir vos prénoms </StepItem>
         <StepItem stepId="requestBirthCertificates">
           Demander des copies intégrales de votre acte de naissance
         </StepItem>
-        <template v-if="store.CecMethod === 'tribunal'">
+        <template v-if="store.CecMethod === 'prénomEtSexe'">
           <StepItem stepId="prepareProofs"> Rassembler vos justificatifs </StepItem>
           <StepItem stepId="prepareProofsBirthCertificate" class="mx-2" :link="false">
             Copie d'acte de naissance
@@ -428,20 +499,20 @@ const store = useGlobalStore()
           <StepItem stepId="party"> Célébrer </StepItem>
         </template>
         <template v-else>
-          <StepItem stepId="submitRequestMairie" :link="false">
-            Changement de prénom en mairie
+          <StepItem stepId="submitRequestNames" :link="false">
+            Changement de prénom {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }}
           </StepItem>
           <StepItem stepId="prepareProofs" class="mx-2"> Rassembler vos justificatifs </StepItem>
-          <StepItem stepId="prepareProofsBirthCertificateMairie" class="mx-4" :link="false">
+          <StepItem stepId="prepareProofsBirthCertificateNames" class="mx-4" :link="false">
             Copie d'acte de naissance
           </StepItem>
-          <StepItem stepId="prepareProofsIdMairie" class="mx-4" :link="false">
+          <StepItem stepId="prepareProofsIdNames" class="mx-4" :link="false">
             Copie de votre CNI ou Passeport
           </StepItem>
-          <StepItem stepId="prepareProofsHomeMairie" class="mx-4" :link="false">
+          <StepItem stepId="prepareProofsHomeNames" class="mx-4" :link="false">
             Justificatif de domicile
           </StepItem>
-          <StepItem stepId="prepareProofsSocialMairie" class="mx-4" :link="false">
+          <StepItem stepId="prepareProofsSocialNames" class="mx-4" :link="false">
             Attestations de proches
           </StepItem>
 
