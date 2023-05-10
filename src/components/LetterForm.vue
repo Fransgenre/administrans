@@ -132,7 +132,7 @@ async function shareUrl() {
           <hr class="hidden" />
         </div>
         <div class="letter position--sticky" id="rendered" :contenteditable="manualEdit">
-          <component :is="template.template" :data="data" />
+          <component :is="template.template" :data="data" :structure="template.structure" />
         </div>
       </div>
     </div>

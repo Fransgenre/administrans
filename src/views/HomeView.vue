@@ -11,16 +11,16 @@ import LettersList from '../components/LettersList.vue'
   <section class="width--narrow my-4">
     <div class="grid--row">
       <div class="grid--column">
-        <h2>Je veux demander un changement de prénom et/ou de mention de sexe à l'état-civil</h2>
+        <h2>Je veux demander un changement de prénom et/ou de mention de sexe à l'état civil</h2>
         <p>Cette étape vous permet de faire reconnaître le changement officiellement.</p>
         <RouterLink class="my-2 button" to="/cec">Commencer</RouterLink>
       </div>
       <div class="grid--column">
         <h2>
-          Je veux faire mettre à jour mon état-civil auprès des entreprises et administrations
+          Je veux faire mettre à jour mon état civil auprès des entreprises et administrations
         </h2>
         <p>
-          Cette étape vous permet de répercuter les changements liés à votre état-civil auprès des
+          Cette étape vous permet de répercuter les changements liés à votre état civil auprès des
           différentes organisations avec lesquelles vous intéragissez.
         </p>
         <RouterLink class="my-2 button" to="/mise-a-jour">Commencer</RouterLink>

@@ -16,10 +16,10 @@ function foreignResidenceSwitch(foreign, local) {
   <div class="grid--row">
     <div class="grid--column two-third">
       <section class="width--xnarrow my-2">
-        <h1>Changer d'état-civil</h1>
+        <h1>Changer d'état civil</h1>
         <p>
           <strong
-            >Le terme état-civil désigne ici les informations vous concernant officiellement
+            >Le terme état civil désigne ici les informations vous concernant officiellement
             garanties par l'état.</strong
           >
           Il s'agit notamment de votre prénom, nom, date et lieu de naissance, filiation. Elles
@@ -45,13 +45,13 @@ function foreignResidenceSwitch(foreign, local) {
       </section>
       <section class="width--xnarrow my-2">
         <h2>Comment faire ?</h2>
-        <p>En France, il existe deux manières de procéder pour changer d'état-civil.</p>
+        <p>En France, il existe deux manières de procéder pour changer d'état civil.</p>
         <p>
           <strong
             >Quelle que soit la méthode que vous choisissez, le résultat final est le même.</strong
           >
           La ou les décisions vont faire modifier votre acte de naissance, et vous permettre
-          d'utiliser votre nouvel état-civil. Certaines personnes préfèrent la première méthode pour
+          d'utiliser votre nouvel état civil. Certaines personnes préfèrent la première méthode pour
           tout faire en une fois, d'autres la seconde pour pouvoir avancer plus rapidement sur leur
           changement de prénom.
         </p>
@@ -237,7 +237,7 @@ function foreignResidenceSwitch(foreign, local) {
             <strong>Il n'est pas nécessaire de fournir de justificatifs médicaux</strong> pour
             obtenir gain de cause. D'autre part, nous vous recommandons de limiter au maximum le
             nombre de justificatifs et attestations que vous joignez à votre demande. En effet, en
-            fournissant de très nombreuses pièces, on habitue les officiers d'état-civil et
+            fournissant de très nombreuses pièces, on habitue les officiers d'état civil et
             magistrats à des dossiers très fournis, ce qui complique d'autant plus la transition des
             personnes isolées ou précaires qui ne sont pas en mesure de fournir de tels
             justificatifs.
@@ -288,7 +288,7 @@ function foreignResidenceSwitch(foreign, local) {
               </a>
             </template>
             <template v-else>
-              au service d'état-civil de votre commune de résidence.
+              au service d'état civil de votre commune de résidence.
             </template>
           </p>
 
@@ -300,13 +300,13 @@ function foreignResidenceSwitch(foreign, local) {
           <h3>Préparer votre demande de changement de mention de sexe</h3>
           <p>
             Une fois que votre demande de changement de prénom aura abouti et que vous aurez reçu la
-            décision du service d'état-civil, il vous faudra rédiger une requête de changement de
+            décision du service d'état civil, il vous faudra rédiger une requête de changement de
             mention de sexe, et l'adresser au tribunal de votre ville de résidence ou
             de naissance.
           </p>
           <p>
             Pour cette seconde demande, pensez à joindre à votre dossier la décision de changement
-            dé prénom fournie par le service d'état-civil.
+            dé prénom fournie par le service d'état civil.
           </p>
           <RouterLink to="courriers/requete-changement-etat-civil-tribunal" class="button my-2">
             Générer votre demande de changement de mention de sexe
@@ -317,7 +317,7 @@ function foreignResidenceSwitch(foreign, local) {
           <h3>Déposer votre demande</h3>
           <p>Pour déposer votre demande, deux choix s'offrent à vous :</p>
           <ul>
-            <li>Une remise en main propre, directement au service d'état-civil ou au tribunal.</li>
+            <li>Une remise en main propre, directement au service d'état civil ou au tribunal.</li>
             <li>Un envoi par courrier, en recommandé.</li>
           </ul>
           <p><strong>Le document de demande doit être daté et signé.</strong></p>
@@ -373,7 +373,7 @@ function foreignResidenceSwitch(foreign, local) {
               >Ce courrier contient la décision ou le jugement et doit être conservé précieusement,
               photocopié et/ou scanné</strong
             >. Il peut notamment vous servir à attester de votre identité en attendant d'avoir
-            refait vos papiers, ou à justifier de vos changements d'état-civil pour d'autres
+            refait vos papiers, ou à justifier de vos changements d'état civil pour d'autres
             démarches.
           </p>
           <p><strong>Chronologie</strong></p>
@@ -383,7 +383,7 @@ function foreignResidenceSwitch(foreign, local) {
           </p>
           <ol>
             <li>
-              Le service d'état-civil ou le tribunal notifient votre commune de naissance du
+              Le service d'état civil ou le tribunal notifient votre commune de naissance du
               changement
             </li>
             <li>Votre commune de naissance mets à jour votre acte de naissance</li>
@@ -547,7 +547,7 @@ function foreignResidenceSwitch(foreign, local) {
             Attestations de proches
           </StepItem>
           <StepItem stepId="prepareProofsNameCHangeCourt" class="mx-4" :link="false">
-            Décision de changement de prénom transmise par l'état-civil
+            Décision de changement de prénom transmise par l'état civil
           </StepItem>
 
           <StepItem stepId="prepareRequestCourt" class="mx-2"> Préparer votre demande </StepItem>
