@@ -64,7 +64,7 @@ function foreignResidenceSwitch(foreign, local) {
           :value="store.situation"
           @input="store.setSituation($event.target.value)"
           >
-          <option value="françaisRésidantEnFrance">Vous êtes français·es et résidez en France</option>
+          <option value="françaisRésidantEnFrance">Vous êtes français·e et résidez en France</option>
           <option value="françaisRésidantÀLétranger">Vous êtes français·e et résidez à l'étranger</option>
           <option value="françaisNéÀLétranger">Vous êtes français·e né·e à l'étranger</option>
           <option value="réfugié">Vous êtes réfugié·e, apatride ou bénéficiaire de la protection subsidiaire (Ofpra)</option>
@@ -456,7 +456,7 @@ function foreignResidenceSwitch(foreign, local) {
             :value="store.situation"
             @input="store.setSituation($event.target.value)"
           >
-            <option value="françaisRésidantEnFrance">Vous êtes français·es et résidez en France</option>
+            <option value="françaisRésidantEnFrance">Vous êtes français·e et résidez en France</option>
             <option value="françaisRésidantÀLétranger">Vous êtes français·e et résidez à l'étranger</option>
             <option value="françaisNéÀLétranger">Vous êtes français·e né·e à l'étranger</option>
             <option value="réfugié">Vous êtes réfugié·e, apatride ou bénéficiaire de la protection subsidiaire (Ofpra)</option>
