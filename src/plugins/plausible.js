@@ -12,8 +12,6 @@ export default {
     }
     const plausible = Plausible(options)
 
-    plausible.enableAutoPageviews()
-
     app.provide('plausible', plausible)
   }
 }

@@ -1,7 +1,24 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { inject } from 'vue'
+import { inject, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
 const plausible = inject('plausible')
+
+watch(
+  () => route.path,
+  (v) => {
+    const config = ({
+      url: v,
+      domain: location.hostname,
+      referrer: document.referrer || null,
+      deviceWidth: window.innerWidth,
+    });
+    plausible.trackEvent('pageview', {}, config)
+  },
+)
 </script>
 
 <template>
