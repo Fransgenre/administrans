@@ -3,7 +3,7 @@ import useLetterTemplate from '@/templates'
 import LetterHeader from './LetterHeader.vue'
 import LetterFooter from './LetterFooter.vue'
 
-const p = defineProps({ data: { type: Object } })
+const p = defineProps({ data: { type: Object }, structure: { type: Array } })
 const { renderValue } = useLetterTemplate(p)
 </script>
 

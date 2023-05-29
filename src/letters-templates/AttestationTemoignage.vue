@@ -1,7 +1,7 @@
 <script setup>
 import useLetterTemplate from '@/templates'
 
-const p = defineProps({ data: { type: Object } })
+const p = defineProps({ data: { type: Object }, structure: { type: Array } })
 const {
   renderValue,
   renderWithGender,
