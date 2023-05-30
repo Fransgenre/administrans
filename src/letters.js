@@ -295,7 +295,6 @@ const templates = [
       field('deadname', {name: 'Deadname (facultatif)'}),
       field('dateNaissance'),
       field('lieuNaissance'),
-      field('adresse'),
 
       category("Information de la personne réalisant l'attestation"),
       field('prénom', { id: 'prénomTiers' }),
