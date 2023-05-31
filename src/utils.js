@@ -1,3 +1,6 @@
+import { marked } from 'marked'
+import DOMPurify from 'dompurify';
+
 export function textToArrays(text, separator = ',', padding = 0) {
   let v = text || ''
   let final = []
@@ -13,4 +16,8 @@ export function textToArrays(text, separator = ',', padding = 0) {
     final.push([])
   }
   return final
+}
+
+export function renderMarkdown(text) {
+  return DOMPurify.sanitize(marked.parse(text));
 }
