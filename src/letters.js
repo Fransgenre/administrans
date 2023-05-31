@@ -146,21 +146,163 @@ const templates = [
   },
   {
     id: 'requete-changement-etat-civil-tribunal',
-    name: 'Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal administratif',
+    name: 'Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal',
     template: defineAsyncComponent(() => import(`./documents-templates/RequeteCecTribunal.vue`)),
-    description: 'TODO',
+    description: `Modèle de requête simplifiée à soumettre au tribunal pour un changement d'état civil.`,
+    help: `
+      Basé sur
+      <a href="https://drive.google.com/drive/folders/1TZIb0BxKpiZVBxmDi_BZ0VLMVE4kUeqA">
+        ce modèle de dossier</a>.
+      Vous pouvez vous référer <a href="https://wikitrans.co/2019/11/26/changement-de-sexe-a-letat-civil-tgi/">
+        à l'article du Wikitrans</a> si vous voulez utiliser un autre modèle.
+    `,
     structure: [
+      category('Tribunal et type de requête'),
+      field('tribunal', {
+        name: 'Nom du tribunal',
+        placeholder: 'Tribunal Judiciaire de Toulouse',
+      }),
+      field('adresseTribunal', {
+        name: 'Adresse du tribunal',
+        type: 'textarea'
+      }),
+      field('villeTribunal', {
+        name: 'Ville du tribunal',
+        type: 'text',
+        placeholder: 'Toulouse',
+      }),
+      field('typeChangement', {
+        name: `Type de demande`,
+        type: 'select',
+        default: () => {
+          return 'genre'
+        },
+        choices: [
+          { label: `Changement mention de sexe`, value: 'genre' },
+          { label: `Changement de prénom et de mention de sexe`, value: 'prénomEtGenre' },
+        ]
+      }),
       category('Vos informations'),
-      field('prénom'),
+
+      field('genre', {help: `Il s'agit genre désiré/revendiqué`}),
+      field('prénom', {
+        id: 'nouveauxPrénoms',
+        name: `Prénom(s) demandés`,
+        help: `Il s'agit de vos nouveaux prénoms, séparés par une virgule`,
+        showCondition: (data) => {return data.typeChangement === 'prénomEtGenre'},
+      }),
+      field('prénom', {id: 'prénomsActuels', name: `Prénom(s) actuels`, help: `Il s'agit de vos prénoms actuels à l'état civil, séparés par une virgule`}),
       field('nom'),
-      field('deadname'),
+      field('dateNaissance'),
+      field('lieuNaissance'),
+      field('nationalité', {type: 'text', name: 'Nationalité', default: () => 'française'}),
       field('adresse'),
       field('email'),
       field('téléphone'),
-      category('Options du document'),
+      field('situationProfessionnelle', {
+        name: 'Situation professionnelle',
+        type: 'text',
+        help: `Poste occupé, étudiant, en recherche d'emploi, etc.`
+      }),
+      field('situationFamiliale', {
+        name: 'Situation familiale',
+        type: 'text',
+        help: 'Mariée, Pacsée, mère de deux enfants, célibataire, en concubinage, etc.'
+      }),
+      category('Informations de la requête'),
+      field('contexte', {
+        name: 'Contexte de la requête',
+        type: 'textarea',
+        attributes: {rows: 10},
+        help: `Utilisez cet endroit pour personnaliser le corps de la requête et justifier votre demande.
+Il n'est pas nécessaire de donner des justifications d'ordre médical, psychiatrique,
+chirurgicales sauf si vous le souhaitez.
+
+Il est préférable d'éviter de rentrer trop dans l'intime pour éviter de normaliser cela auprès des 
+personnes examinant les dossiers. Néanmoins, cela peut s'avérer nécessaire si le tribunal
+auprès duquel vous déposez votre requête à tendance à demander ce genre de détails.`,
+      }),
+      field('contexteExemple', {
+        name: 'Insérer un exemple de contexte',
+        persist: false,
+        help: `Ces exemples peuvent vous aider à personnaliser votre requête. `,
+        type: 'select',
+        injectInto: 'contexte',
+        default: () => {
+          return ''
+        },
+        choices: [
+          { label: '', value: '' },
+          {
+            label: 'Basique - changement de prénom déjà effectué',
+            value: `
+Je suis une personne transgenre, c'est-à-dire que mon genre de naissance n'est pas en adéquation avec mon genre réel.
+
+Depuis de nombreuses années, je me présente et vis quotidiennement en tant que {{ sexe }}, tant dans mes relations familiales qu'amicales ou professionnelles.
+Les personnes qui me cotoient au quotidien utilisent cette identité de genre et l'acceptent parfaitement.
+
+Cette transition sociale s'accompagne également d'autres changements liés à mon apparence, notamment vestimentaires pour me rapprocher de mon genre réel.
+
+Je suis satisfaite de ma transition et je me sens plus équilibrée et en accord avec moi-même depuis que j'ai entrepris ces changements.
+            `
+          },
+        ]
+      }),
+      field('actesÀMettreÀJour', {
+        name: 'Actes supplémentaires à mettre à jour',
+        type: 'textarea',
+        attributes: {rows: 10},
+        help: `
+Le tribunal ordonnera la mise à jour de votre acte de naissance. Selon votre situation, listez ici les autres actes d'état civil pour lesquels le tribunal devra ordonner une mise à jour.
+Un acte par ligne.
+Ces documents doivent être joints à votre requête et listés dans le champ suivant.
+`,
+        default: () => `
+<Selon votre situation> l'acte de mariage
+<Selon votre situation> la convention de PACS
+      `
+      }),
+      field('justificatifsRequête', {
+        name: 'Justificatifs et documents joints',
+        type: 'textarea',
+        attributes: {rows: 10},
+        help: `
+Listez ici les justificatifs et documents que vous joindrez à votre requête.
+N'incluez aucun certificat médical. Un justificatif par ligne.
+Enlevez ou éditez les mentions entre <>.
+Inscrivez le numéro de pièce affiché dans la requête sur les documents joints.
+
+**Le consentement libre et éclairé est un document manuscrit dans lequel vous exprimez votre consentement** libre et éclairé sur les tenants et aboutissants de votre demande, par exemple :
+
+> Je soussigné Tylor RONAN, fais état de mon consentement libre et éclairé à la modification de la mention du sexe et de mes prénoms dans les
+actes d'état civil, comme mon acte de naissance.
+> 
+> Pour faire valoir ce que de droit,
+>
+> Fait à Poitiers, le 08/10/2022
+>
+> Tylor RONAN
+>
+> Signature
+
+**Ce document ne peut être généré ici, vous devrez le rédiger vous même manuscritement.**
+
+`,
+        default: () => `<Obligatoire> Copie intégrale de mon acte de naissance
+<Obligatoire> Photocopie de ma carte nationale d'identité
+<Obligatoire> Justificatif de domicile
+<Obligatoire> Consentement libre et éclairé concernant la modification de l'état civil
+<Si changement prénom déjà effectué> Décision de la mairie de <Ville> de <Date>, sur base de la circulaire du 17/02/2017 pour les changements de prénoms
+Témoignage et carte d'identité recto verso de <A>, <amie>
+Témoignage et carte d'identité recto verso de <B>, <parent>
+Témoignage et carte d'identité recto verso de <C>, <collègue>
+Témoignage et carte d'identité recto verso de <D>, <conjoint·e>
+Preuves de demande de changement auprès d'organismes tiers
+Preuves de refus de changement de la part d'organismes tiers`
+      }),
+      category('Finalisation du document'),
       field('villeDocument'),
-      field('dateDocument'),
-      field('listerPJ')
+      field('dateDocument')
     ]
   },
   {

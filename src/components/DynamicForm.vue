@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, watch } from 'vue'
 import { useGlobalStore } from '@/store'
+import { renderMarkdown } from '@/utils'
 const emit = defineEmits(['update:modelValue', 'submit'])
 const store = useGlobalStore()
 const props = defineProps({
@@ -30,10 +31,13 @@ function handleUpdate(field, value) {
     // we implement extremely basic templating here
     // so we can inject values from other fields
     // in the value before injection in another field
+    let injectData = {...localData}
+    injectData.sexe = injectData.genre === 'masculin' ? 'homme' : 'femme'
+    value = value.replace('{{ sexe }}', injectData.sexe)
     props.structure.forEach((f) => {
       if (f.isInput) {
         const search = `{{ ${f.id} }}`
-        value = value.replace(search, localData[f.id])
+        value = value.replace(search, injectData[f.id])
       }
     })
     localData[field.injectInto] = value.trim()
@@ -58,7 +62,7 @@ function handleUpdate(field, value) {
               v-if="element.type === 'textarea'"
               :value="localData[element.id]"
               :id="`field-${element.id}`"
-              rows="3"
+              v-bind="element.attributes || {rows: 3}"
               @input="handleUpdate(element, $event.target.value)"
               :disabled="disabled"
               :placeholder="element.placeholder"
@@ -94,7 +98,7 @@ function handleUpdate(field, value) {
               :disabled="disabled"
               :placeholder="element.placeholder"
               />
-            <p class="text--small text--italic" v-if="element.help" v-html="element.help"></p>
+            <div v-if="element.help" class="text--small text--italic" v-html="renderMarkdown(element.help)"></div>
           </div>
         </template>
       </template>

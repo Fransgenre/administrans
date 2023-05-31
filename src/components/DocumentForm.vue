@@ -110,7 +110,7 @@ function deleteData() {
         <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre document.</p>
         <DynamicForm
           :key="formKey"
-          class="position--sticky"
+          :class="{'position--sticky': template.stickyForm}"
           v-model="data"
           :disabled="manualEdit"
           :structure="template.structure"

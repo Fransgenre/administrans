@@ -152,6 +152,12 @@ h3 {
 .text--italic {
   font-style: italic;
 }
+.text--bold {
+  font-weight: bold;
+}
+.text--underline {
+  text-decoration: underline;
+}
 .text--uppercase {
   text-transform: uppercase;
 }
@@ -394,7 +400,9 @@ hr.hidden {
   text-decoration: underline;
   margin-bottom: var(--space-medium);
 }
-.document p {
+.document p,
+.document ul,
+.document ol {
   margin-bottom: var(--space-medium);
 }
 .document .signature {
@@ -467,6 +475,36 @@ hr.hidden {
   border: 1px solid var(--black);
   font-size: var(--font-small);
   padding: var(--space-small);
+}
+
+.requete blockquote {
+  font-style: italic;
+}
+.requete .list--piece {
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 0;
+}
+.requete .list--piece li::before {
+  content: 'Pièce ' counter(item, decimal) ' : ';
+  counter-increment: item;
+  font-weight: bold;
+}
+
+.requete {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.3;
+}
+.requete h1 {
+  text-transform: uppercase;
+  color: black;
+}
+.requete h2 {
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+.requete .signature {
+  margin-bottom: var(--space-xlarge);
 }
 @media print {
   @page {

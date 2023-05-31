@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "dompurify": "^3.0.3",
+    "marked": "4",
     "pinia": "^2.0.32",
     "pinia-plugin-persistedstate": "^3.1.0",
     "plausible-tracker": "^0.3.8",
