@@ -19,8 +19,15 @@ function deleteData() {
       en France.
     </p>
     <p>
-      Il est directement inspiré du projet Trans-CEC lancé par Maria Climent-Pommeret, et des
-      différentes versions qui ont ensuites été améliorées et maintenues par des volontaires.
+      Il est directement inspiré du projet Trans-CEC lancé en 2019 par Maria Climent-Pommeret, et des
+      <a href="https://github.com/entropyqueen/trans-cec#ont-contribu%C3%A9">
+        contributions et améliorations apportées par des bénévoles.
+      </a>
+    </p>
+    <p>
+      L'Administrans que vous utilisez ici est une version différente, maintenue séparément par Agate,
+      qui s'appuie sur le travail des précédentes versions et également sur celui de nombreuses associations et personnes
+      qui mettent à disposition des ressources sur la transition administrative.
     </p>
   </section>
   <section class="width--xnarrow my-2">
@@ -59,7 +66,7 @@ function deleteData() {
   <section class="width--xnarrow my-2" id="contact">
     <h2>Contribuer à Administrans</h2>
     <p>
-      Administrans est développé par Agate et Emy, sur notre temps libre. Nous faisons de notre
+      Administrans est développé par Agate et d'autres personnes sur leur temps libre. Nous faisons de notre
       mieux, mais il n'est pas impossible qu'il existe des bugs ou qu'il manque des fonctionnalités
       qui vous paraissent importantes.
     </p>
