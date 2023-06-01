@@ -318,7 +318,9 @@ label {
   display: inline;
   margin-left: var(--space-small);
 }
-
+select {
+  width: 100%;
+}
 .letter-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
