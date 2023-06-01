@@ -1,11 +1,9 @@
 <script setup>
-import useLetterTemplate from '@/templates'
-import LetterHeader from './LetterHeader.vue'
-import LetterFooter from './LetterFooter.vue'
+import useDocumentTemplate from '@/templates'
 import {textToArrays} from '@/utils'
 
 const p = defineProps({ data: { type: Object }, structure: { type: Array } })
-const { renderValue, renderDate } = useLetterTemplate(p)
+const { renderValue, renderDate } = useDocumentTemplate(p)
 </script>
 
 <template>
@@ -221,7 +219,7 @@ const { renderValue, renderDate } = useLetterTemplate(p)
       exacts.
     </p>
     <p>
-      Fait à<span class="value">{{ renderValue('villeCourrier') }}</span>, le<span class="value">{{ renderDate('dateCourrier') }}</span>
+      Fait à<span class="value">{{ renderValue('villeDocument') }}</span>, le<span class="value">{{ renderDate('dateDocument') }}</span>
     </p>
     <p style="margin-bottom: 100px;">
       <strong>Signature :</strong>

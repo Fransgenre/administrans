@@ -29,7 +29,7 @@ function deleteData() {
       formulaires qui vous sont proposés.
     </p>
     <p>
-      Une fois cette étape terminée, vous pouvez optionnellement éditer directement le courrier qui
+      Une fois cette étape terminée, vous pouvez optionnellement éditer directement le document qui
       vous est proposé, puis l'enregistrer en format PDF.
     </p>
     <p>
@@ -45,12 +45,12 @@ function deleteData() {
   <section class="width--xnarrow my-2">
     <h2>Concernant vos données</h2>
     <p>
-      Les données que vous saisissez et les courriers générés ne quittent jamais votre appareil.
+      Les données que vous saisissez et les documents générés ne quittent jamais votre appareil.
       Aucune information personnelle n'est transmise à un tiers, ni même à l'hébergeur du site.
     </p>
     <p>
       Une copie de vos informations est conservée localement sur votre navigateur pour faciliter
-      l'édition successive de plusieurs courriers. Si vous souhaitez supprimer cette copie locale,
+      l'édition successive de plusieurs documents. Si vous souhaitez supprimer cette copie locale,
       cliquez simplement sur le bouton ci-dessous :
     </p>
     <button @click.prevent="deleteData">Supprimer mes données…</button>
@@ -86,7 +86,7 @@ function deleteData() {
       <li>Votre système d'exploitation</li>
       <li>Votre navigateur</li>
       <li>Les URLs visitées</li>
-      <li>Les types de courriers générés</li>
+      <li>Les types de documents générés</li>
       <li>La durée d'utilisation du site</li>
     </ul>
     <p>

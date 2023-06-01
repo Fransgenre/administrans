@@ -1,5 +1,5 @@
 <script setup>
-import LetterForm from '../components/LetterForm.vue'
+import DocumentForm from '../components/DocumentForm.vue'
 import templates from '@/letters'
 
 const props = defineProps({
@@ -15,5 +15,5 @@ templates.forEach((element) => {
 const template = templatesById[props.id]
 </script>
 <template>
-  <LetterForm :template="template" :prefillData="$route.query"/>
+  <DocumentForm :template="template" :prefillData="$route.query"/>
 </template>

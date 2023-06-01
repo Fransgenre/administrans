@@ -72,12 +72,12 @@ export const fields = [
     persist: false
   },
   {
-    id: 'villeCourrier',
+    id: 'villeDocument',
     name: 'Lieu de rédaction',
     type: 'text'
   },
   {
-    id: 'dateCourrier',
+    id: 'dateDocument',
     name: 'Date de rédaction',
     type: 'date',
     default: () => {
@@ -124,7 +124,7 @@ const templates = [
   {
     id: 'contrat-simple',
     name: "Mise à jour  d'état civil pour un contrat simple",
-    template: defineAsyncComponent(() => import(`./letters-templates/ContratSimple.vue`)),
+    template: defineAsyncComponent(() => import(`./documents-templates/ContratSimple.vue`)),
     description:
       "Pour vos démarches auprès de fournisseurs tels qu'EDF, votre assureur, votre opérateur mobile…",
     structure: [
@@ -138,16 +138,16 @@ const templates = [
       category('Société contactée'),
       field('société'),
       field('refContrat'),
-      category('Options du courrier'),
-      field('villeCourrier'),
-      field('dateCourrier'),
+      category('Options du document'),
+      field('villeDocument'),
+      field('dateDocument'),
       field('listerPJ')
     ]
   },
   {
     id: 'requete-changement-etat-civil-tribunal',
     name: 'Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal administratif',
-    template: defineAsyncComponent(() => import(`./letters-templates/RequeteCecTribunal.vue`)),
+    template: defineAsyncComponent(() => import(`./documents-templates/RequeteCecTribunal.vue`)),
     description: 'TODO',
     structure: [
       category('Vos informations'),
@@ -157,16 +157,16 @@ const templates = [
       field('adresse'),
       field('email'),
       field('téléphone'),
-      category('Options du courrier'),
-      field('villeCourrier'),
-      field('dateCourrier'),
+      category('Options du document'),
+      field('villeDocument'),
+      field('dateDocument'),
       field('listerPJ')
     ]
   },
   {
     id: 'changement-prenom-mairie',
     name: 'Cerfa pour changement de prénom(s) en mairie ou consulat',
-    template: defineAsyncComponent(() => import(`./letters-templates/RequetePrenomMairie.vue`)),
+    template: defineAsyncComponent(() => import(`./documents-templates/RequetePrenomMairie.vue`)),
     description: 'Cerfa N° 16233*02 pour demande de changement de prénom.',
     help: `
       L'original peut-être téléchargé et rempli à la main sur 
@@ -268,15 +268,15 @@ const templates = [
         placeholder: 'Lund, Élise, 05/09/2021, Marseille (13)',
         help: `Un·e enfant par ligne, séparer le nom, prénom, date de naissance et lieu de naissance par une virgule`,
       }),
-      category('Finalisation du courrier'),
-      field('villeCourrier'),
-      field('dateCourrier')
+      category('Finalisation du document'),
+      field('villeDocument'),
+      field('dateDocument')
     ]
   },
   {
     id: 'attestation-temoignage',
     name: "Attestation pour témoigner de l'utilisation d'un prénom et/ou genre en vue d'une demande de modification d'état civil",
-    template: defineAsyncComponent(() => import(`./letters-templates/AttestationTemoignage.vue`)),
+    template: defineAsyncComponent(() => import(`./documents-templates/AttestationTemoignage.vue`)),
     description: `
       Cette attestation est destinée à être remplie et signée par vos proches
       et incluse dans votre demande de changements de prénom/mention de sexe.
@@ -330,7 +330,7 @@ const templates = [
       field('contenuExample', {
         name: 'Insérer un exemple',
         persist: false,
-        help: `Ces exemples peuvent vous aider si à personnaliser l'attestation.`,
+        help: `Ces exemples peuvent vous aider à personnaliser l'attestation.`,
         type: 'select',
         injectInto: 'contenuAttestation',
         default: () => {
@@ -363,8 +363,8 @@ const templates = [
         type: 'textarea'
       }),
 
-      field('villeCourrier'),
-      field('dateCourrier')
+      field('villeDocument'),
+      field('dateDocument')
     ]
   }
 ]

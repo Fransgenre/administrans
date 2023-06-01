@@ -1,5 +1,5 @@
 <script setup>
-import useLetterTemplate from '@/templates'
+import useDocumentTemplate from '@/templates'
 
 const p = defineProps({ data: { type: Object }, structure: { type: Array } })
 const {
@@ -8,7 +8,7 @@ const {
   genderSwitch,
   renderDate,
   renderFullDescription
-} = useLetterTemplate(p)
+} = useDocumentTemplate(p)
 </script>
 
 <template>
@@ -22,9 +22,9 @@ const {
         <template v-if="data['emailTiers']"><br />Email : {{ renderValue('emailTiers') }}</template>
       </div>
     </div>
-    <div class="grid--column date" v-if="data.villeCourrier && data.dateCourrier">
-      {{ renderValue('villeCourrier') }}, le
-      {{ new Date(data.dateCourrier).toLocaleDateString('fr-FR') }}
+    <div class="grid--column date" v-if="data.villeDocument && data.dateDocument">
+      {{ renderValue('villeDocument') }}, le
+      {{ new Date(data.dateDocument).toLocaleDateString('fr-FR') }}
     </div>
   </div>
   <p class="subject" v-if="data.typeAttestation === 'prénom'">

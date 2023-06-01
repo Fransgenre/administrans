@@ -1,14 +1,14 @@
 <script setup>
-import useLetterTemplate from '@/templates'
-import LetterHeader from './LetterHeader.vue'
-import LetterFooter from './LetterFooter.vue'
+import useDocumentTemplate from '@/templates'
+import DocumentHeader from './DocumentHeader.vue'
+import DocumentFooter from './DocumentFooter.vue'
 
 const p = defineProps({ data: { type: Object }, structure: { type: Array } })
-const { renderValue } = useLetterTemplate(p)
+const { renderValue } = useDocumentTemplate(p)
 </script>
 
 <template>
-  <LetterHeader :data="p.data" :renderValue="renderValue" />
+  <DocumentHeader :data="p.data" :renderValue="renderValue" />
   <p class="subject">Objet : Mise à jour de mes informations d'état civil</p>
   <p>Madame, Monsieur,</p>
   <p>
@@ -29,5 +29,5 @@ const { renderValue } = useLetterTemplate(p)
     Je vous remercie de l'aide que vous m'apporterez dans ma démarche et vous prie de bien vouloir
     croire, Madame, Monsieur, en l'assurance de ma considération,
   </p>
-  <LetterFooter :data="p.data" :renderValue="renderValue" />
+  <DocumentFooter :data="p.data" :renderValue="renderValue" />
 </template>

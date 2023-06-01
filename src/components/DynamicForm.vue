@@ -46,7 +46,7 @@ function handleUpdate(field, value) {
 
 <template>
   <form @submit.prevent="$emit('submit')">
-    <div class="letter-form">
+    <div class="document-form">
       <template v-for="element in props.structure" :key="JSON.stringify(element)">
         <template v-if="element.showCondition(localData)">
           <h2 v-if="element.isCategory" class="category">{{ element.name }}</h2>

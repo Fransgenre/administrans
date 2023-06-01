@@ -1,4 +1,4 @@
-export default function useLetterTemplate(props) {
+export default function useDocumentTemplate(props) {
   const fieldsById = {}
   props.structure.forEach(e => {
     if (e.isInput) {

@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <div v-for="template in templates" :key="template.id">
     <h2>
-      <RouterLink :to="{ name: 'letters', params: { id: template.id } }">
+      <RouterLink :to="{ name: 'documents', params: { id: template.id } }">
         {{ template.name }}
       </RouterLink>
     </h2>

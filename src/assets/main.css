@@ -321,30 +321,30 @@ label {
 select {
   width: 100%;
 }
-.letter-form {
+.document-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 var(--space-medium);
 }
-.letter-form > * {
+.document-form > * {
   grid-column: span 2;
 }
-.letter-form .category,
-.letter-form .field--textarea,
-.letter-form .field--select,
-.letter-form .field--checkbox
+.document-form .category,
+.document-form .field--textarea,
+.document-form .field--select,
+.document-form .field--checkbox
 {
   grid-column: span 2;
 }
 @media (min-width: 500px) {
-  .letter-form > * {
+  .document-form > * {
     grid-column: span 1;
   }
 }
-.letter-form .category + .letter-form .field {
+.document-form .category + .document-form .field {
   grid-column-start: 1;
 }
-.letter-form .field {
+.document-form .field {
   margin-bottom: var(--space-xsmall);
 }
 
@@ -370,8 +370,8 @@ hr.hidden {
   background: var(--apricot);
   border-radius: var(--border-radius);
 }
-/* letter specific styles */
-.letter {
+/* document specific styles */
+.document {
   background: white;
   border: 1px solid #cccccc;
   font-family: Palatino, serif;
@@ -390,14 +390,14 @@ hr.hidden {
 .date {
   text-align: right;
 }
-.letter .subject {
+.document .subject {
   text-decoration: underline;
   margin-bottom: var(--space-medium);
 }
-.letter p {
+.document p {
   margin-bottom: var(--space-medium);
 }
-.letter .signature {
+.document .signature {
   text-align: center;
 }
 .cerfa {
@@ -481,7 +481,7 @@ hr.hidden {
   .hide-for-print {
     display: none !important;
   }
-  .letter{
+  .document{
     background: white;
     border: none;
     padding: 0;

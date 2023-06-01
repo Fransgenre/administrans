@@ -54,7 +54,7 @@ function updateData(v) {
   Object.assign(data, v)
 }
 function downloadPdf() {
-  plausible.trackEvent('print', { props: { letter: props.template.id } })
+  plausible.trackEvent('print', { props: { document: props.template.id } })
   window.print()
 }
 async function shareUrl() {
@@ -70,7 +70,7 @@ async function shareUrl() {
   }
   url = url + '?' + params.toString()
   await navigator.clipboard.writeText(url)
-  alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du courrier, ne le partagez qu'avec des personnes de confiance`)
+  alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du document, ne le partagez qu'avec des personnes de confiance`)
   
 }
 </script>
@@ -88,7 +88,7 @@ async function shareUrl() {
           v-if="template.help"
           class="text--small"
           v-html="template.help"></p>
-        <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre courrier.</p>
+        <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre document.</p>
         <DynamicForm
           class="position--sticky"
           v-model="data"
@@ -99,7 +99,7 @@ async function shareUrl() {
           <p v-if="manualEdit" class="message--info px-1 py-1">
             En mode édition, il n'est pas possible de modifier les données du formulaire. Vous
             pouvez désactiver l'édition, mais vous perdrez les modifications effectuées manuellement
-            dans le courrier.
+            dans le document.
           </p>
           <button @click.prevent="manualEdit = false" v-if="manualEdit" class="inverted">
             Désactiver l'édition
@@ -109,7 +109,7 @@ async function shareUrl() {
             Télécharger au format PDF
           </button>
           <button class="my-2 mx-2 inverted" @click.prevent="shareUrl">
-            Partager le courrier…
+            Partager le document…
           </button>
         </DynamicForm>
       </div>
@@ -117,7 +117,7 @@ async function shareUrl() {
         <div class="hide-for-print">
           <div class="grid--row">
             <div class="grid--column">
-              <h2>Rendu du courrier</h2>
+              <h2>Rendu du document</h2>
             </div>
             <div class="grid--column text--right">
               <button class="inverted" @click.prevent="manualEdit = true" v-if="!manualEdit">
@@ -127,11 +127,11 @@ async function shareUrl() {
           </div>
           <p v-if="manualEdit" class="message--primary px-1 py-1">
             Vous êtes actuellement en mode édition. Vous pouvez éditer directement le contenu du
-            courrier avant de l'enregistrer.
+            document avant de l'enregistrer.
           </p>
           <hr class="hidden" />
         </div>
-        <div class="letter position--sticky" id="rendered" :contenteditable="manualEdit">
+        <div class="document position--sticky" id="rendered" :contenteditable="manualEdit">
           <component :is="template.template" :data="data" :structure="template.structure" />
         </div>
       </div>
