@@ -15,5 +15,6 @@ templates.forEach((element) => {
 const template = templatesById[props.id]
 </script>
 <template>
-  <DocumentForm :template="template" :prefillData="$route.query"/>
+  <DocumentForm v-if="template" :template="template" :prefillData="$route.query"/>
+  <p v-else>Ce document n'existe pas.</p>
 </template>
