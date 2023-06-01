@@ -5,8 +5,9 @@ const plausibleEnabled = import.meta.env.VITE_PLAUSIBLE_URL
 const store = useGlobalStore()
 
 function deleteData() {
-  confirm('Toutes les données stockées localement seront supprimées.')
-  store.deleteData()
+  if (confirm('Toutes les données stockées localement seront supprimées.')) {
+    store.deleteData()
+  }
 }
 </script>
 

@@ -35,6 +35,7 @@ props.template.structure.forEach((f) => {
 })
 const data = reactive(formFields)
 const manualEdit = ref(false)
+let formKey = ref(1)
 
 watch(
   data,
@@ -73,6 +74,24 @@ async function shareUrl() {
   alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du document, ne le partagez qu'avec des personnes de confiance`)
   
 }
+
+function deleteData() {
+  if (confirm('Cela effacera toutes vos modifications et tous les champs du formulaire.')) {
+    const cleanData = {}
+    props.template.structure.forEach((f) => {
+      if (f.isInput) {
+        let v = undefined
+        if (f.default != undefined) {
+          v = f.default()
+        }
+        cleanData[f.id] = v
+      }
+    })
+    updateData(cleanData)
+    store.persistFormData(cleanData)
+  }
+}
+
 </script>
 
 <template>
@@ -90,6 +109,7 @@ async function shareUrl() {
           v-html="template.help"></p>
         <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre document.</p>
         <DynamicForm
+          :key="formKey"
           class="position--sticky"
           v-model="data"
           :disabled="manualEdit"
@@ -110,6 +130,9 @@ async function shareUrl() {
           </button>
           <button class="my-2 mx-2 inverted" @click.prevent="shareUrl">
             Partager le document…
+          </button>
+          <button class="my-2 inverted" @click.prevent="deleteData();formKey = formKey + 1">
+            Effacer les données…
           </button>
         </DynamicForm>
       </div>
