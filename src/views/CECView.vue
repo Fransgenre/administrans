@@ -247,6 +247,16 @@ function foreignResidenceSwitch(foreign, local) {
             cas, vous aurez l'opportunité d'en transmettre d'autres par la suite en complétant votre
             dossier.
           </p>
+          <p>
+            Néanmoins, si vous savez à l'avance que l'endroit ou les personnes qui traitent votre dossier
+            sont connues pour exiger plus de justificatifs ou refuser les demandes malgré la loi,
+            il est certainement plus prudent d'inclure plus de pièces justificatives dans votre demande.
+          </p>
+          <p>
+            Vous pouvez utiliser <a href="https://fransgenre.fr/">la carte Fransgenre</a> pour vous 
+            informer sur les tribunaux et services d'état civil des différentes communes, les délais
+            de réponse et la façon dont les demandes sont traitées.
+          </p>
         </StepDetails>
         <StepDetails stepId="prepareRequest" v-if="store.CecMethod === 'prénomEtSexe'">
           <h3>Préparer votre demande</h3>
