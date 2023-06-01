@@ -1,1 +1,0 @@
-import{u as t}from"./templates-9512fb52.js";const o={__name:"RequeteCecTribunal",props:{data:{type:Object},structure:{type:Array}},setup(e){return t(e),(c,u)=>"Courrier encore en cours de conception"}};export{o as default};
