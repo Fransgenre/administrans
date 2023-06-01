@@ -10,7 +10,7 @@ const router = createRouter({
     if (to.hash) {
       return { el: to.hash }
     } else {
-      return { x: 0, y: 0 }
+      return { top: 0 }
     }
   },
   routes: [
