@@ -149,12 +149,10 @@ const templates = [
     name: 'Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal',
     template: defineAsyncComponent(() => import(`./documents-templates/RequeteCecTribunal.vue`)),
     description: `Modèle de requête simplifiée à soumettre au tribunal pour un changement d'état civil.`,
-    help: `
-      Basé sur
-      <a href="https://drive.google.com/drive/folders/1TZIb0BxKpiZVBxmDi_BZ0VLMVE4kUeqA">
-        ce modèle de dossier</a>.
-      Vous pouvez vous référer <a href="https://wikitrans.co/2019/11/26/changement-de-sexe-a-letat-civil-tgi/">
-        à l'article du Wikitrans</a> si vous voulez utiliser un autre modèle.
+    help: `Basé sur les modèles suivants :
+
+- [CEC Le guide complet](https://drive.google.com/drive/folders/1TZIb0BxKpiZVBxmDi_BZ0VLMVE4kUeqA)
+- [Modèle référencé sur Wikitrans](https://wikitrans.co/2019/11/26/changement-de-sexe-a-letat-civil-tgi/)
     `,
     structure: [
       category('Tribunal et type de requête'),
@@ -310,10 +308,7 @@ Preuves de refus de changement de la part d'organismes tiers`
     name: 'Cerfa pour changement de prénom(s) en mairie ou consulat',
     template: defineAsyncComponent(() => import(`./documents-templates/RequetePrenomMairie.vue`)),
     description: 'Cerfa N° 16233*02 pour demande de changement de prénom.',
-    help: `
-      L'original peut-être téléchargé et rempli à la main sur 
-      <a href="https://www.service-public.fr/particuliers/vosdroits/R63177">service-public.fr</a>.
-    `,
+    help: `L'original peut-être téléchargé et rempli à la main sur [service-public.fr](https://www.service-public.fr/particuliers/vosdroits/R63177)`,
     structure: [
       category('Vos informations'),
       field('nom'),
@@ -420,14 +415,16 @@ Preuves de refus de changement de la part d'organismes tiers`
     name: "Attestation pour témoigner de l'utilisation d'un prénom et/ou genre en vue d'une demande de modification d'état civil",
     template: defineAsyncComponent(() => import(`./documents-templates/AttestationTemoignage.vue`)),
     description: `
-      Cette attestation est destinée à être remplie et signée par vos proches
-      et incluse dans votre demande de changements de prénom/mention de sexe.
+Cette attestation est destinée à être remplie et signée par vos proches
+et incluse dans votre demande de changements de prénom/mention de sexe.
     `,
     help: `
-      L'attestation doit être renseignée par une personne vous connaissant et atteste
-      que vous utilisez le genre et/ou le prénom revendiqué dans votre demande de changement
-      d'état civil. Il est impératif de joindre à chaque attestation un justificatif d'identité
-      de la personne qui l'a signée.
+L'attestation doit être renseignée par une personne vous connaissant et atteste
+que vous utilisez le genre et/ou le prénom revendiqué dans votre demande de changement
+d'état civil.
+
+Il est impératif de joindre à chaque attestation un justificatif d'identité
+de la personne qui l'a signée, par exemple une copie recto-verso de la carte d'identité.
     `,
     structure: [
       category('Information de la personne concernée par la demande'),

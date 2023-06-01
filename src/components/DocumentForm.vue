@@ -2,6 +2,7 @@
 import { reactive, watch, ref, inject } from 'vue'
 import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
+import {renderMarkdown} from '@/utils'
 
 const plausible = inject('plausible')
 
@@ -99,14 +100,14 @@ function deleteData() {
     <div class="grid--row">
       <div class="grid--column hide-for-print">
         <h1>{{ template.name }}</h1>
-        <p 
+        <div 
           v-if="template.description"
           class="text--small"
-          v-html="template.description"></p>
-        <p 
+          v-html="renderMarkdown(template.description)"></div>
+        <div 
           v-if="template.help"
           class="text--small"
-          v-html="template.help"></p>
+          v-html="renderMarkdown(template.help)"></div>
         <p class="text--small">Remplissez le formulaire ci-dessous pour obtenir votre document.</p>
         <DynamicForm
           :key="formKey"
