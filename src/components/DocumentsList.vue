@@ -1,5 +1,5 @@
 <script setup>
-import templates from '@/letters'
+import templates from '@/documents'
 import { RouterLink } from 'vue-router'
 </script>
 

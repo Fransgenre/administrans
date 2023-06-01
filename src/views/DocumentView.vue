@@ -1,6 +1,6 @@
 <script setup>
 import DocumentForm from '../components/DocumentForm.vue'
-import templates from '@/letters'
+import templates from '@/documents'
 
 const props = defineProps({
   id: {
