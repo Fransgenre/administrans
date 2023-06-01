@@ -71,7 +71,10 @@ function deleteData() {
       qui vous paraissent importantes.
     </p>
     <p>
-      Si vous souhaitez nous poser une question, signaler une anomalie, suggérer une amélioration,
+      <strong>À l'heure actuelle, nous recherchons activement des retours d'utilisateur·ices du service, qu'ils soient positifs ou négatifs.</strong>
+    </p>
+    <p>
+      Si vous souhaitez nous transmettre vos retours, poser une question, signaler une anomalie, suggérer une amélioration,
       participer ou suivre le développement, vous pouvez :
     </p>
     <ul>
