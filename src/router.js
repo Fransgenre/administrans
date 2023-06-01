@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
 import CECView from './views/CECView.vue'
+import MiseAJourView from './views/MiseAJourView.vue'
 import DocumentView from './views/DocumentView.vue'
 
 const router = createRouter({
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/cec',
       name: 'cec',
       component: CECView
+    },
+    {
+      path: '/mise-a-jour',
+      name: 'miseAJour',
+      component: MiseAJourView,
     },
     {
       path: '/documents/:id',
