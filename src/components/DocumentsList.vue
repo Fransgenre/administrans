@@ -11,5 +11,8 @@ import { RouterLink } from 'vue-router'
       </RouterLink>
     </h2>
     <p>{{ template.description }}</p>
+    <hr class="hidden">
+    <hr class="hidden">
+    <hr class="hidden">
   </div>
 </template>
