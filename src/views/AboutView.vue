@@ -68,10 +68,11 @@ function deleteData() {
       participer ou suivre le développement, vous pouvez :
     </p>
     <ul>
+      <li>Écrire un mail à <a href="mailto:administrans@agate.blue">administrans@agate.blue</a></li>
+      <li>Écrire sur discord à <strong>Agate#8675</strong></li>
       <li>
         Consulter la <a href="https://github.com/agateblue/administrans">page GitHub du projet</a>
       </li>
-      <li>Écrire un mail à <a href="mailto:administrans@agate.blue">administrans@agate.blue</a></li>
       <li>Nous laisser un petit mot <a href="https://pad.agate.blue/administrans-retours">sur le pad public prévu à cet effet</a></li>
     </ul>
     <p>Merci beaucoup et prenez soin de vous &lt;3</p>
