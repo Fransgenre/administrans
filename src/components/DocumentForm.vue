@@ -3,6 +3,9 @@ import { reactive, watch, ref, inject } from 'vue'
 import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
 import {renderMarkdown} from '@/utils'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const plausible = inject('plausible')
 
@@ -56,7 +59,7 @@ function updateData(v) {
   Object.assign(data, v)
 }
 function downloadPdf() {
-  plausible.trackEvent('print', { props: { document: props.template.id } })
+  plausible.trackEvent('print', { props: { document: props.template.id } }, {url: route.path})
   window.print()
 }
 async function shareUrl() {
