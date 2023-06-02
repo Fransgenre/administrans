@@ -1,5 +1,5 @@
 import { marked } from 'marked'
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify'
 
 export function textToArrays(text, separator = ',', padding = 0) {
   let v = text || ''

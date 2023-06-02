@@ -4,6 +4,7 @@ import DynamicForm from './DynamicForm.vue'
 import { useGlobalStore } from '@/store'
 import {renderMarkdown} from '@/utils'
 import { useRoute } from 'vue-router'
+import documentsComponents from '@/documentsComponents'
 
 const route = useRoute()
 
@@ -37,12 +38,12 @@ props.template.structure.forEach((f) => {
     formFields[f.id] = v
   }
 })
-const data = reactive(formFields)
+const localData = reactive(formFields)
 const manualEdit = ref(false)
 let formKey = ref(1)
 
 watch(
-  data,
+  localData,
   (v) => {
     let toPersist = {}
     props.template.structure.forEach((e) => {
@@ -55,8 +56,8 @@ watch(
   },
   { deep: true }
 )
-function updateData(v) {
-  Object.assign(data, v)
+function updateLocalData(v) {
+  Object.assign(localData, v)
 }
 function downloadPdf() {
   plausible.trackEvent('print', { props: { document: props.template.id } }, {url: route.path})
@@ -65,16 +66,16 @@ function downloadPdf() {
 async function shareUrl() {
   let url = window.location.href.split('?')[0]
   const params = new URLSearchParams()
-  for (const key in data) {
-    if (Object.hasOwnProperty.call(data, key)) {
-      const element = data[key];
+  for (const key in localData) {
+    if (Object.hasOwnProperty.call(localData, key)) {
+      const element = localData[key];
       if (element != undefined) {
         params.set(key, element)
       }
     }
   }
   url = url + '?' + params.toString()
-  await navigator.clipboard.writeText(url)
+  await window.navigator.clipboard.writeText(url)
   alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du document, ne le partagez qu'avec des personnes de confiance`)
   
 }
@@ -91,10 +92,12 @@ function deleteData() {
         cleanData[f.id] = v
       }
     })
-    updateData(cleanData)
+    updateLocalData(cleanData)
     store.persistFormData(cleanData)
   }
 }
+
+const componentTemplate = documentsComponents[props.template.id]
 
 </script>
 
@@ -115,10 +118,10 @@ function deleteData() {
         <DynamicForm
           :key="formKey"
           :class="{'position--sticky': template.stickyForm}"
-          v-model="data"
+          :modelValue="localData"
           :disabled="manualEdit"
           :structure="template.structure"
-          @update:modelValue="updateData"
+          @update:modelValue="updateLocalData"
         >
           <p v-if="manualEdit" class="message--info px-1 py-1">
             En mode édition, il n'est pas possible de modifier les données du formulaire. Vous
@@ -159,7 +162,7 @@ function deleteData() {
           <hr class="hidden" />
         </div>
         <div class="document position--sticky" id="rendered" :contenteditable="manualEdit">
-          <component :is="template.template" :data="data" :structure="template.structure" />
+          <component :is="componentTemplate" :data="localData" :structure="template.structure" />
         </div>
       </div>
     </div>

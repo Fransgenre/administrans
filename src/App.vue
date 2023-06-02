@@ -1,23 +1,32 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { inject, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 const plausible = inject('plausible')
 
 watch(
   () => route.path,
   (v) => {
+    // for backward compat/redirecting old links like /#cec to /cec
+    if (v === '/' && window.location.hash) {
+      let match = router.resolve(window.location.hash.slice(1))
+      if (match.matched.length > 0) {
+        router.replace(match.fullPath)
+      }
+    }
     const config = ({
       url: v,
-      domain: location.hostname,
+      domain: window.location.hostname,
       referrer: document.referrer || null,
       deviceWidth: window.innerWidth,
     });
     plausible.trackEvent('pageview', {}, config)
   },
+  {immediate: true},
 )
 </script>
 
