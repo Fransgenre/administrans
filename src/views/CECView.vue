@@ -2,7 +2,12 @@
 import StepItem from '@/components/StepItem.vue'
 import StepDetails from '@/components/StepDetails.vue'
 import { useGlobalStore } from '@/store'
+import { useSeoMeta } from '@vueuse/head'
 
+useSeoMeta({
+  title: `Changer d'état civil`,
+  description: `Un guide pas à pas, pour votre changement d'état civil dans le cadre de votre transition administrative. Il est accompagné d'une checklist pour ne rien oublier`,
+})
 const store = useGlobalStore()
 function foreignResidenceSwitch(foreign, local) {
   if (store.situation === 'françaisRésidantÀLétranger') {

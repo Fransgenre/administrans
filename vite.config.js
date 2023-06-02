@@ -15,6 +15,7 @@ export default defineConfig({
     script: 'async',
     formatting: 'prettify',
     dirStyle: 'nested',
+    mock: true,
     includedRoutes(paths, routes) {
       // include path to documents for prerendering
       return routes.flatMap((route) => {

@@ -2,6 +2,31 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useHead, useSeoMeta } from '@vueuse/head'
+
+useHead({
+  titleTemplate: 'Administrans · %s',
+  meta: [
+    {
+      'http-equiv': 'content-language',
+      content: `fr-fr`,
+    },
+  ]
+})
+const title = 'Réaliser votre transition administrative'
+const description = `Administrans est un site gratuit conçu pour vous aider à réaliser votre transition administrative en France, de A à Z. Suivez le guide pas à pas, générez vos documents, courriers et attestations en quelques clics depuis votre ordinateur ou votre smartphone.`
+useSeoMeta({
+  title,
+  description,
+  ogType: 'website',
+  ogSiteName: 'Administrans',
+  ogLocale: 'fr_FR',
+  ogTitle: title,
+  ogDescription: description,
+  twitterCard: 'summary',
+  twitterTitle: title,
+  twitterDescription: description,
+})
 
 const route = useRoute()
 const router = useRouter()
