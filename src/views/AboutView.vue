@@ -95,8 +95,11 @@ function deleteData() {
       participer ou suivre le développement, vous pouvez :
     </p>
     <ul>
+      <li>
+        Rejoindre <a href="https://chat.agate.blue/signup_user_complete/?id=btqyjuhyetnxzmg94gtpwb8fpo&md=link&sbr=fa">
+          notre salon de discussion
+        </a></li>
       <li>Écrire un mail à <a href="mailto:administrans@agate.blue">administrans@agate.blue</a></li>
-      <li>Écrire sur discord à <strong>Agate#8675</strong></li>
       <li>
         Consulter la <a href="https://github.com/agateblue/administrans">page GitHub du projet</a>
       </li>
