@@ -3,7 +3,6 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import plausible from './plugins/plausible'
 
 import App from './App.vue'
-import router from './router'
 import './assets/main.css'
 
 import { ViteSSG } from 'vite-ssg'
@@ -17,7 +16,6 @@ export const createApp = ViteSSG(
     pinia.use(piniaPluginPersistedstate)
     
     app.use(pinia)
-    app.use(router)
     
     if (import.meta.env.VITE_PLAUSIBLE_URL) {
       console.log('Plausible tracking enabled on ', import.meta.env.VITE_PLAUSIBLE_URL)
