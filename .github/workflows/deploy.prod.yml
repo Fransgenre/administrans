@@ -45,3 +45,10 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
           
+      - name: Deploy review branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: github.event_name == 'pull_request'
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: pr-review-${{ github.event.number }} # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
