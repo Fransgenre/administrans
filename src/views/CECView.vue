@@ -32,7 +32,7 @@ function foreignResidenceSwitch(foreign, local) {
         </p>
         <ul>
           <li>Le ou les prénoms</li>
-          <li>La mention de sexe, parfois appelée civilité ou genre</li>
+          <li>La mention de sexe, (masculin/féminin)</li>
         </ul>
         <p>
           Il est possible de changer de prénom(s) sans changer de mention de sexe, et inversement.
@@ -41,6 +41,21 @@ function foreignResidenceSwitch(foreign, local) {
           <a href="https://www.service-public.fr/particuliers/vosdroits/N31778">
             Service-public.fr</a> fournit une page très complète pour expliquer où et comment faire la démarche en fonction
           de votre situation. Nous utilisons cette page comme source par la suite.
+        </p>
+        <h3>À propos de la mention de sexe, du genre et de la civilité</h3>
+        <p>La mention de sexe est souvent confondue avec le genre ou la civilité. En pratique ce sont deux choses distinctes :</p>
+        <ul>
+          <li>La mention de sexe est une notion légale</li>
+          <li>Le genre et la civilité sont des notions sociales</li>
+        </ul>
+        <p>
+          Cette distinction est importante, même si elle peut créer de la confusion.
+          Vous pouvez en pratique demander à faire mettre à jour votre civilité auprès de différentes
+          entreprises par exemple et ce même si votre mention de sexe à l'état civil n'a pas encore bougé.
+        </p>
+        <p>
+          Inversement, vous pouvez conserver votre ancienne civilité auprès de certains organismes, par exemple
+          pour des questions d'accès à la PMA, même si vous avez fait modifier votre mention de sexe à l'état civil.
         </p>
       </section>
       <section class="width--xnarrow my-2">
