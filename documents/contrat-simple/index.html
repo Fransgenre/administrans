@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- 🥚 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrans</title>
+    <script
+      type="module"
+      async=""
+      crossorigin=""
+      src="/assets/app-cf1b6436.js"
+    ></script>
+    <link rel="stylesheet" href="/assets/index-9e917949.css" />
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true">
+      <!--[-->
+      <header>
+        <nav>
+          <a href="/" class="">Administrans</a
+          ><a href="/a-propos" class="">A propos</a>
+        </nav>
+      </header>
+      <main>
+        <div>
+          <div class="grid--row">
+            <div class="grid--column hide-for-print">
+              <h1>Mise à jour d'état civil pour un contrat simple</h1>
+              <div class="text--small">
+                <p>
+                  Pour vos démarches auprès de fournisseurs tels qu'EDF, votre
+                  assureur, votre opérateur mobile…
+                </p>
+              </div>
+              <!---->
+              <p class="text--small">
+                Remplissez le formulaire ci-dessous pour obtenir votre document.
+              </p>
+              <form class="">
+                <div class="document-form">
+                  <!--[--><!--[--><!--[-->
+                  <h2 class="category">Vos informations</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-prénom">Prénom</label
+                    ><input type="text" id="field-prénom" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-nom">Nom</label
+                    ><input type="text" id="field-nom" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-deadname">Deadname</label
+                    ><input type="text" id="field-deadname" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-adresse">Adresse</label
+                    ><textarea id="field-adresse" rows="3"></textarea
+                    ><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--email">
+                    <label for="field-email">Adresse email</label
+                    ><input type="email" id="field-email" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-téléphone">N° de téléphone</label
+                    ><input type="text" id="field-téléphone" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[-->
+                  <h2 class="category">Société contactée</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-société">Nom de la société</label
+                    ><input type="text" id="field-société" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-refContrat">Numéro de contrat</label
+                    ><input type="text" id="field-refContrat" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[-->
+                  <h2 class="category">Options du document</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-villeDocument">Lieu de rédaction</label
+                    ><input type="text" id="field-villeDocument" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--date">
+                    <label for="field-dateDocument">Date de rédaction</label
+                    ><input
+                      type="date"
+                      value="2023-06-02"
+                      id="field-dateDocument"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--checkbox">
+                    <!---->
+                    <div class="checkbox">
+                      <input
+                        type="checkbox"
+                        checked=""
+                        id="field-listerPJ"
+                      /><label for="field-listerPJ"
+                        >Inclure la liste des pièces jointes</label
+                      >
+                    </div>
+                    <!---->
+                  </div>
+                  <!--]--><!--]--><!--]-->
+                </div>
+                <!--[--><!----><!---->
+                <hr class="hidden" />
+                <button type="submit" class="my-2">
+                  Télécharger au format PDF</button
+                ><button class="my-2 mx-2 inverted">
+                  Partager le document…</button
+                ><button class="my-2 inverted">Effacer les données…</button
+                ><!--]-->
+              </form>
+            </div>
+            <div class="grid--column">
+              <div class="hide-for-print">
+                <div class="grid--row">
+                  <div class="grid--column"><h2>Rendu du document</h2></div>
+                  <div class="grid--column text--right">
+                    <button class="inverted">Éditer</button>
+                  </div>
+                </div>
+                <!---->
+                <hr class="hidden" />
+              </div>
+              <div
+                class="document position--sticky"
+                id="rendered"
+                contenteditable="false"
+              >
+                <!--[--><!--[-->
+                <div class="grid--row">
+                  <div class="grid--column">
+                    <div class="adress--sender">
+                      &lt;Prénom&gt; &lt;Nom&gt;<br />&lt;Adresse&gt;
+                      <!----><!---->
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+                <div class="adress--recipient">
+                  À l'attention du service client<!---->
+                </div>
+                <!--]-->
+                <p class="subject">
+                  Objet : Mise à jour de mes informations d'état civil
+                </p>
+                <p>Madame, Monsieur,</p>
+                <p>
+                  Je suis &lt;Prénom&gt; &lt;Nom&gt; et j'ai récemment obtenu
+                  mon changement de prénom à l'état civil. Je souhaite faire
+                  mettre à jour les informations me concernant dans vos
+                  registres.
+                </p>
+                <p>
+                  Je suis titulaire d'un contrat auprès de votre société sous la
+                  référence &lt;Numéro de contrat&gt;. Le nom associé
+                  actuellement à ce contrat est &lt;Deadname&gt; &lt;Nom&gt;.
+                </p>
+                <p>
+                  En vertu de la décision de changement de prénom délivrée par
+                  l'état civil, je vous prie de bien vouloir changer mon prénom
+                  dans vos registres.
+                </p>
+                <p>
+                  Je vous remercie de l'aide que vous m'apporterez dans ma
+                  démarche et vous prie de bien vouloir croire, Madame,
+                  Monsieur, en l'assurance de ma considération,
+                </p>
+                <!--[-->
+                <p class="signature">&lt;Prénom&gt; &lt;Nom&gt;</p>
+                <!--[-->
+                <p>Pièces jointes :</p>
+                <ul class="attachments">
+                  <li>
+                    Copie des pièces d'identité de &lt;Prénom&gt; &lt;Nom&gt; et
+                    décision de changement de prénom de &lt;Prénom&gt;
+                    &lt;Nom&gt;
+                  </li>
+                </ul>
+                <!--]--><!--]--><!--]-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="grid--row">
+          <div class="grid--column text--small text--italic two-third">
+            <p>
+              Peaufiné avec amour grâce au travail de nombreuses personnes au
+              fil des ans.
+            </p>
+            <p>
+              Bien que nous fassions de notre mieux, il est possible que des les
+              informations proposées soient incomplètes, inexactes ou obsolètes.
+              N'hésitez pas à nous le signaler.
+            </p>
+          </div>
+          <div class="grid--column one-third">
+            <p><strong>Liens utiles</strong></p>
+            <a href="/a-propos#contact" class=""> Nous écrire </a><br /><a
+              href="https://github.com/agateblue/administrans"
+            >
+              Page GitHub du projet </a
+            ><br />
+          </div>
+        </div>
+        <p></p>
+      </footer>
+      <!--]-->
+    </div>
+  </body>
+</html>
