@@ -30,6 +30,7 @@ Vous pouvez lancer et modifier le projet localement.
 Pour rajouter de nouveaux documents ou modifier les existants, les fichiers importants sont :
 
 - `src/documents.js` qui contient la définition des différents documents et des champs de formulaires associés
+- `src/documentsComponents.js` qui contient l'association entre un document et le template à utiliser pour le rendu
 - `src/documents-templates/` qui contient tous les fichiers de rendu des documents
 
 ### Installation initiale

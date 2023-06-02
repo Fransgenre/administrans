@@ -6,7 +6,7 @@ import DocumentsList from '../components/DocumentsList.vue'
 <template>
   <section class="width--narrow message--primary px-1 py-2 text--center">
     <h1>Bienvenue sur Administrans !</h1>
-    <p>Le site qui vous aide avec votre transition administrative.</p>
+    <p>Le site qui vous aide à réaliser votre transition administrative.</p>
   </section>
   <section class="width--narrow my-4">
     <div class="grid--row">

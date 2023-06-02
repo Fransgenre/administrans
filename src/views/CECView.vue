@@ -2,7 +2,12 @@
 import StepItem from '@/components/StepItem.vue'
 import StepDetails from '@/components/StepDetails.vue'
 import { useGlobalStore } from '@/store'
+import { useSeoMeta } from '@vueuse/head'
 
+useSeoMeta({
+  title: `Changer d'état civil`,
+  description: `Un guide pas à pas, pour votre changement d'état civil dans le cadre de votre transition administrative. Il est accompagné d'une checklist pour ne rien oublier`,
+})
 const store = useGlobalStore()
 function foreignResidenceSwitch(foreign, local) {
   if (store.situation === 'françaisRésidantÀLétranger') {
@@ -220,7 +225,7 @@ function foreignResidenceSwitch(foreign, local) {
               vous devez transmettre une copie recto-verso de la CNI ou du passeport de la personne
               qui l'a rédigée.
               <br />
-              <RouterLink to="documents/attestation-temoignage" class="button my-2">
+              <RouterLink to="/documents/attestation-temoignage" class="button my-2">
                 Générer vos attestations
               </RouterLink>
             </li>
@@ -283,7 +288,7 @@ function foreignResidenceSwitch(foreign, local) {
             </template>
             
           </p>
-          <RouterLink to="documents/requete-changement-etat-civil-tribunal" class="button my-2">
+          <RouterLink to="/documents/requete-changement-etat-civil-tribunal" class="button my-2">
             Générer votre demande de changement de prénom et de mention de sexe
           </RouterLink>
         </StepDetails>
@@ -302,7 +307,7 @@ function foreignResidenceSwitch(foreign, local) {
             </template>
           </p>
 
-          <RouterLink to="documents/changement-prenom-mairie" class="button my-2">
+          <RouterLink to="/documents/changement-prenom-mairie" class="button my-2">
             Générer votre demande de changement de prénom
           </RouterLink>
         </StepDetails>
@@ -318,7 +323,7 @@ function foreignResidenceSwitch(foreign, local) {
             Pour cette seconde demande, pensez à joindre à votre dossier la décision de changement
             dé prénom fournie par le service d'état civil.
           </p>
-          <RouterLink to="documents/requete-changement-etat-civil-tribunal" class="button my-2">
+          <RouterLink to="/documents/requete-changement-etat-civil-tribunal" class="button my-2">
             Générer votre demande de changement de mention de sexe
           </RouterLink>
         </StepDetails>

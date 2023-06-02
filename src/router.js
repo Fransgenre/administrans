@@ -5,8 +5,8 @@ import CECView from './views/CECView.vue'
 import MiseAJourView from './views/MiseAJourView.vue'
 import DocumentView from './views/DocumentView.vue'
 
-const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+const routerConfig = {
+  // history: createWebHashHistory(import.meta.env.BASE_URL),
   scrollBehavior: function (to, from, savedPosition) {
     if (to.hash) {
       return { el: to.hash }
@@ -45,6 +45,6 @@ const router = createRouter({
       component: DocumentView
     }
   ]
-})
+}
 
-export default router
+export default routerConfig

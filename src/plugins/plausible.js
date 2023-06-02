@@ -10,7 +10,7 @@ export default {
       })
       return
     }
-    const plausible = Plausible(options)
+    const plausible = (Plausible.default || Plausible)(options)
 
     app.provide('plausible', plausible)
   }

@@ -1,5 +1,22 @@
 <script setup>
 import { useGlobalStore } from '@/store'
+import { useSeoMeta } from '@vueuse/head'
+
+const title = `À Propos`
+const description = `Toutes les informations à connaître à propos d'Administrans : histoire, utilisation, contacts…`
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  twitterTitle: title,
+  twitterDescription: description,
+  
+})
+useSeoMeta({
+  
+})
 
 const plausibleEnabled = import.meta.env.VITE_PLAUSIBLE_URL
 const store = useGlobalStore()

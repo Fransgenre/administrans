@@ -1,9 +1,21 @@
 import { defineStore } from 'pinia'
 
+// necessary for prerendering as we cannot reference window 
+// at app creation time
+const storage = {
+  getItem (key) {
+    return window.localStorage.getItem(key)
+  },
+  setItem (key, value) {
+    return window.localStorage.setItem(key, value)
+  }
+}
+
 export const useGlobalStore = defineStore('global', {
   persist: {
     key: 'store.global',
-    paths: ['formData', 'steps', 'CecMethod', 'situation']
+    paths: ['formData', 'steps', 'CecMethod', 'situation'],
+    storage: storage,
   },
   state: () => ({
     formData: {},
