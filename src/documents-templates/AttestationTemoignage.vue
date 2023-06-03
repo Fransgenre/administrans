@@ -56,7 +56,7 @@ const {
       genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
     </template>
     <template v-else>
-      genrer {{ renderFullDescription() }} exclusivement au {s.{ renderValue('genre') }}.
+      genrer {{ renderFullDescription() }} exclusivement au {{ renderValue('genre') }}.
       <template v-if="data.deadname && data.deadname.trim()">
         Je ne l'appelle que par son véritable prénom {{ renderValue('prénom') }} {{ renderValue('nom') }}.
       </template>
