@@ -22,6 +22,10 @@ function foreignResidenceSwitch(foreign, local) {
     <div class="grid--column two-third">
       <section class="width--xnarrow my-2">
         <h1>Changer d'état civil</h1>
+        <p class="text--italic">
+          C'est souvent une étape importante dans une transition et pas la plus évidente ni la plus simple :
+          changer d'état civil. Dans ce guide on part de zéro et on fait ça ensemble, pas à pas.
+        </p>
         <p>
           <strong
             >Le terme état civil désigne ici les informations vous concernant officiellement
