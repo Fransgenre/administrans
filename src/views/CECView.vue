@@ -558,7 +558,7 @@ function foreignResidenceSwitch(foreign, local) {
           </StepItem>
           <StepItem stepId="party" class="mx-2"> Célébrer </StepItem>
 
-          <StepItem stepId="submitRequestCourt" :link="false">
+          <StepItem stepId="changeGenderStatement" :link="false">
             Changement de mention de sexe au tribunal
           </StepItem>
           <StepItem stepId="prepareProofsCourt" class="mx-2" linkTo="prepareProofs">
