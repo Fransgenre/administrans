@@ -47,7 +47,7 @@ jobs:
           
       - name: Deploy review branch
         uses: JamesIves/github-pages-deploy-action@v4
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: pr-review-${{ github.event.number }} # The branch the action should deploy to.
