@@ -56,6 +56,16 @@ watch(
   },
   { deep: true }
 )
+
+watch(
+  manualEdit,
+  (v) => {
+    if (v) {
+      plausible.trackEvent('edit', { props: { document: props.template.id } }, {url: route.path})
+    }
+  },
+  { deep: true }
+)
 function updateLocalData(v) {
   Object.assign(localData, v)
 }
@@ -76,7 +86,9 @@ async function shareUrl() {
   }
   url = url + '?' + params.toString()
   await window.navigator.clipboard.writeText(url)
+  plausible.trackEvent('share', { props: { document: props.template.id } }, {url: route.path})
   alert(`Un lien de partage a été copié dans le presse-papier. Il contient toutes les informations du document, ne le partagez qu'avec des personnes de confiance`)
+
   
 }
 
