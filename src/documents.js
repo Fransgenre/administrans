@@ -424,9 +424,12 @@ d'état civil.
 
 Il est impératif de joindre à chaque attestation un justificatif d'identité
 de la personne qui l'a signée, par exemple une copie recto-verso de la carte d'identité.
+
+**Pour simplifier la démarche avec des personnes à distance, vous pouvez préremplir l'attestation d'un tiers
+et utiliser la fonction « Partager le document »**. Cela lui permettra de l'imprimer directement.
     `,
     structure: [
-      category('Information de la personne concernée par la demande'),
+      category(`Information de la personne concernée par l'attestation`),
       field('prénom'),
       field('nom'),
       field('genre', {help: `Il s'agit genre désiré/revendiqué`}),
