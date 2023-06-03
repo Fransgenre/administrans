@@ -1,8 +1,12 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref, watch } from 'vue'
+import { ref, watch, inject } from 'vue'
 import { useGlobalStore } from '@/store'
+import { useRoute } from 'vue-router'
 
+const plausible = inject('plausible')
+
+const route = useRoute()
 const props = defineProps({
   stepId: { required: true },
   link: { required: false, default: true },
@@ -12,8 +16,12 @@ const props = defineProps({
 const store = useGlobalStore()
 const value = ref(store.steps[props.stepId])
 
+
 watch(value, (v) => {
   store.setStep(props.stepId, v)
+  if (v) {
+    plausible.trackEvent('checkItem', { props: { step: props.stepId } }, {url: route.path})
+  }
 })
 </script>
 
