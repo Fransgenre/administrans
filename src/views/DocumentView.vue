@@ -15,15 +15,17 @@ templates.forEach((element) => {
 })
 const template = templatesById[props.id]
 
-const title = `Générer un document · ${template.name}`
-useSeoMeta({
-  title,
-  description: template.description,
-  ogTitle: title,
-  ogDescription: template.description,
-  twitterTitle: title,
-  twitterDescription: template.description,
-})
+if (template) {
+  const title = `Générer un document · ${template.name}`
+  useSeoMeta({
+    title,
+    description: template.description,
+    ogTitle: title,
+    ogDescription: template.description,
+    twitterTitle: title,
+    twitterDescription: template.description,
+  })
+}
 
 </script>
 <template>
