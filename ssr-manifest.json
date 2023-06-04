@@ -7,6 +7,8 @@
   ],
   "\u0000vite/modulepreload-polyfill": [
   ],
+  "\u0000vite/preload-helper": [
+  ],
   "index.html": [
   ],
   "node_modules/@unhead/dom/dist/index.mjs": [
@@ -49,9 +51,14 @@
   ],
   "node_modules/pinia/dist/pinia.mjs": [
   ],
+  "node_modules/plausible-tracker/build/module/index.js": [
+    "/assets/index-b4772415.js"
+  ],
   "node_modules/plausible-tracker/build/module/lib/request.js": [
+    "/assets/index-b4772415.js"
   ],
   "node_modules/plausible-tracker/build/module/lib/tracker.js": [
+    "/assets/index-b4772415.js"
   ],
   "node_modules/unhead/dist/index.mjs": [
   ],
@@ -98,8 +105,6 @@
   "src/documentsComponents.js": [
   ],
   "src/main.js": [
-  ],
-  "src/plugins/plausible.js": [
   ],
   "src/router.js": [
   ],
