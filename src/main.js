@@ -1,6 +1,5 @@
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-import plausible from './plugins/plausible'
 
 import App from './App.vue'
 import './assets/main.css'
@@ -11,7 +10,7 @@ import routerConfig from './router'
 export const createApp = ViteSSG(
   App,
   routerConfig,
-  ({ app, router, initialState }) => {
+  async ({ app, router, initialState }) => {
     const pinia = createPinia()
     pinia.use(piniaPluginPersistedstate)
     
@@ -19,17 +18,21 @@ export const createApp = ViteSSG(
     
     if (import.meta.env.VITE_PLAUSIBLE_URL) {
       console.log('Plausible tracking enabled on ', import.meta.env.VITE_PLAUSIBLE_URL)
+      const Plausible = (await import('plausible-tracker')).default
       const plausibleOptions = {
         hashMode: true,
         apiHost: import.meta.env.VITE_PLAUSIBLE_URL,
         domain: import.meta.env.VITE_PLAUSIBLE_TRACKING_DOMAIN,
         trackLocalhost: !!import.meta.env.VITE_PLAUSIBLE_TRACK_LOCALHOST
       }
-    
-      app.use(plausible, plausibleOptions)
+      const plausible = (Plausible.default || Plausible)(plausibleOptions)
+      app.provide('plausible', plausible)
     } else {
-      app.use(plausible, {disabled: true})
-    
+      app.provide('plausible', {
+        trackEvent: (name, data) => {
+          console.log('[Plausible] Disabled, would send', name, data)
+        }
+      })    
     }
   }
 )
