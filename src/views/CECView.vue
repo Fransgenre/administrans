@@ -60,12 +60,15 @@ function foreignResidenceSwitch(foreign, local) {
         <p>
           Cette distinction est importante, même si elle peut créer de la confusion.
           Vous pouvez en pratique demander à faire mettre à jour votre civilité auprès de différentes
-          entreprises par exemple et ce même si votre mention de sexe à l'état civil n'a pas encore bougé.
+          entreprises, banques, écoles ou universités par exemple et ce même si votre mention de sexe à l'état civil n'a pas encore bougé.
         </p>
         <p>
-          Inversement, vous pouvez conserver votre ancienne civilité auprès de certains organismes, par exemple
-          pour des questions d'accès à la PMA, même si vous avez fait modifier votre mention de sexe à l'état civil.
+          Compte tenu des lois discriminatoires à l'égard des personnes trans en France, 
+          <strong>le changement de mention de sexe à l'état civil peut bloquer votre accès à la PMA, à la conservation
+          de vos gamètes et à l'accès à vos gamètes déjà prélevés</strong> avant un changement d'état civil.
+          Il peut être nécessaire d'en tenir compte avant d'entamer un changement de mention de sexe si vous êtes concerné·e.
         </p>
+
       </section>
       <section class="width--xnarrow my-2">
         <h2>Comment faire ?</h2>
