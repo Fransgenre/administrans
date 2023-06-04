@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<!-- 🥚 -->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Administrans · Générer un document · Requête pour changement de prénom(s)
+      et/ou de mention de sexe au tribunal
+    </title>
+    <script
+      type="module"
+      async=""
+      crossorigin=""
+      src="/assets/app-6e82d17d.js"
+    ></script>
+    <link rel="stylesheet" href="/assets/index-9e917949.css" />
+    <meta http-equiv="content-language" content="fr-fr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Administrans" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="description"
+      content="Modèle de requête simplifiée à soumettre au tribunal pour un changement d'état civil."
+    />
+    <meta
+      property="og:title"
+      content="Générer un document · Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal"
+    />
+    <meta
+      property="og:description"
+      content="Modèle de requête simplifiée à soumettre au tribunal pour un changement d'état civil."
+    />
+    <meta
+      name="twitter:title"
+      content="Générer un document · Requête pour changement de prénom(s) et/ou de mention de sexe au tribunal"
+    />
+    <meta
+      name="twitter:description"
+      content="Modèle de requête simplifiée à soumettre au tribunal pour un changement d'état civil."
+    />
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true">
+      <!--[-->
+      <header>
+        <nav>
+          <a href="/" class="">Administrans</a
+          ><a href="/a-propos" class="">A propos</a>
+        </nav>
+      </header>
+      <main>
+        <div>
+          <div class="grid--row">
+            <div class="grid--column hide-for-print">
+              <h1>
+                Requête pour changement de prénom(s) et/ou de mention de sexe au
+                tribunal
+              </h1>
+              <div class="text--small">
+                <p>
+                  Modèle de requête simplifiée à soumettre au tribunal pour un
+                  changement d'état civil.
+                </p>
+              </div>
+              <div class="text--small">
+                <p>Basé sur les modèles suivants :</p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://drive.google.com/drive/folders/1TZIb0BxKpiZVBxmDi_BZ0VLMVE4kUeqA"
+                      >CEC Le guide complet</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://wikitrans.co/2019/11/26/changement-de-sexe-a-letat-civil-tgi/"
+                      >Modèle référencé sur Wikitrans</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <p class="text--small">
+                Remplissez le formulaire ci-dessous pour obtenir votre document.
+              </p>
+              <form class="">
+                <div class="document-form">
+                  <!--[--><!--[--><!--[-->
+                  <h2 class="category">Tribunal et type de requête</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--undefined">
+                    <label for="field-tribunal">Nom du tribunal</label
+                    ><input
+                      type="text"
+                      id="field-tribunal"
+                      placeholder="Tribunal Judiciaire de Toulouse"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-adresseTribunal"
+                      >Adresse du tribunal</label
+                    ><textarea id="field-adresseTribunal" rows="3"></textarea
+                    ><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-villeTribunal">Ville du tribunal</label
+                    ><input
+                      type="text"
+                      id="field-villeTribunal"
+                      placeholder="Toulouse"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--select">
+                    <label for="field-typeChangement">Type de demande</label
+                    ><select value="genre" id="field-typeChangement">
+                      <!--[-->
+                      <option value="genre">Changement mention de sexe</option>
+                      <option value="prénomEtGenre">
+                        Changement de prénom et de mention de sexe
+                      </option>
+                      <!--]--></select
+                    ><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[-->
+                  <h2 class="category">Vos informations</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--select">
+                    <label for="field-genre">Genre</label
+                    ><select id="field-genre">
+                      <!--[-->
+                      <option value="masculin">Masculin</option>
+                      <option value="féminin">Féminin</option>
+                      <!--]-->
+                    </select>
+                    <div class="text--small text--italic">
+                      <p>Il s'agit genre désiré/revendiqué</p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!----><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-prénomsActuels">Prénom(s) actuels</label
+                    ><input type="text" id="field-prénomsActuels" />
+                    <div class="text--small text--italic">
+                      <p>
+                        Il s'agit de vos prénoms actuels à l'état civil, séparés
+                        par une virgule
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-nom">Nom</label
+                    ><input type="text" id="field-nom" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--date">
+                    <label for="field-dateNaissance">Date de naissance</label
+                    ><input type="date" id="field-dateNaissance" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-lieuNaissance"
+                      >Commune et département de naissance</label
+                    ><input
+                      type="text"
+                      id="field-lieuNaissance"
+                      placeholder="Marseille (13)"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-nationalité">Nationalité</label
+                    ><input
+                      type="text"
+                      value="française"
+                      id="field-nationalité"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-adresse">Adresse</label
+                    ><textarea id="field-adresse" rows="3"></textarea
+                    ><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--email">
+                    <label for="field-email">Adresse email</label
+                    ><input type="email" id="field-email" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-téléphone">N° de téléphone</label
+                    ><input type="text" id="field-téléphone" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-situationProfessionnelle"
+                      >Situation professionnelle</label
+                    ><input type="text" id="field-situationProfessionnelle" />
+                    <div class="text--small text--italic">
+                      <p>Poste occupé, étudiant, en recherche d'emploi, etc.</p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-situationFamiliale"
+                      >Situation familiale</label
+                    ><input type="text" id="field-situationFamiliale" />
+                    <div class="text--small text--italic">
+                      <p>
+                        Mariée, Pacsée, mère de deux enfants, célibataire, en
+                        concubinage, etc.
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[-->
+                  <h2 class="category">Informations de la requête</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-contexte">Contexte de la requête</label
+                    ><textarea id="field-contexte" rows="10"></textarea>
+                    <div class="text--small text--italic">
+                      <p>
+                        Utilisez cet endroit pour personnaliser le corps de la
+                        requête et justifier votre demande. Il n'est pas
+                        nécessaire de donner des justifications d'ordre médical,
+                        psychiatrique, chirurgicales sauf si vous le souhaitez.
+                      </p>
+                      <p>
+                        Il est préférable d'éviter de rentrer trop dans l'intime
+                        pour éviter de normaliser cela auprès des personnes
+                        examinant les dossiers. Néanmoins, cela peut s'avérer
+                        nécessaire si le tribunal auprès duquel vous déposez
+                        votre requête à tendance à demander ce genre de détails.
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--select">
+                    <label for="field-contexteExemple"
+                      >Insérer un exemple de contexte</label
+                    ><select value="" id="field-contexteExemple">
+                      <!--[-->
+                      <option value=""></option>
+                      <option
+                        value="
+Je suis une personne transgenre, c'est-à-dire que mon genre de naissance n'est pas en adéquation avec mon genre réel.
+
+Depuis de nombreuses années, je me présente et vis quotidiennement en tant que {{ sexe }}, tant dans mes relations familiales qu'amicales ou professionnelles.
+Les personnes qui me cotoient au quotidien utilisent cette identité de genre et l'acceptent parfaitement.
+
+Cette transition sociale s'accompagne également d'autres changements liés à mon apparence, notamment vestimentaires pour me rapprocher de mon genre réel.
+
+Je suis satisfaite de ma transition et je me sens plus équilibrée et en accord avec moi-même depuis que j'ai entrepris ces changements.
+            "
+                      >
+                        Basique - changement de prénom déjà effectué
+                      </option>
+                      <!--]-->
+                    </select>
+                    <div class="text--small text--italic">
+                      <p>
+                        Ces exemples peuvent vous aider à personnaliser votre
+                        requête.
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-actesÀMettreÀJour"
+                      >Actes supplémentaires à mettre à jour</label
+                    ><textarea id="field-actesÀMettreÀJour" rows="10">
+&lt;Selon votre situation&gt; l'acte de mariage
+&lt;Selon votre situation&gt; la convention de PACS
+      </textarea
+                    >
+                    <div class="text--small text--italic">
+                      <p>
+                        Le tribunal ordonnera la mise à jour de votre acte de
+                        naissance. Selon votre situation, listez ici les autres
+                        actes d'état civil pour lesquels le tribunal devra
+                        ordonner une mise à jour. Un acte par ligne. Ces
+                        documents doivent être joints à votre requête et listés
+                        dans le champ suivant.
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--textarea">
+                    <label for="field-justificatifsRequête"
+                      >Justificatifs et documents joints</label
+                    ><textarea id="field-justificatifsRequête" rows="10">
+&lt;Obligatoire&gt; Copie intégrale de mon acte de naissance
+&lt;Obligatoire&gt; Photocopie de ma carte nationale d'identité
+&lt;Obligatoire&gt; Justificatif de domicile
+&lt;Obligatoire&gt; Consentement libre et éclairé concernant la modification de l'état civil
+&lt;Si changement prénom déjà effectué&gt; Décision de la mairie de &lt;Ville&gt; de &lt;Date&gt;, sur base de la circulaire du 17/02/2017 pour les changements de prénoms
+Témoignage et carte d'identité recto verso de &lt;A&gt;, &lt;amie&gt;
+Témoignage et carte d'identité recto verso de &lt;B&gt;, &lt;parent&gt;
+Témoignage et carte d'identité recto verso de &lt;C&gt;, &lt;collègue&gt;
+Témoignage et carte d'identité recto verso de &lt;D&gt;, &lt;conjoint·e&gt;
+Preuves de demande de changement auprès d'organismes tiers
+Preuves de refus de changement de la part d'organismes tiers</textarea
+                    >
+                    <div class="text--small text--italic">
+                      <p>
+                        Listez ici les justificatifs et documents que vous
+                        joindrez à votre requête. N'incluez aucun certificat
+                        médical. Un justificatif par ligne. Enlevez ou éditez
+                        les mentions entre &lt;&gt;. Inscrivez le numéro de
+                        pièce affiché dans la requête sur les documents joints.
+                      </p>
+                      <p>
+                        <strong
+                          >Le consentement libre et éclairé est un document
+                          manuscrit dans lequel vous exprimez votre
+                          consentement</strong
+                        >
+                        libre et éclairé sur les tenants et aboutissants de
+                        votre demande, par exemple :
+                      </p>
+                      <blockquote>
+                        <p>
+                          Je soussigné Tylor RONAN, fais état de mon
+                          consentement libre et éclairé à la modification de la
+                          mention du sexe et de mes prénoms dans les actes
+                          d'état civil, comme mon acte de naissance.
+                        </p>
+                        <p>Pour faire valoir ce que de droit,</p>
+                        <p>Fait à Poitiers, le 08/10/2022</p>
+                        <p>Tylor RONAN</p>
+                        <p>Signature</p>
+                      </blockquote>
+                      <p>
+                        <strong
+                          >Ce document ne peut être généré ici, vous devrez le
+                          rédiger vous même manuscritement.</strong
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[-->
+                  <h2 class="category">Finalisation du document</h2>
+                  <!----><!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--text">
+                    <label for="field-villeDocument">Lieu de rédaction</label
+                    ><input type="text" id="field-villeDocument" /><!---->
+                  </div>
+                  <!--]--><!--]--><!--[--><!--[--><!---->
+                  <div class="field field--date">
+                    <label for="field-dateDocument">Date de rédaction</label
+                    ><input
+                      type="date"
+                      value="2023-06-04"
+                      id="field-dateDocument"
+                    /><!---->
+                  </div>
+                  <!--]--><!--]--><!--]-->
+                </div>
+                <!--[--><!----><!---->
+                <hr class="hidden" />
+                <button type="submit" class="my-2">
+                  Télécharger au format PDF</button
+                ><button class="my-2 mx-2 inverted">
+                  Partager le document…</button
+                ><button class="my-2 inverted">Effacer les données…</button
+                ><!--]-->
+              </form>
+            </div>
+            <div class="grid--column">
+              <div class="hide-for-print">
+                <div class="grid--row">
+                  <div class="grid--column"><h2>Rendu du document</h2></div>
+                  <div class="grid--column text--right">
+                    <button class="inverted">Éditer</button>
+                  </div>
+                </div>
+                <!---->
+                <hr class="hidden" />
+              </div>
+              <div
+                class="document position--sticky"
+                id="rendered"
+                contenteditable="false"
+              >
+                <div class="requete">
+                  <p class="text--right">
+                    À Mesdames et Messieurs les Président et Juges <br />
+                    de la Chambre du Conseil du &lt;Nom du tribunal&gt;
+                  </p>
+                  <p class="text--right">&lt;Adresse du tribunal&gt;</p>
+                  <h1>
+                    Requête en changement de la mention du sexe à l'état civil
+                  </h1>
+                  <p>
+                    Devant la Chambre du Conseil <br />
+                    (article 1055-8 du Code de procédure civile)<br />
+                    (article 1055-7 CpC : « Le ministère d’avocat n’est pas
+                    obligatoire »)<br />
+                  </p>
+                  <hr />
+                  <p>
+                    <strong> À la demande de : </strong><br />
+                    Madame &lt;NOM&gt; &lt;Prénom(s) actuels&gt; dit Monsieur
+                    &lt;NOM&gt; &lt;Prénom(s) demandés&gt; <br />
+                    Né le &lt;Date de naissance&gt; à &lt;Commune et département
+                    de naissance&gt;, de nationalité française <br />
+                    &lt;Situation professionnelle&gt; <br />
+                    &lt;Situation familiale&gt; <br />
+                    Résidant au &lt;Adresse&gt; <br />
+                    &lt;N° de téléphone&gt;, &lt;Adresse email&gt; <br />
+                    Sans avocat, présentant sa requête en personne.
+                  </p>
+                  <p>
+                    <strong> En présence de : </strong><br />
+                    Madame la Procureure ou Monsieur le Procureur de la
+                    République Près le Tribunal Judiciaire de &lt;Ville du
+                    tribunal&gt;.
+                  </p>
+                  <p>
+                    <strong>
+                      Moi même le requérent, à l'honneur d'exposer ce qui suit :
+                    </strong>
+                  </p>
+                  <h2>Les faits</h2>
+                  <div><p>&lt;Contexte de la requête&gt;</p></div>
+                  <h2>
+                    Discussion sur la demande de rectification de la mention de
+                    sexe
+                    <!---->
+                    à l'état civil
+                  </h2>
+                  <p>
+                    L’article 8 de la Convention Européenne des Droits de
+                    l’Homme reconnaît à la personne déclarée de sexe féminin à
+                    l’officier d’état civil le droit de rectification de son
+                    état civil, dès lors que, après traitement hormonal et
+                    intervention chirurgicale, cette personne ne présente pas
+                    les caractéristiques de son sexe d’origine et a pris
+                    l’apparence physique qui la rapproche de l’autre sexe.
+                  </p>
+                  <p>
+                    La jurisprudence de principe de la Cour de Cassation admet
+                    également la recevabilité et le bien-fondé de cette action
+                    lorsqu’à la suite d’un traitement médico-chirurgical suivi
+                    dans un but thérapeutique, une personne présentant le
+                    syndrome du transsexualisme ne possède plus tous les
+                    caractères de son sexe d’origine et a pris l’apparence
+                    physique la rapprochant de l’autre sexe, auquel correspond
+                    son comportement social : Le principe du respect de la vie
+                    privé justifie alors que son état civil indique désormais le
+                    sexe dont elle a pris l’apparence.
+                  </p>
+                  <p>
+                    (Deux arrêts de principe rendus en assemblée plénière le 11
+                    Décembre 1992)
+                  </p>
+                  <p>
+                    La Cour de Cassation a confirmé sa position le 18 octobre
+                    1994 en précisant la référence au principe du respect dû à
+                    la vie privée posé, non seulement sur l’article 8 de la
+                    Convention Européenne des Droits de l’Homme, mais également
+                    par l’article 9 du Code Civil (Cass. 1ère civ., 18octobre
+                    1994 : Defrénois 1995, p.721, obs Massip ; RTD civ 1995,
+                    obs. Hauser.)
+                  </p>
+                  <p>
+                    L’article 56 de la loi n° 2016-1547 du 18 novembre 2016 de
+                    modernisation de la Justice du XXIème siècle – validé par le
+                    Conseil Constitutionnel dans sa décision n° 2016-739 DC du
+                    17 novembre 2016 – vient introduire quatre nouveaux articles
+                    dans le Code Civil.
+                  </p>
+                  <p>L’article 61-5 du Code Civil pose le principe que :</p>
+                  <blockquote>
+                    <p>
+                      « Toute personne majeure ou mineur émancipée qui démontre
+                      par une réunion suffisante de faits que la mention
+                      relative à son sexe dans les actes de l’état civil ne
+                      correspondant pas à celui
+                      <strong
+                        >dans lequel elle se présente et dans lequel elle est
+                        connue</strong
+                      >
+                      peut en obtenir la modification.
+                    </p>
+                    <p>
+                      Les principaux de ces faits, dont la preuve peut être
+                      rapportée par tous moyens, peuvent être :
+                    </p>
+                    <ol>
+                      <li>
+                        Qu’elle se <strong>présente publiquement</strong> comme
+                        appartenant au sexe revendiqué ;
+                      </li>
+                      <li>
+                        Qu’elle est
+                        <strong>connue sous le sexe revendiqué</strong> de son
+                        entourage familial, amical ou professionnel ;
+                      </li>
+                      <li>
+                        Qu’elle a
+                        <strong>obtenu le changement de son prénom</strong> afin
+                        qu’il corresponde au sexe revendiqué ; »
+                      </li>
+                    </ol>
+                  </blockquote>
+                  <p>L’article 61-6 dudit code ajoute :</p>
+                  <blockquote>
+                    <p>
+                      « La demande est présentée devant
+                      <strong>le tribunal de grande instance</strong>.
+                    </p>
+                    <p>
+                      Le demandeur fait état de son consentement libre et
+                      éclairé à la modification de la mention relative à son
+                      sexe dans les actes de l'état civil et produit tous
+                      éléments de preuve au soutien de sa demande.
+                    </p>
+                    <p>
+                      <strong
+                        >Le fait de ne pas avoir subi des traitements médicaux,
+                        une opération chirurgicale ou une stérilisation ne peut
+                        motiver le refus de faire droit à la demande.</strong
+                      >
+                    </p>
+                    <p>
+                      Le tribunal constate que le demandeur satisfait aux
+                      conditions fixées à l'article 61-5 et ordonne la
+                      modification de la mention relative au sexe
+                      <strong
+                        >ainsi que, le cas échéant, des prénoms, dans les actes
+                        de l'état civil.</strong
+                      >
+                      »
+                    </p>
+                  </blockquote>
+                  <p>
+                    Une fois le changement d’état civil accordé, l’article 61-7
+                    du code précité précise que :
+                  </p>
+                  <blockquote>
+                    <p>
+                      « Mention de la décision de modification du sexe et, le
+                      cas échéant, des prénoms est portée en marge de l'acte de
+                      naissance de l'intéressé,
+                      <strong
+                        >à la requête du procureur de la République, dans les
+                        quinze jours suivant la date à laquelle cette décision
+                        est passée en force de chose jugée.</strong
+                      >
+                    </p>
+                    <p>
+                      Par dérogation à l'article 61-4, les modifications de
+                      prénoms corrélatives à une décision de modification de
+                      sexe ne sont portées en marge des actes de l'état civil
+                      des conjoints et enfants qu'avec le consentement des
+                      intéressés ou de leurs représentants légaux.
+                    </p>
+                    <p>
+                      Les articles 100 et 101 sont applicables aux modifications
+                      de sexe. »
+                    </p>
+                  </blockquote>
+                  <p>Enfin, l’article 61-8 du Code civil dispose que :</p>
+                  <blockquote>
+                    <p>
+                      « La modification de la mention du sexe dans les actes de
+                      l'état civil est sans effet sur les obligations
+                      contractées à l'égard de tiers ni sur les filiations
+                      établies avant cette modification. »
+                    </p>
+                  </blockquote>
+                  <p>
+                    <strong
+                      >Ce faisant le changement de sexe à l’état civil est
+                      totalement démédicalisé et se fonde désormais uniquement
+                      sur la détermination sociale de son sexe par la personne
+                      et sa reconnaissance par son entourage.</strong
+                    >
+                  </p>
+                  <p>
+                    <strong
+                      >Le législateur a en outre pris la peine d’indiquer
+                      directement dans la loi que :</strong
+                    >
+                  </p>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >« Le fait de ne pas avoir subi des traitements
+                        médicaux, une opération chirurgicale ou une
+                        stérilisation ne peut motiver le refus de faire droit à
+                        la demande. »</strong
+                      >
+                    </p>
+                  </blockquote>
+                  <p>
+                    Cela a été confirmé par
+                    <strong
+                      >la cour d’appel de Montpellier dans l’arrêt du 15 mars
+                      2017 :</strong
+                    >
+                  </p>
+                  <blockquote>
+                    <p>
+                      « La personne <strong>ne</strong> doit
+                      <strong>plus établir</strong> […] la réalité du syndrome
+                      transsexuel […] ainsi que le caractère irréversible de la
+                      transformation de l’apparence.
+                    </p>
+                    <p>
+                      <strong>La reconnaissance sociale</strong>, posée par la
+                      loi nouvelle du 18 novembre 2016
+                      <strong>comme seule condition</strong> à la modification
+                      de la mention du sexe à l’état civil. »
+                    </p>
+                  </blockquote>
+                  <p>
+                    La France a aussi été condamnée par
+                    <strong
+                      >la cour européenne des droits de l’Homme le 6 avril 2017
+                      :</strong
+                    >
+                  </p>
+                  <blockquote>
+                    <p>
+                      « Le rejet de la demande […] tendant à la modification de
+                      leur état civil au motif qu’ils n’avaient pas
+                      <strong
+                        >établi le caractère irréversible de la transformation
+                        de leur apparence</strong
+                      >, c'est-à-dire démontré avoir subi une opération
+                      stérilisante ou un traitement médical entraînant une très
+                      forte probabilité de stérilité,
+                      <strong
+                        >s’analyse en un manquement par l’Etat défendeur à son
+                        obligation positive de garantir le droit de ces derniers
+                        au respect de leur vie privée. Il y a donc, de ce chef,
+                        violation de l’article 8 de la Convention à leur
+                        égard.</strong
+                      >
+                      »
+                    </p>
+                  </blockquote>
+                  <p>
+                    De plus, il est inutile d’apporter des preuves pour tous les
+                    principaux faits mentionnés à l’article 61-5 du Code Civil
+                    comme le stipule l’arrêt de la cour d’appel de Montpellier
+                    du 15 mars 2017 :
+                  </p>
+                  <blockquote>
+                    <p>
+                      « L’emploi, par le législateur, des termes « principaux de
+                      ces faits … peuvent être », permet de considérer que
+                      l’énumération de ces faits et circonstances n’est
+                      <strong>ni exhaustives, ni cumulatives</strong>. »
+                    </p>
+                  </blockquote>
+                  <p>
+                    Cela était, d’ailleurs, la volonté du législateur. J.J.
+                    URVOAS, alors ministre de la justice, a clairement précisé
+                    lors de la séance plénière du jeudi 19 mai 2016 en première
+                    lecture à l’Assemblée Nationale consacré au projet de loi de
+                    modernisation de la justice du XXIème siècle que :
+                  </p>
+                  <blockquote>
+                    « La réunion d’<strong
+                      >une série de faits énumérés à titre indicatif</strong
+                    >
+                    permet selon la méthode du faisceau d’indices »
+                  </blockquote>
+                  <p>
+                    Lors de la commission des lois du mercredi 29 juin 2016
+                    consacrée au même projet de loi, Pascale CROZON, alors
+                    députée, rappelle « par ailleurs que
+                    <strong>ces faits ne sont pas cumulatifs</strong> ». Enfin,
+                    lors de la 1ère séance plénière du 12 juillet 2016 à
+                    l’Assemblée Nationale, le député Sergio CORONADO ajoute :
+                  </p>
+                  <blockquote>
+                    <p>
+                      « Les éléments de preuve pouvant être apportés par tous
+                      moyens par la personne, et énumérés dans le même article,
+                      <strong>ne peuvent être cumulatifs</strong> ».
+                    </p>
+                  </blockquote>
+                  <!---->
+                  <h2>Ma requête</h2>
+                  <p>
+                    C'est dans ces conditions que je souhaite bénéficier de la
+                    loi du 18 novembre 2016 de modernisation de la Justice du
+                    XXIème siècle afin de faire modifier :
+                  </p>
+                  <ul>
+                    <!---->
+                    <li>
+                      La mention du sexe sur mon état civil : rectification de
+                      la mention féminin pour masculin
+                    </li>
+                  </ul>
+                  <p>
+                    Ce changement me permettra d'avoir une identité
+                    administrative conforme à mon identité de genre, ce qui
+                    protégera ma vie privée des actes de la vie courante qui
+                    nécessitent de prouver son identité, et m'évitera ainsi de
+                    continuer à subir de la discrimination.
+                  </p>
+                  <p>
+                    Afin d'étayer ma requête, je fournis des témoignages et
+                    preuves de mon identité au quotidien. Toutes ces pièces vont
+                    dans le sens de l'affirmation de mon identité &lt;Genre&gt;e
+                    et de ma volonté d'être connu et reconnu en tant qu'homme
+                    <!---->
+                  </p>
+                  <h2>Par ces motifs, plaise au tribunal :</h2>
+                  <p>Vu les articles 9, 60, 61-5 et suivants du Code Civil.</p>
+                  <p>
+                    Vu l’article 8 de la Convention Européenne de Sauvegarde des
+                    Droits de l’Homme et des Libertés Fondamentales.
+                  </p>
+                  <p>
+                    Madame &lt;NOM&gt; &lt;Prénom(s) actuels&gt; dit Monsieur
+                    &lt;NOM&gt; &lt;Prénom(s) demandés&gt; demande au Président
+                    du Tribunal Judiciaire de &lt;Ville du tribunal&gt;
+                    d'appliquer les requêtes suivantes :
+                  </p>
+                  <ul>
+                    <!---->
+                    <li>
+                      <strong>ORDONNER</strong> que l’acte de naissance<!--[-->,
+                      &lt;Selon votre situation&gt; l'acte de mariage, &lt;Selon
+                      votre situation&gt; la convention de PACS<!--]-->
+                      de &lt;Prénom(s) actuels&gt; &lt;NOM&gt; soient
+                      rectifié(s) en ce sens que la mention « sexe féminin »
+                      soit remplacée par la mention « sexe masculin ». et que la
+                      mention « née » soit remplacée par la mention « né ».
+                    </li>
+                    <li>
+                      <strong>RAPPELER</strong> qu’en vertu de l’article 61-7 du
+                      Code Civil, la mention de la décision de modification du
+                      sexe est portée en marge de l’acte de naissance de
+                      l’intéressé, à la requête du procureur de la République,
+                      dans les quinze jours suivant la date à laquelle cette
+                      décision est passée en force de chose jugée.
+                    </li>
+                    <li>
+                      <strong>ORDONNER</strong> qu’aucune expédition des actes
+                      d’État civil sans la mention desdites rectifications ne
+                      soit délivrée.
+                    </li>
+                  </ul>
+                  <p>Fait à &lt;Lieu de rédaction&gt;, le 04/06/2023</p>
+                  <p class="signature">
+                    Signature de &lt;NOM&gt; &lt;Prénom(s) actuels&gt; dit
+                    &lt;NOM&gt; &lt;Prénom(s) demandés&gt;
+                  </p>
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <hr class="hidden" />
+                  <h2>Bordereau de pièces</h2>
+                  <ol class="list--piece">
+                    <!--[--><!--[-->
+                    <li>
+                      &lt;Obligatoire&gt; Copie intégrale de mon acte de
+                      naissance
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      &lt;Obligatoire&gt; Photocopie de ma carte nationale
+                      d'identité
+                    </li>
+                    <!--]--><!--[-->
+                    <li>&lt;Obligatoire&gt; Justificatif de domicile</li>
+                    <!--]--><!--[-->
+                    <li>
+                      &lt;Obligatoire&gt; Consentement libre et éclairé
+                      concernant la modification de l'état civil
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      &lt;Si changement prénom déjà effectué&gt; Décision de la
+                      mairie de &lt;Ville&gt; de &lt;Date&gt;, sur base de la
+                      circulaire du 17/02/2017 pour les changements de prénoms
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Témoignage et carte d'identité recto verso de &lt;A&gt;,
+                      &lt;amie&gt;
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Témoignage et carte d'identité recto verso de &lt;B&gt;,
+                      &lt;parent&gt;
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Témoignage et carte d'identité recto verso de &lt;C&gt;,
+                      &lt;collègue&gt;
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Témoignage et carte d'identité recto verso de &lt;D&gt;,
+                      &lt;conjoint·e&gt;
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Preuves de demande de changement auprès d'organismes tiers
+                    </li>
+                    <!--]--><!--[-->
+                    <li>
+                      Preuves de refus de changement de la part d'organismes
+                      tiers
+                    </li>
+                    <!--]--><!--]-->
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="grid--row">
+          <div class="grid--column text--small text--italic two-third">
+            <p>
+              Peaufiné avec amour grâce au travail de nombreuses personnes au
+              fil des ans.
+            </p>
+            <p>
+              Bien que nous fassions de notre mieux, il est possible que des les
+              informations proposées soient incomplètes, inexactes ou obsolètes.
+              N'hésitez pas à nous le signaler.
+            </p>
+          </div>
+          <div class="grid--column one-third">
+            <p><strong>Liens utiles</strong></p>
+            <a href="/a-propos#contact" class=""> Nous écrire </a><br /><a
+              href="https://github.com/agateblue/administrans"
+            >
+              Page GitHub du projet </a
+            ><br />
+          </div>
+        </div>
+        <p></p>
+      </footer>
+      <!--]-->
+    </div>
+  </body>
+</html>
