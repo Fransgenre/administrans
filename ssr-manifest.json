@@ -90,11 +90,7 @@
   ],
   "src/documents-templates/AttestationTemoignage.vue": [
   ],
-  "src/documents-templates/ContratSimple.vue": [
-  ],
-  "src/documents-templates/DocumentFooter.vue": [
-  ],
-  "src/documents-templates/DocumentHeader.vue": [
+  "src/documents-templates/DemandeMaj.vue": [
   ],
   "src/documents-templates/RequeteCecTribunal.vue": [
   ],
@@ -117,6 +113,8 @@
   "src/views/AboutView.vue": [
   ],
   "src/views/CECView.vue": [
+  ],
+  "src/views/DocumentListView.vue": [
   ],
   "src/views/DocumentView.vue": [
   ],
