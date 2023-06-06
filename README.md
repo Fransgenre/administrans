@@ -17,6 +17,8 @@ Afin de travailler efficacement et dans un environnement qui nous convienne, nou
 
 Nous nous réservons le droit d'arrêter de travailler avec un contributeur si nous ne nous sentons pas à l'aise pour quelque raison que ce soit.
 
+Avant de contribuer, nous vous invitons à lire notre [code de conduite](/CODE_OF_CONDUCT.md)
+
 [Informations de contact pour contribuer](https://administrans.agate.blue/#/a-propos#contact)
 
 Nous attendons des contributeurs qu'ils prennent connaissance de la feuille de route ci-dessous avant de proposer des changements sur le projet.
