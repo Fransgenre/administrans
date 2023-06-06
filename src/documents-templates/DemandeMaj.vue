@@ -49,7 +49,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
       de prénom et de civilité
     </template>
     dans vos registres.
-    <template v-if="data.refOrganismeType || data.refOrganismeType != 'Aucune'">
+    <template v-if="data.refOrganismeType && data.refOrganismeType != 'Aucune'">
       Mon {{ renderValue('refOrganismeType').toLowerCase() }} est le
       {{ renderValue('refOrganisme', `<${data.refOrganismeType}>`) }}.
     </template>
@@ -72,7 +72,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
       En effet, comme l’a rappelé de nombreuses fois le Défenseur des Droits dans
       des rapports, synthèses, recommandations et décisions, la civilité est une affaire
       d’usage et n’est aucunement liée à la mention de sexe à l’État-Civil. Je vous
-      engage à vous renseigner plus avant sur le site du Défenseur des Droits si le
+      engage à vous renseigner sur le site du Défenseur des Droits si le
       moindre doute persiste.
     </p>
     <p>
@@ -93,8 +93,8 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     <template v-if="data['changementDemandé'] === 'prénomEtCivilité'">
       mon prénom et ma civilité
     </template>
-    dans vos registres, et de me tenir {{ renderWithGender('informé', 'civilité') }} par
-    retour de courrier électronique de la bonne prise en compte de ces informations.
+    dans vos registres, et de me tenir {{ renderWithGender('informé', 'civilité') }} 
+    de la bonne prise en compte de ces informations.
   </p>
   <p v-if="data.mentionDDDEtCnil">
     Faute d’une rapide modification de ces informations et d’un prompt retour de

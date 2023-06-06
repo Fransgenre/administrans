@@ -146,6 +146,7 @@ au préalable pour que la demande de changement de civilité aboutisse.**
       field('organisme', {
         name: `Organisme contacté`,
         type: 'select',
+        class: 'field--fullwidth',
         default: () => {
           return null
         },
@@ -180,7 +181,9 @@ au préalable pour que la demande de changement de civilité aboutisse.**
       }),
       field('ligneDestinataire', {
         name: `Service recevant la demande`,
-        type: 'text',
+        type: 'textarea',
+        attributes: {rows: 3},
+        class: 'field--fullwidth',
         placeholder: `À l'attention de <service>`,
         default: () => {
           return null
@@ -216,6 +219,7 @@ Sélectionnez "Aucune" si vous n'êtes pas sûr·e ou ne disposez pas d'une tell
       field('changementDemandé', {
         name: `Type de demande`,
         type: 'select',
+        class: 'field--fullwidth',
         default: () => {
           return 'prénomEtCivilité'
         },
@@ -243,7 +247,7 @@ Sélectionnez "Aucune" si vous n'êtes pas sûr·e ou ne disposez pas d'une tell
         default: () => {
           return false
         },
-        name: `Ajouter une mention sur la saisine potentielle du Défenseur des Droits et de la CNIL`,
+        name: `Ajouter une mention sur la saisie potentielle du Défenseur des Droits et de la CNIL`,
       }),
       field('villeDocument'),
       field('dateDocument'),

@@ -67,7 +67,7 @@ const steps = [
           Pour demander une mise à jour de vos prénoms, il vous faudra avoir effectué cette démarche
           à l'état civil au préalable et fournir le justificatif correspondant.
         </p>
-        <p>Cependant, il est possible de demandé une mise à jour de votre civilité sans avoir effecuté de changement
+        <p>Cependant, il est possible de demander une mise à jour de votre civilité sans avoir effecuté de changement
           de mention de sexe à l'état civil.
         </p>
       </section>
