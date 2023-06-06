@@ -10,7 +10,31 @@ https://administrans.agate.blue/
 
 # Contribuer
 
+Afin de travailler efficacement et dans un environnement qui nous convienne, nous travaillons en non-mixité choisie : 
+
+1. Avec des personnes trans, effectuant ou cherchant à effectuer une transition administrative
+2. Avec des personnes accompagnant leur(s) proche(s) trans dans leur transision administrative
+
+Nous nous réservons le droit d'arrêter de travailler avec un contributeur si nous ne nous sentons pas à l'aise pour quelque raison que ce soit.
+
 [Informations de contact pour contribuer](https://administrans.agate.blue/#/a-propos#contact)
+
+Nous attendons des contributeurs qu'ils prennent connaissance de la feuille de route ci-dessous avant de proposer des changements sur le projet.
+
+## Feuille de route
+
+Voici **ce que nous souhaitons faire** :
+
+1. Faciliter la transition administrative des personnes trans en France
+2. Lorsque c'est pertinent, référencer, intégrer des ressources, contenus et services tiers
+3. Fournir un service léger, rapide, simple d'utilisation et accessibles à tous et toutes
+4. Limiter au maximum les barrières à l'entrée pour de nouvelles personnes souhaitant contribuer
+
+Voici **ce que nous ne voulons pas faire** :
+
+1. Intégrer des fonctionnalités et contenus qui ne sont pas directement liés à la transistion administrative en France
+2. Faire de la tech pour de la tech : les contributions doivent servir le projet et ses utilisateurs avant tout
+3. Faire dépendre le fonctionnement d'Administrans de site, outils ou services tiers. Administrans doit pouvoir continuer de fonctionner sans interruption et en dépendant du moins de choses possibles
 
 ## Utiliser administrans et transmettre vos retours
 
