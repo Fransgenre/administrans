@@ -59,6 +59,7 @@ watch(
   <header>
     <nav>
       <RouterLink to="/">Administrans</RouterLink>
+      <RouterLink to="/documents">Documents</RouterLink>
       <RouterLink to="/a-propos">A propos</RouterLink>
     </nav>
   </header>

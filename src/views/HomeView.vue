@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import DocumentsList from '../components/DocumentsList.vue'
 </script>
 
 <template>
@@ -30,9 +29,5 @@ import DocumentsList from '../components/DocumentsList.vue'
       Administrans est gratuit, fonctionne sans inscription et les données que vous saisissez et
       documents générés ne quittent jamais votre appareil.
     </p>
-  </section>
-  <section class="width--narrow">
-    <h2>Documents et demandes disponibles</h2>
-    <DocumentsList />
   </section>
 </template>
