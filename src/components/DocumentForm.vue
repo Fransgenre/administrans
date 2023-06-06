@@ -24,6 +24,7 @@ const props = defineProps({
   }
 })
 const formFields = {}
+const withActions = []
 props.template.structure.forEach((f) => {
   if (f.isInput) {
     let v
@@ -37,6 +38,12 @@ props.template.structure.forEach((f) => {
     }
     formFields[f.id] = v
   }
+  if (f.action) {
+    withActions.push(f)
+  }
+})
+withActions.forEach(f => {
+  f.action(formFields)
 })
 const localData = reactive(formFields)
 const manualEdit = ref(false)

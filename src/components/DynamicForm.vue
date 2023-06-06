@@ -44,6 +44,9 @@ function handleUpdate ( field, value ) {
   } else {
     localData[field.id] = value
   }
+  if (field.action) {
+    field.action(localData)
+  }
   emit( 'update:modelValue', localData )
 }
 </script>
@@ -54,7 +57,7 @@ function handleUpdate ( field, value ) {
       <template v-for="element in props.structure" :key="JSON.stringify(element)">
         <template v-if="element.showCondition(localData)">
           <h2 v-if="element.isCategory" class="category">{{ element.name }}</h2>
-          <div v-if="element.isInput" :class="['field', `field--${element.type}`]">
+          <div v-if="element.isInput" :class="['field', `field--${element.type}`, element.class || '']">
             <label v-if="element.type != 'checkbox'" :for="`field-${element.id}`">{{
               element.name
             }}</label>

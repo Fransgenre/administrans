@@ -100,7 +100,7 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0 var(--space-small);
   border-left: 1px solid var(--color-border);
 }
 
@@ -337,7 +337,7 @@ select {
 }
 .document-form .category,
 .document-form .field--textarea,
-.document-form .field--select,
+.document-form .field--fullwidth,
 .document-form .field--checkbox
 {
   grid-column: span 2;

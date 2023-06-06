@@ -2,6 +2,7 @@ import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
 import CECView from './views/CECView.vue'
 import MiseAJourView from './views/MiseAJourView.vue'
+import DocumentListView from './views/DocumentListView.vue'
 import DocumentView from './views/DocumentView.vue'
 
 const routerConfig = {
@@ -35,14 +36,16 @@ const routerConfig = {
       component: MiseAJourView,
     },
     {
+      path: '/documents',
+      name: 'documentsList',
+      component: DocumentListView
+    },
+    {
       path: '/documents/:id',
       name: 'documents',
       props: true,
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: DocumentView
-    }
+    },
   ]
 }
 
