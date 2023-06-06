@@ -337,7 +337,6 @@ select {
 }
 .document-form .category,
 .document-form .field--textarea,
-.document-form .field--select,
 .document-form .field--checkbox
 {
   grid-column: span 2;

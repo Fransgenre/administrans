@@ -22,6 +22,18 @@ export const fields = [
     ]
   },
   {
+    id: 'civilité',
+    name: 'Civilité',
+    type: 'select',
+    default: () => {
+      return null
+    },
+    choices: [
+      { label: 'Monsieur', value: 'masculin' },
+      { label: 'Madame', value: 'féminin' }
+    ]
+  },
+  {
     id: 'deadname',
     name: 'Deadname',
     type: 'text'
@@ -58,12 +70,7 @@ export const fields = [
   //   type: 'textarea',
   //   persist: false,
   // },
-  {
-    id: 'refContrat',
-    name: 'Numéro de contrat',
-    type: 'text',
-    persist: false
-  },
+  
   {
     id: 'société',
     name: 'Nom de la société',
@@ -121,26 +128,125 @@ function field(id, params = {}) {
 
 export const templates = [
   {
-    id: 'contrat-simple',
-    name: "Mise à jour  d'état civil pour un contrat simple",
-    template: `ContratSimple`,
+    id: 'demande-maj',
+    name: "Demande de mise à jour de prénom et/ou civilité",
+  template: `DemandeMaj`,
     description:
-      "Pour vos démarches auprès de fournisseurs tels qu'EDF, votre assureur, votre opérateur mobile…",
+      "Pour demander à une entité, entreprise ou administration de mettre à jour vos informations.",
+    help: `
+
+<br>
+Ce document est à envoyer pour demander la mise à jour de votre prénom et/ou civilité.
+
+**Il n'est pas nécessaire d'avoir obtenu un changement de mention de sexe à l'état civil
+au préalable pour que la demande de changement de civilité aboutisse.**
+    `,
     structure: [
+      category('Organisme contacté'),
+      field('organisme', {
+        name: `Organisme contacté`,
+        type: 'select',
+        default: () => {
+          return null
+        },
+        choices: [
+          { value: `cpam`, label: 'CPAM' },
+          { value: `enseignement`, label: 'École ou université' },
+          { value: `impôts`, label: 'Impôts' },
+          { value: `poleEmploi`, label: 'Pôle emploi' },
+          { value: `autre`, label: 'Autre organisme : banque, EDF, Opérateur mobile ou internet, etc.' },
+        ],
+        action: (data) => {
+          if (data.organisme === 'cpam') {
+            data.refOrganismeType = 'Numéro de sécurité sociale'
+            data.ligneDestinataire = `À l'attention de la CPAM du <Département>`
+          }
+          else if (data.organisme === 'enseignement') {
+            data.refOrganismeType = 'Numéro étudiant'
+            data.ligneDestinataire = `À l'attention du service scolarité de <École>`
+          }
+          else if (data.organisme === 'poleEmploi') {
+            data.refOrganismeType = 'Numéro'
+            data.ligneDestinataire = `À l'attention de Pôle Emploi (<Ville>)`
+          }
+          else if (data.organisme === 'impôts') {
+            data.refOrganismeType = 'Numéro fiscal'
+            data.ligneDestinataire = `À l'attention du Service des Impôts des Particuliers de <Ville>`
+          } else {
+            data.refOrganismeType = 'Numéro'
+            data.ligneDestinataire = `À l'attention du service clients de <Entreprise>`
+          }
+        }
+      }),
+      field('ligneDestinataire', {
+        name: `Service recevant la demande`,
+        type: 'text',
+        placeholder: `À l'attention de <service>`,
+        default: () => {
+          return null
+        },
+      }),
+      field('refOrganismeType', {
+        name: `Type de référence`,
+        help: `Le type de référence permettant à l'organisme de vous retrouver plus facilement. 
+        
+Sélectionnez "Aucune" si vous n'êtes pas sûr·e ou ne disposez pas d'une telle référence.`,
+        type: 'select',
+        default: () => {
+          return null
+        },
+        choices: [
+          { label: `Aucune`, value: null },
+          { label: `Identifiant client`, value: 'Identifiant client' },
+          { label: `Numéro`, value: 'Numéro' },
+          { label: `Numéro de compte`, value: 'Numéro de compte' },
+          { label: `Numéro de contrat`, value: 'Numéro de contrat' },
+          { label: `Numéro de sécurité sociale`, value: 'Numéro de sécurité sociale' },
+          { label: `Numéro étudiant`, value: 'Numéro étudiant' },
+          { label: `Numéro fiscal`, value: 'Numéro fiscal' },
+        ]
+      }),
+      field('refOrganisme', {
+        name: `Référence auprès de l'oganisme`,
+        help: `Par exemple votre numéro de contrat, numéro de compte, identifiant client, numéro de sécurité sociale, etc.`,
+        type: 'text',
+        persist: false,
+      }),
+      category('Votre demande'),
+      field('changementDemandé', {
+        name: `Type de demande`,
+        type: 'select',
+        default: () => {
+          return 'prénomEtCivilité'
+        },
+        choices: [
+          { label: `Mise à jour du prénom`, value: 'prénom' },
+          { label: `Mise à jour de la civilité`, value: 'civilité' },
+          { label: `Mise à jour du prénom et de la civilité`, value: 'prénomEtCivilité' },
+        ]
+      }),
       category('Vos informations'),
-      field('prénom'),
+      field('prénom', {help: `Il s'agit de vos prénoms revendiqués, séparés par une virgule`}),
       field('nom'),
-      field('deadname'),
+      field('civilité', {
+        help: "Il s'agit de votre civilité revendiquée",
+      }),
+      field('deadname', {
+        showCondition: (data) => {return data.changementDemandé != 'civilité'},
+      }),
       field('adresse'),
       field('email'),
       field('téléphone'),
-      category('Société contactée'),
-      field('société'),
-      field('refContrat'),
       category('Options du document'),
+      field('mentionDDDEtCnil', {
+        type: 'checkbox',
+        default: () => {
+          return false
+        },
+        name: `Ajouter une mention sur la saisine potentielle du Défenseur des Droits et de la CNIL`,
+      }),
       field('villeDocument'),
       field('dateDocument'),
-      field('listerPJ')
     ]
   },
   {

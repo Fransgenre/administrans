@@ -44,6 +44,9 @@ function handleUpdate ( field, value ) {
   } else {
     localData[field.id] = value
   }
+  if (field.action) {
+    field.action(localData)
+  }
   emit( 'update:modelValue', localData )
 }
 </script>
