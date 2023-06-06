@@ -10,12 +10,12 @@ import routerConfig from './router'
 export const createApp = ViteSSG(
   App,
   routerConfig,
-  async ({ app, router, initialState }) => {
+  async ({ app }) => {
     const pinia = createPinia()
     pinia.use(piniaPluginPersistedstate)
-    
+
     app.use(pinia)
-    
+
     if (import.meta.env.VITE_PLAUSIBLE_URL) {
       console.log('Plausible tracking enabled on ', import.meta.env.VITE_PLAUSIBLE_URL)
       const Plausible = (await import('plausible-tracker')).default
@@ -32,7 +32,7 @@ export const createApp = ViteSSG(
         trackEvent: (name, data) => {
           console.log('[Plausible] Disabled, would send', name, data)
         }
-      })    
+      })
     }
   }
 )

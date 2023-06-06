@@ -1,11 +1,11 @@
 <script setup>
-const props = defineProps({
+defineProps( {
   data: {
     type: Object,
     required: true
   },
   renderValue: {}
-})
+} )
 </script>
 
 <template>

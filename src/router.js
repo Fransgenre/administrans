@@ -1,4 +1,3 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
 import CECView from './views/CECView.vue'
@@ -7,7 +6,7 @@ import DocumentView from './views/DocumentView.vue'
 
 const routerConfig = {
   // history: createWebHashHistory(import.meta.env.BASE_URL),
-  scrollBehavior: function (to, from, savedPosition) {
+  scrollBehavior: function (to) {
     if (to.hash) {
       return { el: to.hash }
     } else {
