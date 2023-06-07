@@ -44,6 +44,14 @@ export const useGlobalStore = defineStore('global', {
       this.situation = value
     },
 
+    importData(data) {
+      let defaultState = getDefaultState()
+      this.formData = data.formData || defaultState.formData
+      this.steps = data.steps || defaultState.steps
+      this.CecMethod = data.CecMethod || defaultState.CecMethod
+      this.situation = data.situation || defaultState.situation
+    },
+
     deleteData() {
       Object.assign(this, getDefaultState())
     }

@@ -1,9 +1,63 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { inject, watch } from 'vue'
+import { inject, watch, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useGlobalStore } from '@/store'
 import { useHead, useSeoMeta } from '@vueuse/head'
+import {getDefaultState} from './store'
 
+import isEqual from 'lodash/isEqual'
+
+const route = useRoute()
+const router = useRouter()
+const store = useGlobalStore()
+
+const migrate = reactive({
+  redirectDomain: import.meta.env.VITE_REDIRECT_DOMAIN,
+  currentDomain: window.location.hostname || 'administrans.fr',
+  migrateUrl: null,
+})
+
+function migrateData () {
+  let data = window.location.hash.split('#migrate=')[1]
+  data = window.decodeURI(data)
+  try {
+    data = JSON.parse(data)
+  } catch (e) {
+    console.log("Coulnd't parse as JSON:", data)
+    return
+  }
+  console.log("Migration triggered : Importing data", data)
+  store.importData(data)
+  router.replace(route.fullPath.split('#')[0])
+
+}
+function updateMigrateUrl () {
+  let currentUrl = new URL(window.location)
+  currentUrl.hostname = migrate.redirectDomain
+  currentUrl.hash = ""
+  // we grab the current store data to include it in the URL
+  const data = {
+    formData: store.formData,
+    steps: store.steps,
+    CecMethod: store.CecMethod,
+    situation: store.situation,
+  }
+  if (!isEqual(data, getDefaultState())) {
+    currentUrl.hash = `#migrate=${JSON.stringify(data)}`
+  }
+  migrate.migrateUrl = currentUrl.toString()
+}
+
+if ((window.location.hash || '').startsWith('#migrate=')) {
+  migrateData()
+}
+else if (!!migrate.redirectDomain && migrate.redirectDomain != migrate.currentDomain) {
+  updateMigrateUrl()
+  store.$subscribe(() => {
+    updateMigrateUrl()
+  })
+}
 useHead({
   titleTemplate: 'Administrans · %s',
   meta: [
@@ -27,9 +81,6 @@ useSeoMeta({
   twitterTitle: title,
   twitterDescription: description,
 })
-
-const route = useRoute()
-const router = useRouter()
 
 const plausible = inject('plausible')
 
@@ -64,6 +115,18 @@ watch(
     </nav>
   </header>
   <main>
+    <div
+      class="width--narrow message--primary my-2 px-2 py-2 hide-for-print"
+      v-if="migrate.migrateUrl"
+    >
+      <p>
+        <strong>
+          Administrans migre sur un nouveau nom de domaine : {{ migrate.redirectDomain }}
+        </strong>
+      </p>
+      <p>Vos données ne seront pas perdues. Cliquez sur le lien ci-dessous pour être redirigé·e immédiatement.</p>
+      <a :href="migrate.migrateUrl" class="button">Migrer vers {{ migrate.redirectDomain }}</a>
+    </div>
     <RouterView />
   </main>
   <footer>
