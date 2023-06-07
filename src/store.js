@@ -11,18 +11,22 @@ const storage = {
   }
 }
 
+export function getDefaultState () {
+  return {
+    formData: {},
+    steps: {},
+    CecMethod: 'prénomPuisSexe',
+    situation: 'françaisRésidantEnFrance',
+  }
+}
+
 export const useGlobalStore = defineStore('global', {
   persist: {
     key: 'store.global',
     paths: ['formData', 'steps', 'CecMethod', 'situation'],
     storage: storage,
   },
-  state: () => ({
-    formData: {},
-    steps: {},
-    CecMethod: 'prénomPuisSexe',
-    situation: 'françaisRésidantEnFrance',
-  }),
+  state: () => (getDefaultState()),
   actions: {
     persistFormData(data) {
       this.formData = {
@@ -41,7 +45,7 @@ export const useGlobalStore = defineStore('global', {
     },
 
     deleteData() {
-      this.formData = {}
+      Object.assign(this, getDefaultState())
     }
   }
 })
