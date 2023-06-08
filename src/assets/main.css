@@ -510,6 +510,14 @@ hr.hidden {
   @page {
     size: auto;
     /* padding: var(--space-medium); */
+    margin: 0mm; /* This deletes the margin where the header and footers are written */
+  }
+  html {
+    background-color: #FFFFFF; 
+    margin: 0mm;  /* this affects the margin on the html before sending to printer */
+  }
+  body {
+    margin: 15mm; /* margin you want for the content */
   }
   main {
     padding: 0;
