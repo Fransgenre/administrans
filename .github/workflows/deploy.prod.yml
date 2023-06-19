@@ -1,4 +1,4 @@
-name: Test, build and deploy to administrans.agate.blue
+name: Test, build and deploy to administrans.fr
 
 on:
   push:
@@ -31,8 +31,8 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          VITE_PLAUSIBLE_TRACKING_DOMAIN: administrans.agate.blue
-          VITE_PLAUSIBLE_URL: https://stats.agate.blue
+          VITE_PLAUSIBLE_TRACKING_DOMAIN: administrans.fr
+          VITE_PLAUSIBLE_URL: https://stats.administrans.fr
           VITE_REDIRECT_DOMAIN: administrans.fr
 
       - name: Disable jekyll

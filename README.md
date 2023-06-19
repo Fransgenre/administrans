@@ -6,7 +6,7 @@ Il est directement inspiré du projet Trans-CEC lancé par Maria Climent-Pommere
 et des différentes versions qui ont ensuites été améliorées et maintenues par des volontaires.
 
 Le projet n'est pas encore fini, mais vous pouvez commencer à regarder le résultat ici :
-https://administrans.agate.blue/
+https://administrans.fr/
 
 # Contribuer
 
@@ -19,7 +19,7 @@ Nous nous réservons le droit d'arrêter de travailler avec un contributeur si n
 
 Avant de contribuer, nous vous invitons à lire notre [code de conduite](/CODE_OF_CONDUCT.md)
 
-[Informations de contact pour contribuer](https://administrans.agate.blue/#/a-propos#contact)
+[Informations de contact pour contribuer](https://administrans.fr/#/a-propos#contact)
 
 Nous attendons des contributeurs qu'ils prennent connaissance de la feuille de route ci-dessous avant de proposer des changements sur le projet.
 
