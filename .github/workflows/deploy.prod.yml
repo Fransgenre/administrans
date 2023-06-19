@@ -33,6 +33,7 @@ jobs:
         env:
           VITE_PLAUSIBLE_TRACKING_DOMAIN: administrans.agate.blue
           VITE_PLAUSIBLE_URL: https://stats.agate.blue
+          VITE_REDIRECT_DOMAIN: administrans.fr
 
       - name: Disable jekyll
         run: touch dist/.nojekyll
