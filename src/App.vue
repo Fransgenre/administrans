@@ -16,6 +16,7 @@ const migrate = reactive({
   redirectDomain: import.meta.env.VITE_REDIRECT_DOMAIN,
   currentDomain: window.location.hostname || 'administrans.fr',
   migrateUrl: null,
+  show: true,
 })
 
 function migrateData () {
@@ -117,7 +118,7 @@ watch(
   <main>
     <div
       class="width--narrow message--primary my-2 px-2 py-2 hide-for-print"
-      v-if="migrate.migrateUrl"
+      v-if="migrate.migrateUrl && migrate.show"
     >
       <p>
         <strong>
@@ -126,6 +127,7 @@ watch(
       </p>
       <p>Vos données ne seront pas perdues. Cliquez sur le lien ci-dessous pour être redirigé·e immédiatement.</p>
       <a :href="migrate.migrateUrl" class="button">Migrer vers {{ migrate.redirectDomain }}</a>
+      <a href="#" class="mx-2" @click.prevent="migrate.show = false">Me le rappeler plus tard</a>
     </div>
     <RouterView />
   </main>
