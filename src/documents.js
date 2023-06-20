@@ -245,7 +245,8 @@ Sélectionnez "Aucune" si vous n'êtes pas sûr·e ou ne disposez pas d'une tell
       field('ajouterCSEC', {
         type: 'checkbox',
         default: () => {return false},
-        name: `Appuyer la demande de changement de civilité avec la décision de changement de sexe à l'état civil.`
+        name: `Appuyer la demande de changement de civilité avec la décision de changement de sexe à l'état civil.`,
+        showCondition: (data) => {return data.changementDemandé != 'prénom'},
       }),
       field('mentionDDDEtCnil', {
         type: 'checkbox',

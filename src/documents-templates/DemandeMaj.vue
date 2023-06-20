@@ -62,7 +62,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
   <p v-if="data['changementDemandé'] != 'civilité'">
     Vous trouverez en pièce jointe la décision de changement de prénom délivrée par l'état civil.
   </p>
-  <p v-if="data.ajouterCSEC">
+  <p v-if="data.ajouterCSEC && data['changementDemandé'] != 'prénom'">
     J'ai déjà obtenu un changement de mention de sexe à l'état-civil. Vous trouverez en pièce jointe une copie de la décision du tribunal.
   </p>
   <template v-if="data['changementDemandé'] != 'prénom'">
@@ -121,7 +121,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     <li v-if="data['changementDemandé'] != 'civilité'">
       Décision de changement de prénom de {{ renderValue('prénom') }} {{ renderValue('nom') }}
     </li>
-    <li v-if="data.ajouterCSEC">
+    <li v-if="data.ajouterCSEC && data['changementDemandé'] != 'prénom'">
       Décision du tribunal du changement de sexe à l'état civil de {{ renderValue('prénom') }} {{ renderValue('nom') }}
     </li>
   </ul>
