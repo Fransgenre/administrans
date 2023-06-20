@@ -62,6 +62,9 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
   <p v-if="data['changementDemandé'] != 'civilité'">
     Vous trouverez en pièce jointe la décision de changement de prénom délivrée par l'état civil.
   </p>
+  <p v-if="data.ajouterCSEC">
+    J'ai déjà obtenu un changement de mention de sexe à l'état-civil. Vous trouverez en pièce jointe une copie de la décision du tribunal.
+  </p>
   <template v-if="data['changementDemandé'] != 'prénom'">
     <p>
 
@@ -79,11 +82,6 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
       De surcroı̂t, il a noté qu’une persistence d’une civilité erronnée, c’est-à-dire non
       conforme à l’identité de genre réelle d’une personne transgenre, relevait du harcèlement
       discriminatoire basé sur l’identité de genre.
-    </p>
-    <p v-if="data.ajouterCSEC">
-      Cependant, face à la résistance de certains organisme à mettre à jour mes informations,
-      j'ai fait le choix de joindre la décision du tribunal judiciaire accordant mon changement de sexe
-      à l'état civil.
     </p>
   </template>
   <p>
@@ -123,7 +121,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     <li v-if="data['changementDemandé'] != 'civilité'">
       Décision de changement de prénom de {{ renderValue('prénom') }} {{ renderValue('nom') }}
     </li>
-    <li v-if="data.ajouterCSEC && data['changementDemandé'] != 'prénom'">
+    <li v-if="data.ajouterCSEC">
       Décision du tribunal du changement de sexe à l'état civil de {{ renderValue('prénom') }} {{ renderValue('nom') }}
     </li>
   </ul>
