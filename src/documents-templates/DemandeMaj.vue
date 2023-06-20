@@ -80,6 +80,11 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
       conforme à l’identité de genre réelle d’une personne transgenre, relevait du harcèlement
       discriminatoire basé sur l’identité de genre.
     </p>
+    <p v-if="data.ajouterCSEC">
+      Cependant, face à la résistance de certains organisme à mettre à jour mes informations,
+      j'ai fait le choix de joindre la décision du tribunal judiciaire accordant mon changement de sexe
+      à l'état civil.
+    </p>
   </template>
   <p>
     Par conséquent, je vous demande de mettre à jour, dans les plus brefs
@@ -117,6 +122,9 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     </li>
     <li v-if="data['changementDemandé'] != 'civilité'">
       Décision de changement de prénom de {{ renderValue('prénom') }} {{ renderValue('nom') }}
+    </li>
+    <li v-if="data.ajouterCSEC && data['changementDemandé'] != 'prénom'">
+      Décision du tribunal du changement de sexe à l'état civil de {{ renderValue('prénom') }} {{ renderValue('nom') }}
     </li>
   </ul>
 </template>
