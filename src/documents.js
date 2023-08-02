@@ -398,7 +398,7 @@ actes d'état civil, comme mon acte de naissance.
 >
 > Signature
 
-**Ce document ne peut être généré ici, vous devrez le rédiger vous même manuscritement.**
+**Ce document ne peut être généré ici, vous devrez le rédiger vous même manuscritement.** Afin de faciliter cette étape, nous vous proposons d'utiliser [ce template](/annexe_consentement_eclaire.pdf).
 
 `,
         default: () => `<Obligatoire> Copie intégrale de mon acte de naissance
