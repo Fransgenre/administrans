@@ -55,7 +55,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     </template>
   </p>
   <p v-if="data['changementDemandé'] != 'civilité'">
-    Je suis suis connue de vos services sous le nom de
+    Je suis connue de vos services sous le nom de
     {{ renderValue('deadname') }}
     {{ renderValue('nom').toUpperCase() }}.
   </p>
@@ -79,7 +79,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
       moindre doute persiste.
     </p>
     <p>
-      De surcroı̂t, il a noté qu’une persistence d’une civilité erronnée, c’est-à-dire non
+      De surcroit, il a noté qu’une persistance d’une civilité erronée, c’est-à-dire non
       conforme à l’identité de genre réelle d’une personne transgenre, relevait du harcèlement
       discriminatoire basé sur l’identité de genre.
     </p>
