@@ -354,12 +354,12 @@ function foreignResidenceSwitch(foreign, local) {
           <h3>Déposer votre demande</h3>
           <p>Pour déposer votre demande, deux choix s'offrent à vous :</p>
           <ul>
-            <li>Une remise en main propre, directement au service d'état civil ou au tribunal.</li>
-            <li>Un envoi par courrier, en recommandé.</li>
+            <li><strong>Fortement conseillé :</strong> Une remise en main propre, directement au service d'état civil ou au tribunal.</li>
+            <li>Un envoi par courrier, en recommandé, uniquement pour les demandes adressées au tribunal.</li>
           </ul>
           <p><strong>Le document de demande doit être daté et signé.</strong></p>
           <p>
-            Si vous déposez votre demande en main propre, demandez systématiquement un reçu ou un
+            Lorsque vous déposez votre demande en main propre, demandez systématiquement un reçu ou un
             document attestant du dépôt. Cela vous permettra de suivre l'avancée de la procédure, et
             de relancer si nécessaire.
           </p>
