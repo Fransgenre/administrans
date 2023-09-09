@@ -64,7 +64,7 @@ Pour rajouter de nouveaux documents ou modifier les existants, les fichiers impo
 Il vous faudra NodeJS, et Yarn installé au préalable.
 
 ```sh
-git clone git@github.com:agateblue/administrans.git
+git clone git@github.com:Fransgenre/administrans.git
 cd administrans
 yarn install
 ```

@@ -99,7 +99,7 @@ function deleteData() {
       <li>
         Consulter la <a href="https://github.com/Fransgenre/administrans">page GitHub du projet</a>
       </li>
-      <li>Nous laisser un petit mot <a href="https://pad.agate.blue/administrans-retours">sur le pad public prévu à cet effet</a></li>
+      <li>Nous laisser un petit mot <a href="https://hackmd.io/@agatee/administrans/edit">sur le pad public prévu à cet effet</a></li>
     </ul>
     <p>Merci beaucoup et prenez soin de vous &lt;3</p>
   </section>
