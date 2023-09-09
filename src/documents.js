@@ -598,7 +598,7 @@ et utiliser la fonction « Partager le document »**. Cela lui permettra de l'im
           {
             label: 'Ami·e',
             value: `
-              Je connais {{ prénom }} depuis <Année> et j'utilise son prénom et genre {{ genre }} quotidennement dans le cadre de notre relation amicale. Je constate que ses proches font de même.
+              Je connais {{ prénom }} depuis <Année> et j'utilise son prénom et genre {{ genre }} quotidiennement dans le cadre de notre relation amicale. Je constate que ses proches font de même.
             `
           },
           {
@@ -610,7 +610,7 @@ et utiliser la fonction « Partager le document »**. Cela lui permettra de l'im
           {
             label: 'Collègue / Responsable hiérarchique',
             value: `
-              Je travaille avec {{ prénom }} depuis <Année> et j'utilise son prénom et genre {{ genre }} quotidennement dans nos échanges professionnels. Je constate que mes collègues font de même.
+              Je travaille avec {{ prénom }} depuis <Année> et j'utilise son prénom et genre {{ genre }} quotidiennement dans nos échanges professionnels. Je constate que mes collègues font de même.
             `
           }
         ]

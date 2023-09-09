@@ -39,7 +39,7 @@ function deleteData() {
       </a>
     </p>
     <p>
-      L'Administrans que vous utilisez ici est une version différente, maintenue séparément par Agate,
+      L'Administrans que vous utilisez ici est une version différente, maintenue séparément par Agate et Emy,
       qui s'appuie sur le travail des précédentes versions et également sur celui de nombreuses associations et personnes
       qui mettent à disposition des ressources sur la transition administrative.
     </p>
