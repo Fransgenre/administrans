@@ -95,7 +95,7 @@ function deleteData() {
       <li>
         Rejoindre <a href="https://discord.gg/fransgenre">le serveur Discord</a> de <a href="https://fransgenre.fr/">l'association Fransgenre</a> et notamment le canal Administratif
       </li>
-      <li>Écrire un mail à <a href="mailto:administrans@agate.blue">administrans@agate.blue</a></li>
+      <li>Écrire un mail à <a href="mailto:contact@administrans.fr">contact@administrans.fr</a></li>
       <li>
         Consulter la <a href="https://github.com/Fransgenre/administrans">page GitHub du projet</a>
       </li>
