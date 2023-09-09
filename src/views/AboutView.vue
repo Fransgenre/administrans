@@ -80,7 +80,7 @@ function deleteData() {
   <section class="width--xnarrow my-2" id="contact">
     <h2>Nous contacter / Contribuer à Administrans</h2>
     <p>
-      Administrans est développé par Agate et d'autres personnes sur leur temps libre. Nous faisons de notre
+      Administrans est développé par Agate, Emy et d'autres personnes sur leur temps libre. Nous faisons de notre
       mieux, mais il n'est pas impossible qu'il existe des bugs ou qu'il manque des fonctionnalités
       qui vous paraissent importantes.
     </p>
@@ -93,12 +93,11 @@ function deleteData() {
     </p>
     <ul>
       <li>
-        Rejoindre <a href="https://chat.agate.blue/signup_user_complete/?id=btqyjuhyetnxzmg94gtpwb8fpo&md=link&sbr=fa">
-          notre salon de discussion
-        </a></li>
+        Rejoindre <a href="https://discord.gg/fransgenre">le serveur Discord</a> de <a href="https://fransgenre.fr/">l'association Fransgenre</a> et notamment le canal Administratif
+      </li>
       <li>Écrire un mail à <a href="mailto:administrans@agate.blue">administrans@agate.blue</a></li>
       <li>
-        Consulter la <a href="https://github.com/agateblue/administrans">page GitHub du projet</a>
+        Consulter la <a href="https://github.com/Fransgenre/administrans">page GitHub du projet</a>
       </li>
       <li>Nous laisser un petit mot <a href="https://pad.agate.blue/administrans-retours">sur le pad public prévu à cet effet</a></li>
     </ul>
