@@ -372,7 +372,7 @@ function foreignResidenceSwitch(foreign, local) {
           <h3>Attendre le résultat de la procédure</h3>
           <p>Votre demande est déposée, maintenant vous n'avez plus qu'à attendre.</p>
           <p>
-            En {{ foreignResidenceSwitch('au poste consulaire', 'à la mairie') }}, les délais vont généralement de quelques semaines à trois ou quatre mois,
+            {{ foreignResidenceSwitch('Au poste consulaire', 'À la mairie') }}, les délais vont généralement de quelques semaines à trois ou quatre mois,
             mais cela dépend évidemment de chaque endroit.
           </p>
           <p>
