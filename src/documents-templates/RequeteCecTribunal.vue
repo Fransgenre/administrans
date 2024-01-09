@@ -241,7 +241,7 @@ const { renderValue, genderSwitch, renderWithGender, renderDate } = useDocumentT
           modification de la mention relative au sexe <strong>ainsi que, le cas échéant, des prénoms, dans les actes de
             l'état civil.</strong></p>
       </blockquote>
-      <p>Ainsi, le Tribunal de Grande Instance est compétent pour ordonner un changement de prénom lorsqu’il est saisi
+      <p>Ainsi, le Tribunal Judiciaire est compétent pour ordonner un changement de prénom lorsqu’il est saisi
         d’une telle demande accompagnée d’une demande de modification de la mention relative au sexe.</p>
     </template>
     <h2>Ma requête</h2>
