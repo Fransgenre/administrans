@@ -366,6 +366,29 @@ hr.hidden {
   border-top: none;
 }
 
+/* table */
+
+table {
+  font-size: 90%;
+  border-collapse: collapse;
+}
+th {
+  font-weight: bold;
+  text-align: left;
+}
+thead {
+  background-color: var(--separator-color);
+}
+th, td {
+  padding: var(--space-small);
+}
+td {
+  vertical-align: top;
+}
+tbody tr {
+  border-bottom: 1px solid var(--separator-color);
+}
+
 /* messages */
 
 .message--primary {
