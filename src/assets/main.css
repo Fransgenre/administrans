@@ -129,17 +129,18 @@ h1 {
   margin-bottom: var(--space-small);
   font-size: var(--font-xlarge);
   color: var(--primary-color);
+  font-weight: bold;
 }
 h2 {
   margin-bottom: var(--space-small);
-  font-size: var(--font-large);
-  font-weight: bold;
+  font-size: var(--font-xlarge);
 }
 h3 {
-  margin-bottom: var(--space-xsmall);
+  margin-bottom: var(--space-medium);
   font-size: var(--font-large);
   color: var(--primary-color);
-  font-style: italic;
+  padding-bottom: var(--space-small);
+  border-bottom: 2px dashed var(--primary-color);
 }
 /* text */
 .text--center {
@@ -176,7 +177,7 @@ p {
 
 ol,
 ul {
-  padding-left: var(--space-medium);
+  padding-left: var(--space-large);
 }
 
 button,

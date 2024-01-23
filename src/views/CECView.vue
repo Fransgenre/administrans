@@ -20,7 +20,7 @@ function foreignResidenceSwitch(foreign, local) {
 <template>
   <div class="grid--row">
     <div class="grid--column two-third">
-      <section class="width--xnarrow my-2">
+      <section class="width--xnarrow my-4">
         <h1>Changer d'état civil</h1>
         <p class="text--italic">
           C'est souvent une étape importante dans une transition et pas la plus évidente ni la plus simple :
@@ -70,7 +70,7 @@ function foreignResidenceSwitch(foreign, local) {
         </p>
 
       </section>
-      <section class="width--xnarrow my-2">
+      <section class="width--xnarrow my-4">
         <h2>Comment faire ?</h2>
         <p>En France, il existe deux manières de procéder pour changer d'état civil.</p>
         <p>
@@ -164,7 +164,7 @@ function foreignResidenceSwitch(foreign, local) {
           </div>
         </div>
       </section>
-      <section class="width--xnarrow my-2">
+      <section class="width--xnarrow my-4">
         <h2>Les étapes en détail</h2>
         <p>
           Ici, on vous explique très précisément comment constituer votre dossier pour qu'il aie les
