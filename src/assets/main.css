@@ -63,6 +63,11 @@ body {
 }
 
 /* general layout */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 header {
   max-width: var(--content-width-large);
   margin: 0 auto;
@@ -72,8 +77,8 @@ main {
   max-width: var(--content-width-large);
   margin: 0 auto;
   padding: var(--space-medium);
-
   font-weight: normal;
+  flex: 1;
 }
 footer {
   border-top: 1px solid var(--separator-color);
