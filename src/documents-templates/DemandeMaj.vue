@@ -55,7 +55,7 @@ const { renderValue, genderSwitch, renderWithGender } = useDocumentTemplate(p)
     </template>
   </p>
   <p v-if="data['changementDemandé'] != 'civilité'">
-    Je suis connue de vos services sous le nom de
+    Je suis {{ renderWithGender('connu', 'civilité') }} de vos services sous le nom de
     {{ renderValue('deadname') }}
     {{ renderValue('nom').toUpperCase() }}.
   </p>
