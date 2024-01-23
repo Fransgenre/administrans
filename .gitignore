@@ -28,3 +28,5 @@ coverage
 *.sw?
 .vite-ssg-temp
 .env*
+
+src/data-maj.json

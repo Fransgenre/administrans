@@ -71,6 +71,8 @@ const steps = [
           de mention de sexe à l'état civil.
         </p>
       </section>
+      <ToUpdateEntriesTable />
+
     </div>
     <div class="grid--column one-third">
       <aside class="position--sticky my-4" id="checklist">

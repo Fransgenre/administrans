@@ -1,0 +1,133 @@
+catégories:
+  - id: scolaire
+    label: Vie scolaire et étudiante
+  - id: pro
+    label: Travail et vie professionnelle
+  - id: administration
+    label: Administrations et services publics
+  - id: social
+    label: Vie sociale et loisirs
+  - id: logement
+    label: Logement
+  - id: santé
+    label: Santé
+  - id: état-civil
+    label: État-civil
+  - id: quotidien
+    label: Vie quotidienne
+  - id: privé
+    label: Commerces, services et entreprises privées
+  - id: finances
+    label: Argent, paiement et finances
+
+prérequis:
+  - id: none
+    label: Aucun
+
+tags:
+  - id: autonome
+    label: Autonomie
+    decription: Le changement est réalisable sans contacter directement un tiers, par exemple via un formulaire dédié
+    type: positif
+  - id: instantané
+    label: Immédiat
+    decription: Le changement est répercuté immédiatement
+    type: positif
+  - id: sans-justificatif
+    label: Aucun justificatif
+    decription: Aucun justificatif n'est nécessaire pour effectuer le changement
+    type: positif
+  - id: service-continu
+    label: Continuité de service
+    decription: Aucune dégradation de service ou conséquence imprévue n'est à prévoir suite au changement
+    type: positif
+  - id: support
+    label: Obligation de contacter le support
+    decription: Il est nécessaire de contacter le support pour demander le changement
+    type: information
+  - id: justificatifs-demandés
+    label: Justificatifs demandés
+    decription: Un ou plusieurs justificatifs sont demandés pour effectuer la demande, même si cela n'est pas nécessaire.
+    type: négatif
+  - id: justificatifs-nécessaires
+    label: Justificatifs nécessaires
+    decription: Un ou plusieurs justificatifs sont nécessaires pour effectuer la demande, pour des raisons légales ou de sécurité.
+    type: information
+  - id: incohérences
+    label: Incohérences après la mise à jour
+    decription: Même après la mise à jour, des informations obsolètes peuvent apparaître dans les interfaces et les documents.
+    type: négatif
+  - id: lent
+    label: Lenteur de traitement
+    decription: Le traitement de la demande de mise à jour est lent.
+    type: négatif
+
+canaux:
+  - id: insee
+    label: Automatique (INSEE)
+    description: La mise à jour est déclenchée automatiquement par l'INSEE.
+  - id: courrier
+    label: Courrier
+    description: La demande de mise à jour s'effectue par voie postale.
+  - id: téléphone
+    label: Téléphone
+    description: La demande de mise à jour s'effectue par téléphone.
+  - id: email
+    label: E-mail
+    description: La demande de mise à jour s'effectue par email.
+  - id: web
+    label: Formulaire en ligne ou site web
+    description: La demande de mise à jour s'effectue via un formulaire en ligne
+  - id: physique
+    label: RDV physique
+    description: La demande de mise à jour s'effectue en présentiel.
+  - id: variable
+    label: Variable
+    description: La demande de mise à jour passe par des canaux différents selons les situations ou les établissements.
+
+defaults:
+  last_update: 2023-01-23
+  genre: null
+  prénom: null
+
+entrées:
+  - id: cpam
+    label: Caisse Primaire d'Assurance Maladie (CPAM)
+    catégories: [santé, quotidien, administration, finances]
+    prénom:
+      canaux: [insee, courrier]
+      tags: [justificatifs-nécessaires, incohérences]
+    genre:
+      canaux: [insee, courrier]
+      tags: [justificatifs-nécessaires, incohérences]
+  - id: mutuelle
+    label: Mutuelle / complémentaire santé
+    catégories: [santé, quotidien, finances, privé]
+    prénom:
+      canaux: [variable]
+  - id: france-travail
+    label: France Travail / Pôle Emploi
+    catégories: [finances, pro, administration]
+    prénom:
+      canaux: [insee, téléphone, courrier]
+      tags: [incohérences]
+  - id: banque
+    label: Banque
+    catégories: [finances, quotidien, privé]
+    prénom:
+      canaux: [variable]
+      tags: [justificatifs-nécessaires]
+  - id: rib
+    label: Relevé d'Identité Bancaire (RIB)
+    catégories: [finances, quotidien, privé]
+    voir: banque
+  - id: impôts
+    label: Centre des Impôts
+    catégories: [finances, administration]
+    prénom:
+      canaux: [insee, courrier, web]
+      tags: [justificatifs-nécessaires, incohérences, lent]
+    genre:
+      canaux: [insee, courrier, web]
+      tags: [justificatifs-nécessaires, incohérences, lent]
+

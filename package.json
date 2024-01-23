@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "prepare-data": "node prepare-data.js > src/data-maj.json",
     "format": "prettier --write src/"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "jsdom": "^21.1.0",
     "prettier": "^2.8.4",
     "vite": "^4.1.4",
-    "vitest": "^0.29.1"
+    "vitest": "^0.29.1",
+    "yaml": "^2.3.4"
   }
 }
