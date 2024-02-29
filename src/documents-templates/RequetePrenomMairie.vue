@@ -226,7 +226,7 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
     </p>
     <p class="footer">
       La loi n°78-17 du 6 janvier 1978 relative aux fichiers nominatifs garantit un droit d'accès et
-      de rectification des données après des organismes destinataires de ce formuliaire
+      de rectification des données après des organismes destinataires de ce formulaire
     </p>
   </div>
 </template>
