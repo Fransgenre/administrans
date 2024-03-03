@@ -63,6 +63,11 @@ body {
 }
 
 /* general layout */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 header {
   max-width: var(--content-width-large);
   margin: 0 auto;
@@ -72,8 +77,8 @@ main {
   max-width: var(--content-width-large);
   margin: 0 auto;
   padding: var(--space-medium);
-
   font-weight: normal;
+  flex: 1;
 }
 footer {
   border-top: 1px solid var(--separator-color);
@@ -129,17 +134,18 @@ h1 {
   margin-bottom: var(--space-small);
   font-size: var(--font-xlarge);
   color: var(--primary-color);
+  font-weight: bold;
 }
 h2 {
   margin-bottom: var(--space-small);
-  font-size: var(--font-large);
-  font-weight: bold;
+  font-size: var(--font-xlarge);
 }
 h3 {
-  margin-bottom: var(--space-xsmall);
+  margin-bottom: var(--space-medium);
   font-size: var(--font-large);
   color: var(--primary-color);
-  font-style: italic;
+  padding-bottom: var(--space-small);
+  border-bottom: 2px dashed var(--primary-color);
 }
 /* text */
 .text--center {
@@ -176,7 +182,7 @@ p {
 
 ol,
 ul {
-  padding-left: var(--space-medium);
+  padding-left: var(--space-large);
 }
 
 button,
@@ -363,6 +369,29 @@ hr {
 }
 hr.hidden {
   border-top: none;
+}
+
+/* table */
+
+table {
+  font-size: 90%;
+  border-collapse: collapse;
+}
+th {
+  font-weight: bold;
+  text-align: left;
+}
+thead {
+  background-color: var(--separator-color);
+}
+th, td {
+  padding: var(--space-small);
+}
+td {
+  vertical-align: top;
+}
+tbody tr {
+  border-bottom: 1px solid var(--separator-color);
 }
 
 /* messages */
