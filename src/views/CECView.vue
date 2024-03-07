@@ -184,7 +184,7 @@ function foreignResidenceSwitch(foreign, local) {
             @input="store.setCecMethod($event.target.value)"
           >
             <option value="prénomEtSexe">Prénom et mention de sexe en une fois</option>
-            <option value="prénomPuisSexe">Prénom puis mention de sexe en deux fois</option>
+            <option value="prénomPuisSexe">Prénom et mention de sexe indépendamment</option>
           </select>
         </p>
         <StepDetails stepId="chooseNames">
@@ -508,7 +508,7 @@ function foreignResidenceSwitch(foreign, local) {
             @input="store.setCecMethod($event.target.value)"
           >
             <option value="prénomEtSexe">Prénom et mention de sexe en une fois</option>
-            <option value="prénomPuisSexe">Prénom puis mention de sexe en deux fois</option>
+            <option value="prénomPuisSexe">Prénom et mention de sexe indépendamment</option>
           </select>
         </StepItem>
         <StepItem stepId="chooseNames" :link="true"> Choisir vos prénoms </StepItem>
