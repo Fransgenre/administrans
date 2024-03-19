@@ -57,7 +57,7 @@ const { renderValue, genderSwitch, renderWithGender, renderDate } = useDocumentT
     </p>
     <p>
       <strong>
-        Moi même {{ genderSwitch('le requérent', 'la requérante') }}, à l'honneur d'exposer ce qui suit :
+        Moi même {{ genderSwitch('le requérent', 'la requérante') }}, a l'honneur d'exposer ce qui suit :
       </strong>
     </p>
     <h2>Les faits</h2>
