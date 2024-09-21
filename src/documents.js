@@ -422,7 +422,7 @@ Preuves de refus de changement de la part d'organismes tiers`
     id: 'changement-prenom-mairie',
     name: 'Cerfa pour changement de prénom(s) en mairie ou consulat',
     template: `RequetePrenomMairie`,
-    description: 'Cerfa N° 16233*02 pour demande de changement de prénom.',
+    description: 'Cerfa N° 16233*03 pour demande de changement de prénom.',
     help: `L'original peut-être téléchargé et rempli à la main sur [service-public.fr](https://www.service-public.fr/particuliers/vosdroits/R63177)`,
     structure: [
       category('Vos informations'),

@@ -11,7 +11,7 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
     <div class="text--center">
       <h1>Demande de changement de prénom</h1>
       <p>
-        Cerfa N° 16233*02 <br>
+        Cerfa N° 16233*03 <br>
         (Article 60 du code civil)
       </p>
     </div>
@@ -82,13 +82,14 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
           J'atteste sur l'honneur qu'aucune procédure de changement de prénom(s) n'est actuellement en cours devant
           les juridictions fraçaises, ni qu'aucune demande de changement de prénom(s) n'est actuellement examinée devant un autre officier de l'état civil.
         </p>
+        <p>Par ailleurs :</p>
         <div class="checkbox">
           <input
           type="checkbox"
           :checked="data.typeDemande === 'première'"
           id="premièreDemande"
           />
-          <label for="premièreDemande">Je déclare n'avoir jamais formulé de demande de changement de prénom(s).</label>
+          <label for="premièreDemande">Aucune demande de changement de prénom(s) n’a été formulée à ce jour.</label>
         </div>
         <div class="checkbox">
           <input
@@ -96,13 +97,13 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
           :checked="data.typeDemande === 'plusieurs'"
           id="plusieursDemandes"
           />
-          <label for="plusieursDemandes">J'ai déjà formulé la ou les demandes de changement de prénom(s) mentionnée(s) ci-dessous :</label>
+          <label for="plusieursDemandes">La ou les demande changement de prénoms mentionnées ci-dessous ont déjà été formulées :</label>
         </div>
-        <table>
+        <table class="my-2">
           <thead>
             <th>Date et lieu de la demande</th>
             <th>Autorité saisie</th>
-            <th>Date de la décision rendue</th>
+            <th>Décision</th>
           </thead>
           <tbody>
             <tr v-for="row, idx in textToArrays(data.demandes, ',', 3)" :key="idx">
@@ -228,5 +229,36 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
       La loi n°78-17 du 6 janvier 1978 relative aux fichiers nominatifs garantit un droit d'accès et
       de rectification des données après des organismes destinataires de ce formulaire
     </p>
+    <div>
+    <h3>Conséquences sur vos titres d’identité (carte nationale d’identité, passeport...)</h3>
+      <p>
+        Le changement de prénom vous interdit d’utiliser les titres d’identité qui vous ont été délivrés
+        avant votre changement de prénom dans la mesure où ceux-ci ne correspondent plus à votre
+        état civil. Ces titres seront invalidés à l'expiration d'un délai de trois mois à compter de
+        l'actualisation de votre acte de naissance. Cela signifie qu’en cas de contrôle, ils apparaitront
+        comme non valides et leur présentation ne permettra pas de justifier de votre identité.
+      </p>
+      <p>
+        A la réception de la notification de votre changement de prénom, vous devez attendre que la
+        mise à jour des actes de l’état civil concernés par votre changement de prénom a été
+        effectuée. Lorsque cette mise à jour aura été effectuée, vous devrez vous rapprocher de la
+        mairie de votre choix pour déposer une demande de renouvellement de votre carte nationale
+        d’e d’un titre d’identité qui ne correspond pas à votre état civil est passible des sanctions
+        prévueidentité et/ou de votre passeport, même si leur durée de validité n’est pas expirée, en
+        justifiant notamment de l’acte de naissance modifié.
+      </p>
+      <p>
+        Ce renouvellement est gratuit sous réserve de produire la carte nationale d’identité et/ou le
+        passeport dont vous demandez le renouvellement.
+      </p>
+      <p>
+        Après le renouvellement de votre carte d’identité et/ou de votre passeport, vous devrez
+        également renouveler votre permis de conduire ainsi que votre carte vitale.
+      </p>
+      <p>
+        L’usage d’un titre d’identité qui ne correspond pas à votre état civil est passible des sanctions
+        prévues à l’article 441-2 du code pénal.
+      </p>
+    </div>
   </div>
 </template>
