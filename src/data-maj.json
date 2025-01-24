@@ -1,0 +1,561 @@
+{
+  "defaults": {
+    "last_update": "2023-01-23",
+    "genre": null,
+    "prénom": null
+  },
+  "catégories": [
+    {
+      "id": "scolaire",
+      "label": "Vie scolaire et étudiante"
+    },
+    {
+      "id": "pro",
+      "label": "Travail et vie professionnelle"
+    },
+    {
+      "id": "administration",
+      "label": "Administrations et services publics"
+    },
+    {
+      "id": "social",
+      "label": "Vie sociale et loisirs"
+    },
+    {
+      "id": "logement",
+      "label": "Logement"
+    },
+    {
+      "id": "santé",
+      "label": "Santé"
+    },
+    {
+      "id": "état-civil",
+      "label": "État-civil"
+    },
+    {
+      "id": "quotidien",
+      "label": "Vie quotidienne"
+    },
+    {
+      "id": "privé",
+      "label": "Commerces, services et entreprises privées"
+    },
+    {
+      "id": "finances",
+      "label": "Argent, paiement et finances"
+    }
+  ],
+  "catégoriesById": {
+    "scolaire": {
+      "id": "scolaire",
+      "label": "Vie scolaire et étudiante"
+    },
+    "pro": {
+      "id": "pro",
+      "label": "Travail et vie professionnelle"
+    },
+    "administration": {
+      "id": "administration",
+      "label": "Administrations et services publics"
+    },
+    "social": {
+      "id": "social",
+      "label": "Vie sociale et loisirs"
+    },
+    "logement": {
+      "id": "logement",
+      "label": "Logement"
+    },
+    "santé": {
+      "id": "santé",
+      "label": "Santé"
+    },
+    "état-civil": {
+      "id": "état-civil",
+      "label": "État-civil"
+    },
+    "quotidien": {
+      "id": "quotidien",
+      "label": "Vie quotidienne"
+    },
+    "privé": {
+      "id": "privé",
+      "label": "Commerces, services et entreprises privées"
+    },
+    "finances": {
+      "id": "finances",
+      "label": "Argent, paiement et finances"
+    }
+  },
+  "tags": [
+    {
+      "id": "autonome",
+      "label": "Autonomie",
+      "description": "Le changement est réalisable sans contacter directement un tiers, par exemple via un formulaire dédié",
+      "type": "positif"
+    },
+    {
+      "id": "instantané",
+      "label": "Immédiat",
+      "description": "Le changement est répercuté immédiatement",
+      "type": "positif"
+    },
+    {
+      "id": "sans-justificatif",
+      "label": "Aucun justificatif",
+      "description": "Aucun justificatif n'est nécessaire pour effectuer le changement",
+      "type": "positif"
+    },
+    {
+      "id": "service-continu",
+      "label": "Continuité de service",
+      "description": "Aucune dégradation de service ou conséquence imprévue n'est à prévoir suite au changement",
+      "type": "positif"
+    },
+    {
+      "id": "support",
+      "label": "Obligation de contacter le support",
+      "description": "Il est nécessaire de contacter le support pour demander le changement",
+      "type": "information"
+    },
+    {
+      "id": "justificatifs-demandés",
+      "label": "Justificatifs demandés",
+      "description": "Un ou plusieurs justificatifs sont demandés pour effectuer la demande, même si cela n'est pas nécessaire.",
+      "type": "négatif"
+    },
+    {
+      "id": "justificatifs-nécessaires",
+      "label": "Justificatifs nécessaires",
+      "description": "Un ou plusieurs justificatifs sont nécessaires pour effectuer la demande, pour des raisons légales ou de sécurité.",
+      "type": "information"
+    },
+    {
+      "id": "incohérences",
+      "label": "Incohérences après la mise à jour",
+      "description": "Même après la mise à jour, des informations obsolètes peuvent apparaître dans les interfaces et les documents.",
+      "type": "négatif"
+    },
+    {
+      "id": "lent",
+      "label": "Lenteur de traitement",
+      "description": "Le traitement de la demande de mise à jour est lent.",
+      "type": "négatif"
+    }
+  ],
+  "tagsById": {
+    "autonome": {
+      "id": "autonome",
+      "label": "Autonomie",
+      "description": "Le changement est réalisable sans contacter directement un tiers, par exemple via un formulaire dédié",
+      "type": "positif"
+    },
+    "instantané": {
+      "id": "instantané",
+      "label": "Immédiat",
+      "description": "Le changement est répercuté immédiatement",
+      "type": "positif"
+    },
+    "sans-justificatif": {
+      "id": "sans-justificatif",
+      "label": "Aucun justificatif",
+      "description": "Aucun justificatif n'est nécessaire pour effectuer le changement",
+      "type": "positif"
+    },
+    "service-continu": {
+      "id": "service-continu",
+      "label": "Continuité de service",
+      "description": "Aucune dégradation de service ou conséquence imprévue n'est à prévoir suite au changement",
+      "type": "positif"
+    },
+    "support": {
+      "id": "support",
+      "label": "Obligation de contacter le support",
+      "description": "Il est nécessaire de contacter le support pour demander le changement",
+      "type": "information"
+    },
+    "justificatifs-demandés": {
+      "id": "justificatifs-demandés",
+      "label": "Justificatifs demandés",
+      "description": "Un ou plusieurs justificatifs sont demandés pour effectuer la demande, même si cela n'est pas nécessaire.",
+      "type": "négatif"
+    },
+    "justificatifs-nécessaires": {
+      "id": "justificatifs-nécessaires",
+      "label": "Justificatifs nécessaires",
+      "description": "Un ou plusieurs justificatifs sont nécessaires pour effectuer la demande, pour des raisons légales ou de sécurité.",
+      "type": "information"
+    },
+    "incohérences": {
+      "id": "incohérences",
+      "label": "Incohérences après la mise à jour",
+      "description": "Même après la mise à jour, des informations obsolètes peuvent apparaître dans les interfaces et les documents.",
+      "type": "négatif"
+    },
+    "lent": {
+      "id": "lent",
+      "label": "Lenteur de traitement",
+      "description": "Le traitement de la demande de mise à jour est lent.",
+      "type": "négatif"
+    }
+  },
+  "canaux": [
+    {
+      "id": "insee",
+      "label": "Automatique (INSEE)",
+      "description": "La mise à jour est déclenchée automatiquement par l'INSEE."
+    },
+    {
+      "id": "courrier",
+      "label": "Courrier",
+      "description": "La demande de mise à jour s'effectue par voie postale."
+    },
+    {
+      "id": "téléphone",
+      "label": "Téléphone",
+      "description": "La demande de mise à jour s'effectue par téléphone."
+    },
+    {
+      "id": "email",
+      "label": "E-mail",
+      "description": "La demande de mise à jour s'effectue par email."
+    },
+    {
+      "id": "web",
+      "label": "Formulaire en ligne ou site web",
+      "description": "La demande de mise à jour s'effectue via un formulaire en ligne"
+    },
+    {
+      "id": "physique",
+      "label": "RDV physique",
+      "description": "La demande de mise à jour s'effectue en présentiel."
+    },
+    {
+      "id": "variable",
+      "label": "Variable",
+      "description": "La demande de mise à jour passe par des canaux différents selons les situations ou les établissements."
+    }
+  ],
+  "canauxById": {
+    "insee": {
+      "id": "insee",
+      "label": "Automatique (INSEE)",
+      "description": "La mise à jour est déclenchée automatiquement par l'INSEE."
+    },
+    "courrier": {
+      "id": "courrier",
+      "label": "Courrier",
+      "description": "La demande de mise à jour s'effectue par voie postale."
+    },
+    "téléphone": {
+      "id": "téléphone",
+      "label": "Téléphone",
+      "description": "La demande de mise à jour s'effectue par téléphone."
+    },
+    "email": {
+      "id": "email",
+      "label": "E-mail",
+      "description": "La demande de mise à jour s'effectue par email."
+    },
+    "web": {
+      "id": "web",
+      "label": "Formulaire en ligne ou site web",
+      "description": "La demande de mise à jour s'effectue via un formulaire en ligne"
+    },
+    "physique": {
+      "id": "physique",
+      "label": "RDV physique",
+      "description": "La demande de mise à jour s'effectue en présentiel."
+    },
+    "variable": {
+      "id": "variable",
+      "label": "Variable",
+      "description": "La demande de mise à jour passe par des canaux différents selons les situations ou les établissements."
+    }
+  },
+  "prérequis": [
+    {
+      "id": "none",
+      "label": "Aucun"
+    }
+  ],
+  "prérequisById": {
+    "none": {
+      "id": "none",
+      "label": "Aucun"
+    }
+  },
+  "entrées": [
+    {
+      "last_update": "2023-01-23",
+      "genre": {
+        "canaux": [
+          "insee",
+          "courrier"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences"
+        ]
+      },
+      "prénom": {
+        "canaux": [
+          "insee",
+          "courrier"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences"
+        ]
+      },
+      "id": "cpam",
+      "label": "Caisse Primaire d'Assurance Maladie (CPAM)",
+      "catégories": [
+        "santé",
+        "quotidien",
+        "administration",
+        "finances"
+      ]
+    },
+    {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "variable"
+        ]
+      },
+      "id": "mutuelle",
+      "label": "Mutuelle / complémentaire santé",
+      "catégories": [
+        "santé",
+        "quotidien",
+        "finances",
+        "privé"
+      ]
+    },
+    {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "insee",
+          "téléphone",
+          "courrier"
+        ],
+        "tags": [
+          "incohérences"
+        ]
+      },
+      "id": "france-travail",
+      "label": "France Travail / Pôle Emploi",
+      "catégories": [
+        "finances",
+        "pro",
+        "administration"
+      ]
+    },
+    {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "variable"
+        ],
+        "tags": [
+          "justificatifs-nécessaires"
+        ]
+      },
+      "id": "banque",
+      "label": "Banque",
+      "catégories": [
+        "finances",
+        "quotidien",
+        "privé"
+      ]
+    },
+    {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": null,
+      "id": "rib",
+      "label": "Relevé d'Identité Bancaire (RIB)",
+      "catégories": [
+        "finances",
+        "quotidien",
+        "privé"
+      ],
+      "voir": "banque"
+    },
+    {
+      "last_update": "2023-01-23",
+      "genre": {
+        "canaux": [
+          "insee",
+          "courrier",
+          "web"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences",
+          "lent"
+        ]
+      },
+      "prénom": {
+        "canaux": [
+          "insee",
+          "courrier",
+          "web"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences",
+          "lent"
+        ]
+      },
+      "id": "impôts",
+      "label": "Centre des Impôts",
+      "catégories": [
+        "finances",
+        "administration"
+      ]
+    }
+  ],
+  "entréesById": {
+    "cpam": {
+      "last_update": "2023-01-23",
+      "genre": {
+        "canaux": [
+          "insee",
+          "courrier"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences"
+        ]
+      },
+      "prénom": {
+        "canaux": [
+          "insee",
+          "courrier"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences"
+        ]
+      },
+      "id": "cpam",
+      "label": "Caisse Primaire d'Assurance Maladie (CPAM)",
+      "catégories": [
+        "santé",
+        "quotidien",
+        "administration",
+        "finances"
+      ]
+    },
+    "mutuelle": {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "variable"
+        ]
+      },
+      "id": "mutuelle",
+      "label": "Mutuelle / complémentaire santé",
+      "catégories": [
+        "santé",
+        "quotidien",
+        "finances",
+        "privé"
+      ]
+    },
+    "france-travail": {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "insee",
+          "téléphone",
+          "courrier"
+        ],
+        "tags": [
+          "incohérences"
+        ]
+      },
+      "id": "france-travail",
+      "label": "France Travail / Pôle Emploi",
+      "catégories": [
+        "finances",
+        "pro",
+        "administration"
+      ]
+    },
+    "banque": {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": {
+        "canaux": [
+          "variable"
+        ],
+        "tags": [
+          "justificatifs-nécessaires"
+        ]
+      },
+      "id": "banque",
+      "label": "Banque",
+      "catégories": [
+        "finances",
+        "quotidien",
+        "privé"
+      ]
+    },
+    "rib": {
+      "last_update": "2023-01-23",
+      "genre": null,
+      "prénom": null,
+      "id": "rib",
+      "label": "Relevé d'Identité Bancaire (RIB)",
+      "catégories": [
+        "finances",
+        "quotidien",
+        "privé"
+      ],
+      "voir": "banque"
+    },
+    "impôts": {
+      "last_update": "2023-01-23",
+      "genre": {
+        "canaux": [
+          "insee",
+          "courrier",
+          "web"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences",
+          "lent"
+        ]
+      },
+      "prénom": {
+        "canaux": [
+          "insee",
+          "courrier",
+          "web"
+        ],
+        "tags": [
+          "justificatifs-nécessaires",
+          "incohérences",
+          "lent"
+        ]
+      },
+      "id": "impôts",
+      "label": "Centre des Impôts",
+      "catégories": [
+        "finances",
+        "administration"
+      ]
+    }
+  }
+}

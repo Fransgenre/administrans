@@ -19,7 +19,7 @@ const steps = [
   },
   {
     id: 'poleEmploi',
-    label: "Pôle Emploi",
+    label: "France Travail",
     linkTo: {name: 'documents', params: {id: 'demande-maj'}, query: {organisme: 'poleEmploi'}}
   },
   {

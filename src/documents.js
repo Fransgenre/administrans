@@ -154,7 +154,7 @@ au préalable pour que la demande de changement de civilité aboutisse.**
           { value: `cpam`, label: 'CPAM' },
           { value: `enseignement`, label: 'École ou université' },
           { value: `impôts`, label: 'Impôts' },
-          { value: `poleEmploi`, label: 'Pôle emploi' },
+          { value: `poleEmploi`, label: 'France Travail' },
           { value: `autre`, label: 'Autre organisme : banque, EDF, Opérateur mobile ou internet, etc.' },
         ],
         action: (data) => {
@@ -168,7 +168,7 @@ au préalable pour que la demande de changement de civilité aboutisse.**
           }
           else if (data.organisme === 'poleEmploi') {
             data.refOrganismeType = 'Numéro'
-            data.ligneDestinataire = `À l'attention de Pôle Emploi (<Ville>)`
+            data.ligneDestinataire = `À l'attention de France Travail (<Ville>)`
           }
           else if (data.organisme === 'impôts') {
             data.refOrganismeType = 'Numéro fiscal'
