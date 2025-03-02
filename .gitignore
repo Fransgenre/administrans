@@ -28,3 +28,4 @@ coverage
 *.sw?
 .vite-ssg-temp
 .env*
+.yarn/install-state.gz
