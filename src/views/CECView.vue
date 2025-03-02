@@ -520,7 +520,7 @@ function foreignResidenceSwitch(foreign, local) {
         <StepItem stepId="chooseNames" :link="true"> <span id="prenoms-checklist-label">Choisir vos prénoms</span>
           <template #after-link>
             <input aria-labelledby="prenoms-checklist-label" type="text" name="prenoms-checklist" id="prenoms-checklist"
-              :value="store.formData.prénom" @input="store.persistFormData({ prénom: $event.target.value }))">
+              :value="store.formData.prénom" @input="store.persistFormData({ prénom: $event.target.value })">
           </template>
         </StepItem>
         <StepItem stepId="requestBirthCertificates">
