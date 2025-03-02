@@ -34,5 +34,6 @@ watch(value, (v) => {
     <template v-if="link">
       · <RouterLink :to="`#${linkTo || stepId}`">Détails</RouterLink>
     </template>
+    <slot name="after-link"></slot>
   </div>
 </template>
