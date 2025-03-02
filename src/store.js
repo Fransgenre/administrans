@@ -33,6 +33,9 @@ export const useGlobalStore = defineStore('global', {
         ...this.formData,
         ...data
       }
+      if (this.formData.prénom) {
+        this.setStep('chooseNames', true)
+      }
     },
     setStep(id, value) {
       this.steps[id] = value
