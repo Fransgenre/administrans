@@ -209,6 +209,9 @@ function foreignResidenceSwitch(foreign, local) {
             Si vous avez fait votre choix, vous pouvez renseigner vos prénom(s) souhaité(s) ici, ce qui pré-remplira le
             champ correspondant dans les différents formulaires proposés par le site :
           </p>
+          <label for="prenoms">
+            Nouveau(x) prénom(s), séparés par une virgule
+          </label>
           <input type="text" name="prenoms" id="prenoms" :value="store.formData.prénom"
             @input="store.persistFormData({ prénom: $event.target.value })">
         </StepDetails>
@@ -520,6 +523,7 @@ function foreignResidenceSwitch(foreign, local) {
         <StepItem stepId="chooseNames" :link="true"> <span id="prenoms-checklist-label">Choisir vos prénoms</span>
           <template #after-link>
             <input aria-labelledby="prenoms-checklist-label" type="text" name="prenoms-checklist" id="prenoms-checklist"
+              placeholder="Ex. : Prénom1, Prénom 2"
               :value="store.formData.prénom" @input="store.persistFormData({ prénom: $event.target.value })">
           </template>
         </StepItem>
