@@ -10,7 +10,7 @@
       type="module"
       async=""
       crossorigin=""
-      src="/assets/app-14f4a153.js"
+      src="/assets/app-34afaf1d.js"
     ></script>
     <link rel="stylesheet" href="/assets/index-5aa07475.css" />
     <meta http-equiv="content-language" content="fr-fr" />
@@ -288,7 +288,15 @@
                     inventer vos propres prénoms si vous le souhaitez
                   </li>
                 </ul>
-                <!--]-->
+                <p>
+                  Si vous avez fait votre choix, vous pouvez renseigner vos
+                  prénom(s) souhaité(s) ici, ce qui pré-remplira le champ
+                  correspondant dans les différents formulaires proposés par le
+                  site :
+                </p>
+                <label for="prenoms">
+                  Nouveau(x) prénom(s), séparés par une virgule </label
+                ><input type="text" name="prenoms" id="prenoms" /><!--]-->
               </div>
               <div id="requestBirthCertificates" class="my-3">
                 <!--[-->
@@ -647,7 +655,7 @@
                       protection subsidiaire (Ofpra)
                     </option></select
                   ><!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox">
                 <input
@@ -665,7 +673,7 @@
                       Prénom et mention de sexe indépendamment
                     </option></select
                   ><!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox">
                 <input
@@ -673,9 +681,9 @@
                   id="check-chooseNames"
                   name="chooseNames"
                 /><label for="check-chooseNames"
-                  ><!--[-->
-                  Choisir vos prénoms
-                  <!--]--></label
+                  ><!--[--><span id="prenoms-checklist-label"
+                    >Choisir vos prénoms</span
+                  ><!--]--></label
                 ><!--[-->
                 ·
                 <a
@@ -683,7 +691,13 @@
                   href="/cec#chooseNames"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><input
+                  aria-labelledby="prenoms-checklist-label"
+                  type="text"
+                  name="prenoms-checklist"
+                  id="prenoms-checklist"
+                  placeholder="Ex. : Prénom1, Prénom 2"
+                /><!--]-->
               </div>
               <div class="step checkbox">
                 <input
@@ -701,7 +715,7 @@
                   href="/cec#requestBirthCertificates"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <!--[-->
               <div class="step checkbox">
@@ -712,7 +726,7 @@
                 /><label for="check-submitRequestNames"
                   ><!--[-->
                   Changement de prénom à la mairie<!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -730,7 +744,7 @@
                   href="/cec#prepareProofs"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -741,7 +755,7 @@
                   ><!--[-->
                   Copie d'acte de naissance
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -752,7 +766,7 @@
                   ><!--[-->
                   Copie de votre CNI ou Passeport
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -763,7 +777,7 @@
                   ><!--[-->
                   Justificatif de domicile
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -774,7 +788,7 @@
                   ><!--[-->
                   Attestations de proches
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -792,7 +806,7 @@
                   href="/cec#prepareRequestName"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -810,7 +824,7 @@
                   href="/cec#submitRequest"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -828,7 +842,7 @@
                   href="/cec#wait"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -846,7 +860,7 @@
                   href="/cec#notification"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input type="checkbox" id="check-party" name="party" /><label
@@ -861,7 +875,7 @@
                   href="/cec#party"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox">
                 <input
@@ -872,7 +886,7 @@
                   ><!--[-->
                   Changement de mention de sexe au tribunal
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -890,7 +904,7 @@
                   href="/cec#prepareProofs"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -901,7 +915,7 @@
                   ><!--[-->
                   Copie d'acte de naissance
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -912,7 +926,7 @@
                   ><!--[-->
                   Copie de votre CNI ou Passeport
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -923,7 +937,7 @@
                   ><!--[-->
                   Justificatif de domicile
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -934,7 +948,7 @@
                   ><!--[-->
                   Attestations de proches
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-4">
                 <input
@@ -945,7 +959,7 @@
                   ><!--[-->
                   Décision de changement de prénom transmise par l'état civil
                   <!--]--></label
-                ><!---->
+                ><!----><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -963,7 +977,7 @@
                   href="/cec#prepareRequestCourt"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -981,7 +995,7 @@
                   href="/cec#submitRequest"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -999,7 +1013,7 @@
                   href="/cec#wait"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input
@@ -1017,7 +1031,7 @@
                   href="/cec#notification"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <div class="step checkbox mx-2">
                 <input type="checkbox" id="check-party" name="party" /><label
@@ -1032,7 +1046,7 @@
                   href="/cec#party"
                   class="router-link-active router-link-exact-active"
                   >Détails</a
-                ><!--]-->
+                ><!--]--><!--[--><!--]-->
               </div>
               <!--]-->
             </aside>
