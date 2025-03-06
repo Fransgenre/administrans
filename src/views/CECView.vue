@@ -205,6 +205,15 @@ function foreignResidenceSwitch(foreign, local) {
               prénoms si vous le souhaitez
             </li>
           </ul>
+          <p>
+            Si vous avez fait votre choix, vous pouvez renseigner vos prénom(s) souhaité(s) ici, ce qui pré-remplira le
+            champ correspondant dans les différents formulaires proposés par le site :
+          </p>
+          <label for="prenoms">
+            Nouveau(x) prénom(s), séparés par une virgule
+          </label>
+          <input type="text" name="prenoms" id="prenoms" :value="store.formData.prénom"
+            @input="store.persistFormData({ prénom: $event.target.value })">
         </StepDetails>
         <StepDetails stepId="requestBirthCertificates">
           <h3>Demander des copies intégrales de votre acte de naissance</h3>
@@ -511,7 +520,13 @@ function foreignResidenceSwitch(foreign, local) {
             <option value="prénomPuisSexe">Prénom et mention de sexe indépendamment</option>
           </select>
         </StepItem>
-        <StepItem stepId="chooseNames" :link="true"> Choisir vos prénoms </StepItem>
+        <StepItem stepId="chooseNames" :link="true"> <span id="prenoms-checklist-label">Choisir vos prénoms</span>
+          <template #after-link>
+            <input aria-labelledby="prenoms-checklist-label" type="text" name="prenoms-checklist" id="prenoms-checklist"
+              placeholder="Ex. : Prénom1, Prénom 2"
+              :value="store.formData.prénom" @input="store.persistFormData({ prénom: $event.target.value })">
+          </template>
+        </StepItem>
         <StepItem stepId="requestBirthCertificates">
           Demander des copies intégrales de votre acte de naissance
         </StepItem>
