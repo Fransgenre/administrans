@@ -11,7 +11,7 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
     <div class="text--center">
       <h1>Demande de changement de prénom</h1>
       <p>
-        Cerfa N° 16233*03 <br>
+        Cerfa N° 16233*04 <br>
         (Article 60 du code civil)
       </p>
     </div>
@@ -182,33 +182,6 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
           </p>
           <hr class="hidden">
         </template>
-        <p>
-          <strong>Acte de mariage du/des enfant(s) (le cas échéant)</strong>
-        </p>
-        <template v-for="row, idx in textToArrays(data.enfants, ',', 3)" :key="idx">
-          <p class="field">
-            Nom du {{ idx + 1}}<template v-if="idx === 0">er</template><template v-else>ème</template> enfant :
-            <span class="value" v-if="row.length > 0 && data.majActeMariageEnfants">
-              {{ row[0] }}
-            </span>
-            <span class="value" v-else></span>
-          </p>
-          <p class="field">
-            Prénom(s) :
-            <span class="value" v-if="row.length > 0 && data.majActeMariageEnfants">
-              {{ row[1] }}
-            </span>
-            <span class="value" v-else></span>
-          </p>
-          <p class="field">
-            Date et lieu de naissance :
-            <span class="value" v-if="row.length > 0 && data.majActeMariageEnfants">
-              {{ row[2] }} à {{ row[3] }}
-            </span>
-            <span class="value" v-else></span>
-          </p>
-          <hr class="hidden">
-        </template>
       </div>
     </div>
     <h2>Attestation sur l'honneur</h2>
@@ -239,12 +212,11 @@ const { renderValue, renderDate } = useDocumentTemplate(p)
         comme non valides et leur présentation ne permettra pas de justifier de votre identité.
       </p>
       <p>
-        A la réception de la notification de votre changement de prénom, vous devez attendre que la
+        À la réception de la notification de votre changement de prénom, vous devez attendre que la
         mise à jour des actes de l’état civil concernés par votre changement de prénom a été
         effectuée. Lorsque cette mise à jour aura été effectuée, vous devrez vous rapprocher de la
         mairie de votre choix pour déposer une demande de renouvellement de votre carte nationale
-        d’e d’un titre d’identité qui ne correspond pas à votre état civil est passible des sanctions
-        prévueidentité et/ou de votre passeport, même si leur durée de validité n’est pas expirée, en
+        d’identité et/ou de votre passeport, même si leur durée de validité n’est pas expirée, en
         justifiant notamment de l’acte de naissance modifié.
       </p>
       <p>
