@@ -509,13 +509,9 @@ Preuves de refus de changement de la part d'organismes tiers`
         type: 'checkbox',
         name: `Demander une mise à jour de l'acte de naissance de vos enfants`
       }),
-      field('majActeMariageEnfants', {
-        type: 'checkbox',
-        name: `Demander une mise à jour de l'acte de mariage de vos enfants`
-      }),
       field('enfants', {
         name: `Informations sur vos enfants`,
-        showCondition: (data) => {return data.majActeMariageEnfants || data.majActeNaissanceEnfants },
+        showCondition: (data) => {return !!data.majActeNaissanceEnfants },
         type: 'textarea',
         placeholder: 'Lund, Élise, 05/09/2021, Marseille (13)',
         help: `Un·e enfant par ligne, séparer le nom, prénom, date de naissance et lieu de naissance par une virgule`,
