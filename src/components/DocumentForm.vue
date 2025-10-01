@@ -29,7 +29,13 @@ props.template.structure.forEach((f) => {
   if (f.isInput) {
     let v
     if (props.prefillData[f.id] != undefined) {
-      v = props.prefillData[f.id]
+      if ('checkbox' == f.type) {
+        if (['false', '0', ''].includes(props.prefillData[f.id])) v = false
+        else v = true
+      }
+      else {
+        v = props.prefillData[f.id]
+      }
     }
     else if (store.formData[f.id] != undefined) {
       v = store.formData[f.id]
