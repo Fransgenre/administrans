@@ -26,9 +26,12 @@ const props = defineProps({
 const formFields = {}
 const withActions = []
 props.template.structure.forEach((f) => {
+  let prefilled = false
   if (f.isInput) {
     let v
     if (props.prefillData[f.id] != undefined) {
+      // the field was loaded with prefilled data, typically via a share link
+      prefilled = true
       if ('checkbox' == f.type) {
         if (['false', '0', ''].includes(props.prefillData[f.id])) v = false
         else v = true
@@ -44,7 +47,9 @@ props.template.structure.forEach((f) => {
     }
     formFields[f.id] = v
   }
-  if (f.action) {
+  if (!prefilled && f.action) {
+    // we don't trigger actions when the field is prefilled,
+    // to avoid overwriting the prefilled data
     withActions.push(f)
   }
 })
