@@ -125,6 +125,9 @@ function foreignResidenceSwitch(foreign, local) {
                   On attend plus de temps avant de pouvoir utiliser officiellement son ou ses
                   nouveaux prénom(s)
                 </li>
+                <li>
+                  Payant (50€) depuis mars 2026 comment toute procédure juridique
+                </li>
               </ul>
             </div>
           </div>
@@ -354,6 +357,19 @@ function foreignResidenceSwitch(foreign, local) {
           </RouterLink>
         </StepDetails>
 
+        <StepDetails stepId="boughtFiscalStamp">
+          <h3>Acheter un timbre fiscal</h3>
+          <p><strong>Cela est nécessaire que pour la procédure au tribunal.</strong>
+          La procédure en mairie (changement de prénom seul), il ne faut pas la faire.</p>
+          <p>Depuis le 1er mars 2026 toutes procédure juridique nécessite un timbre fiscal de 50€,
+          Pour cela rendez-vous sur <a href="https://timbres.impots.gouv.fr"> le site des impots</a></p>
+          <ul>
+            <li>sélectionner: "Acheter un timbre électronique"</li>
+            <li>sélectionner: "Je souhaite acheter un timbre justice"</li>
+            <li>sélectionner: "Introduire une instance devant un tribunal judiciaire ou un conseil des prud'hommes"</li>
+          </ul>
+        </StepDetails>
+
         <StepDetails stepId="submitRequest">
           <h3>Déposer votre demande</h3>
           <p>Pour déposer votre demande, deux choix s'offrent à vous :</p>
@@ -539,6 +555,11 @@ function foreignResidenceSwitch(foreign, local) {
           <StepItem stepId="prepareProofsSocial" class="mx-2" :link="false">
             Attestations de proches
           </StepItem>
+
+          <template v-if="store.CecMethod === 'prénomEtSexe'">
+            <StepItem stepId="boughtFiscalStamp" class="mx-2" > Acheter un timbre fiscal </StepItem>
+          </template>
+
           <StepItem stepId="prepareRequest"> Préparer votre demande </StepItem>
           <StepItem stepId="submitRequest"> Déposer où envoyer votre demande </StepItem>
           <StepItem stepId="wait"> Attendre la décision </StepItem>
@@ -593,6 +614,9 @@ function foreignResidenceSwitch(foreign, local) {
           <StepItem stepId="prepareProofsSocialCourt" class="mx-4" :link="false">
             Attestations de proches
           </StepItem>
+
+          <StepItem stepId="boughtFiscalStamp" class="mx-4" > Acheter un timbre fiscal </StepItem>
+
           <StepItem stepId="prepareProofsNameCHangeCourt" class="mx-4" :link="false">
             Décision de changement de prénom transmise par l'état civil
           </StepItem>
