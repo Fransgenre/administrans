@@ -226,7 +226,7 @@ const { renderValue, renderDate, genderSwitch, renderWithGender } = useDocumentT
     </blockquote>
     <p>
       De plus, il est inutile d’apporter des preuves pour tous les principaux faits mentionnés à
-      l’article 61-5 du Code Civil comme le stipule l’arrêt de la cour d’appel de Montpellier du 15
+      l’article 61-5 du Code Civil comme le précise l’arrêt de la cour d’appel de Montpellier du 15
       mars 2017 :
     </p>
     <blockquote>
